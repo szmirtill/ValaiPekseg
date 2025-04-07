@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import LoginRequiredModal from './components/LoginRequiredModal';
 import './Style/MainPage3.css';
 
@@ -7,6 +8,7 @@ function MainPage3() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false);
+    const navigate = useNavigate();
 
     const categories = [
         { id: 1, name: "Helyben Sütött" },
@@ -21,7 +23,7 @@ function MainPage3() {
 
     useEffect(() => {
         fetchProducts();
-    }, []);
+    }, [selectedCategory]); // fontos, hogy frissüljön, ha vált kategóriát
 
     const fetchProducts = () => {
         let url = "https://localhost:7136/api/termekek";
@@ -52,7 +54,7 @@ function MainPage3() {
 
     return (
         <div className="mainpage3-container">
-            {/* ✅ Tökéletesen elrendezett navbar */}
+            {/* ✅ Navbar javítva */}
             <header className="header">
                 <nav className="navbar">
                     <div className="navbar-left">
@@ -63,8 +65,8 @@ function MainPage3() {
                         <a href="/termekek">Termékek</a>
                     </div>
                     <div className="navbar-right">
-                        <button className="nav-button" onClick={("/mainpage")}>Belépés</button>
-                        <button className="nav-button" onClick={("/admin/login")  }>Admin</button>
+                        <button className="nav-button" onClick={() => navigate("/mainpage")}>Belépés</button>
+                        <button className="nav-button" onClick={() => navigate("/admin/login")}>Admin</button>
                     </div>
                 </nav>
             </header>

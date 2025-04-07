@@ -1,7 +1,7 @@
 ﻿import { useState, useEffect } from "react";
 import './Style/Cart.css';
 import EditQuantityModal from './components/EditQuantityModal';
-import SuccessModal from './components/SuccessModal'; // FONTOS: Success két "s"-el
+import SuccessModal from './components/SuccessModal';
 
 function Cart() {
     const [cartItems, setCartItems] = useState([]);
