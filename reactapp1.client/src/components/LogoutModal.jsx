@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Style/QuantityModal.css'; // haszn�lhatod ugyanazt a st�lust
+import './Style/QuantityModal.css';
 
 export default function LogoutModal({ isOpen, onClose, onConfirm }) {
     if (!isOpen) return null;

@@ -1,10 +1,12 @@
 // src/admin/AdminProducts.jsx
 import { useEffect, useState } from "react";
+import AdminProductUpdate from "../components/AdminProductUpdate";
 import "../Style/AdminProducts.css";
 
 const AdminProducts = () => {
     const [termekek, setTermekek] = useState([]);
-    const [ujArak, setUjArak] = useState({});
+    const [showModal, setShowModal] = useState(false);
+    const [selectedProduct, setSelectedProduct] = useState(null);
 
     useEffect(() => {
         fetch("https://localhost:7136/api/termekek")
@@ -31,39 +33,14 @@ const AdminProducts = () => {
         }
     };
 
-    const handleChange = (e, id) => {
-        const value = e.target.value;
-        setUjArak({ ...ujArak, [id]: value });
+    const openModal = (product) => {
+        setSelectedProduct(product);
+        setShowModal(true);
     };
 
-    const handleUpdate = async (id) => {
-        const ujAr = ujArak[id];
-
-        if (!ujAr || isNaN(ujAr)) {
-            alert("Adj meg érvényes árat.");
-            return;
-        }
-
-        try {
-            const res = await fetch(`https://localhost:7136/api/termekek/${id}`, {
-                method: "PUT",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(parseFloat(ujAr)),
-            });
-
-            if (res.ok) {
-                const updatedTermekek = termekek.map((t) =>
-                    t.id === id ? { ...t, ar: parseFloat(ujAr) } : t
-                );
-                setTermekek(updatedTermekek);
-                setUjArak((prev) => ({ ...prev, [id]: "" }));
-                alert("Ár sikeresen frissítve!");
-            } else {
-                alert("Nem sikerült frissíteni az árat.");
-            }
-        } catch (error) {
-            alert("Hálózati hiba történt.");
-        }
+    const closeModal = () => {
+        setShowModal(false);
+        setSelectedProduct(null);
     };
 
     return (
@@ -85,19 +62,18 @@ const AdminProducts = () => {
                             <td>{termek.ar} Ft</td>
                             <td>{termek.kategoriaNev}</td>
                             <td>
-                                <input
-                                    type="number"
-                                    placeholder="Új ár"
-                                    value={ujArak[termek.id] || ""}
-                                    onChange={(e) => handleChange(e, termek.id)}
-                                />
-                                <button onClick={() => handleUpdate(termek.id)}>Módosítás</button>
+                                <button onClick={() => openModal(termek)}>Új ár</button>
                                 <button onClick={() => handleDelete(termek.id)}>Törlés</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+
+            {/* Modal megjelenítése */}
+            {showModal && (
+                <AdminProductUpdate product={selectedProduct} onClose={closeModal} />
+            )}
         </div>
     );
 };

@@ -1,35 +1,144 @@
-/* AdminProducts.css */
-
-.admin-products-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
+﻿/* Alap reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-    .admin-products-container h2 {
-        font-size: 24px;
-        margin-bottom: 20px;
+html, body {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #fdf6e3, #f8e1c4, #ebc79e);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    height: 100%;
+}
+
+/* ✅ Fejléc navbar */
+.header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 90%;
+    max-width: 1320px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    width: 100%;
+}
+
+/* Konténerek */
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-center a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #5c4033;
+        transition: color 0.3s ease;
     }
 
-    .admin-products-container input,
-    .admin-products-container select {
-        display: block;
-        margin: 10px 0;
-        padding: 8px;
-        width: 250px;
-    }
-
-    .admin-products-container button {
-        padding: 10px 20px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 5px;
-    }
-
-        .admin-products-container button:hover {
-            background-color: #218838;
+        .navbar-center a:hover {
+            color: #a0622b;
         }
+
+/* ✅ Termékek kezelésének container */
+.admin-products-container {
+    width: 90vw; /* Kitölti a képernyő teljes szélességét */
+    margin: 120px auto 60px auto;
+    padding: 20px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
+    color: #5c4033;
+    overflow-x: auto; /* Görgethető ha túl széles */
+}
+
+    /* Címek */
+    .admin-products-container h2 {
+        text-align: center;
+        font-size: 28px;
+        color: #5c4033;
+        margin-bottom: 30px;
+    }
+
+/* ✅ Táblázat */
+table {
+    width: 100%; /* Kitölti a teljes szélességet */
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f8e1c4;
+}
+
+    thead th {
+        padding: 16px 12px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #5c4033;
+        text-align: left;
+    }
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 14px 12px;
+    font-size: 15px;
+}
+
+/* ✅ Input mező */
+input[type="number"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100px;
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* ✅ Gombok */
+button {
+    padding: 6px 12px; /* Kisebb gombok */
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    
+    cursor: pointer;
+    margin-right: 6px; /* Csökkentett margó, hogy elférjenek egymás mellett */
+    transition: 0.3s;
+    font-size: 14px;
+    background-color: #d6a675;
+    color: white;
+}
+
+    button:hover {
+        background-color: #bf8b50;
+        opacity: 0.95;
+    }
+
+    /* Elválasztás a gombok között */
+    button:nth-of-type(1) {
+        margin-right: 8px; /* Módosítás gomb */
+    }
+
+    button:nth-of-type(2) {
+        margin-right: 0; /* Törlés gomb */
+    }
