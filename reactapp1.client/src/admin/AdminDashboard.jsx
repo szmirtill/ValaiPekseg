@@ -1,4 +1,4 @@
-﻿// AdminDashboard.jsx
+﻿// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/AdminDashboard.css";
@@ -8,23 +8,26 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-dashboard">
-            {/* Oldalsáv */}
-            <aside className="modern-sidebar">
-                <div className="sidebar-section">
-                    <h3 className="section-title">Admin</h3>
-                    <ul>
-                        <li onClick={() => navigate("/admin/products")}>Termékek</li>
-                        <li onClick={() => navigate("/admin/users")}>Felhasználók</li> {/* ✅ HOZZÁADVA */}
-                    </ul>
-                </div>
-                <div className="sidebar-section">
-                    <ul>
-                        <li className="logout" onClick={() => navigate("/")}>Kijelentkezés</li>
-                    </ul>
-                </div>
-            </aside>
 
-            {/* Tartalom */}
+            {/* Fejléc NAVBAR felül */}
+            <header className="header">
+                <nav className="navbar">
+                    <div className="navbar-left">
+                        <span className="logo">Valai Pékség Admin</span>
+                    </div>
+
+                    <div className="navbar-center">
+                        <a onClick={() => navigate("/admin/products")}>Termékek</a>
+                        <a onClick={() => navigate("/admin/users")}>Felhasználók</a>
+                    </div>
+
+                    <div className="navbar-right">
+                        <button className="nav-button" onClick={() => navigate("/")}>Kijelentkezés</button>
+                    </div>
+                </nav>
+            </header>
+
+            {/* Tartalom a navbar alatt */}
             <main className="dashboard-content">
                 <header className="dashboard-header">
                     <h1>Admin Vezérlőpult</h1>
@@ -34,11 +37,11 @@ const AdminDashboard = () => {
                 <section className="stats-overview">
                     <div className="stat-box">
                         <h4>Teljes bevétel</h4>
-                        <p className="value">X Ft</p>
+                        <p className="value">*Jövőbeli fejlesztés*</p>
                     </div>
                     <div className="stat-box">
                         <h4>Összes rendelés</h4>
-                        <p className="value">X</p>
+                        <p className="value">*Jövőbeli fejlesztés*</p>
                     </div>
                 </section>
             </main>
