@@ -1,10 +1,11 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
+import LoginRequiredModal from './components/LoginRequiredModal'; // importáljuk a modalt
 import './Style/MainPage3.css';
 
 function MainPage3() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
+    const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false); // új állapot a modalhoz
 
     const categories = [
         { id: 1, name: "Helyben Sütött" },
@@ -45,7 +46,8 @@ function MainPage3() {
     };
 
     const addToCart = () => {
-        alert("Ehhez a cselekvéshez be kell jelentkezned!");
+        // Ha nincs bejelentkezve a felhasználó, akkor megjelenik a modal
+        setShowLoginRequiredModal(true);
     };
 
     return (
@@ -101,6 +103,12 @@ function MainPage3() {
                     )}
                 </div>
             </div>
+
+            {/* A modal itt jelenik meg */}
+            <LoginRequiredModal
+                isOpen={showLoginRequiredModal}
+                onClose={() => setShowLoginRequiredModal(false)} // Bezárja a modalt
+            />
         </div>
     );
 }
