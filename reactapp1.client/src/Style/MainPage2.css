@@ -5,6 +5,12 @@
     box-sizing: border-box;
 }
 
+body, html {
+    height: auto !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+}
+
 html, body {
     background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E) !important;
     height: 100%;
@@ -256,8 +262,3 @@ body {
     }
 }
 
-body, html {
-    height: auto !important;
-    min-height: 100vh !important;
-    overflow-y: auto !important;
-}

@@ -20,17 +20,54 @@ namespace ReactApp1.Server.Test
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase("RendelesTestDb")
+                .UseInMemoryDatabase(databaseName: "RendelesTestDb")
                 .Options;
 
             _context = new ApplicationDbContext(options);
 
-            // 🔹 Feltöltés tesztadatokkal
+            // ✅ Kötelező mezők hozzáadása!
             _context.rendelesek.AddRange(
-                new Rendeles { Id = 1, vevo_id = 1, allapot = "Feldolgozás alatt" },
-                new Rendeles { Id = 2, vevo_id = 2, allapot = "Kiszállítva" },
-                new Rendeles { Id = 3, vevo_id = 1, allapot = "Teljesítve" }
+                new Rendeles
+                {
+                    Id = 1,
+                    vevo_id = 1,
+                    allapot = "Feldolgozás alatt",
+                    Keresztnev = "Teszt",
+                    Vezeteknev = "User",
+                    SzallitasiMod = "pekseghez",
+                    Iranyitoszam = "1111",
+                    Varos = "Tesztváros",
+                    Utca = "Teszt utca",
+                    Hazszam = "1"
+                },
+                new Rendeles
+                {
+                    Id = 2,
+                    vevo_id = 2,
+                    allapot = "Kiszállítva",
+                    Keresztnev = "Másik",
+                    Vezeteknev = "User",
+                    SzallitasiMod = "kiszallitas",
+                    Iranyitoszam = "2222",
+                    Varos = "Másikváros",
+                    Utca = "Másik utca",
+                    Hazszam = "2"
+                },
+                new Rendeles
+                {
+                    Id = 3,
+                    vevo_id = 1,
+                    allapot = "Teljesítve",
+                    Keresztnev = "Teszt",
+                    Vezeteknev = "User",
+                    SzallitasiMod = "pekseghez",
+                    Iranyitoszam = "1111",
+                    Varos = "Tesztváros",
+                    Utca = "Teszt utca",
+                    Hazszam = "3"
+                }
             );
+
             _context.SaveChanges();
 
             _controller = new RendelesController(_context);
