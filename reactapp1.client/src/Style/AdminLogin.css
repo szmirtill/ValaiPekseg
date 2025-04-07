@@ -1,21 +1,27 @@
-﻿body {
-    font-family: 'Poppins', sans-serif;
-    color: #5C4033;
-    background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E);
+﻿/* ADMIN LOGIN – LOGINKINÉZETHEZ IGAZÍTVA */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #ffefdb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .admin-login-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100vh;
+    background-color: #ffefdb;
 }
 
 .admin-login-box {
     display: flex;
-    width: 1000px;
+    width: 800px;
     border-radius: 20px;
     overflow: hidden;
     background: white;
@@ -28,23 +34,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .login-icon {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-bottom: 20px;
 }
 
-.admin-login-left h2 {
+.admin-login-left h1 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
     color: #5C4033;
-    margin-bottom: 10px;
-}
-
-.admin-login-left p {
-    font-size: 14px;
-    color: #555;
     margin-bottom: 20px;
 }
 
@@ -54,35 +56,28 @@
     margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid #ccc;
-    background: #ffffff; /* ✅ Fehér háttér */
-    color: #000000; /* ✅ Fekete szöveg */
+    background: #ffffff;
+    color: #000000;
     font-size: 16px;
 }
 
-.admin-login-left .forgot {
-    font-size: 13px;
-    color: #5C4033;
-    margin-bottom: 20px;
-    display: inline-block;
-}
-
 .admin-login-left button[type="submit"] {
-    width: 200px; /* ✅ Kisebb szélesség */
-    padding: 10px 15px; /* ✅ Kisebb magasság */
+    width: 200px;
+    padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: linear-gradient(to bottom, #D9A065, #C7864D);
+    background: #d6a675; /* ÚJ szín */
     color: white;
     font-weight: bold;
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    align-self: center; /* ✅ Gomb középre igazítása */
+    align-self: center;
     font-size: 15px;
 }
 
     .admin-login-left button[type="submit"]:hover {
-        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+        background: #bf8b50; /* ÚJ hover szín */
     }
 
 .admin-login-right {
