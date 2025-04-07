@@ -1,24 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Style/QuantityModal.css'; // ugyanazt a CSS-t használjuk
+import './Style/QuantityModal.css'; // haszn�lhatod ugyanazt a st�lust
 
-export default function LoginRequiredModal({ isOpen, onClose }) {
+export default function LogoutModal({ isOpen, onClose, onConfirm }) {
     if (!isOpen) return null;
 
     return (
         <div className="modal-overlay" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-                <h3>Bejelentkezés szükséges</h3>
-                <p>A rendelés leadásához előbb be kell jelentkezned.</p>
+                <h3>Biztosan ki szeretnél jelentkezni?</h3>
                 <div className="modal-buttons">
-                    <button onClick={onClose}>Rendben</button>
+                    <button onClick={onConfirm}>Igen, kijelentkezem</button>
+                    <button onClick={onClose}>Mégsem</button>
                 </div>
             </div>
         </div>
     );
 }
 
-LoginRequiredModal.propTypes = {
+LogoutModal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,
+    onConfirm: PropTypes.func.isRequired,
 };
