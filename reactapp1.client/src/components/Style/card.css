@@ -1,0 +1,101 @@
+.card-card {
+    width: 100%;
+    max-width: 680px;
+    margin-left: 6rem; /* finoman beljebb húzva */
+    background: linear-gradient(to right, #ffffff 70%, #fef6f2);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    z-index: 2;
+    position: relative;
+}
+
+/* Cím */
+.card-text1 {
+    color: #8a6153;
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+/* Alcím */
+.card-text2 {
+    color: #1e1e2f;
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+/* Leírás */
+.card-text3 {
+    font-size: 1.2rem;
+    color: #333333;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    max-width: 90%;
+    text-align: left;
+}
+
+/* Gombkonténer */
+.card-container1 {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+/* Gomb */
+.card-button {
+    background-color: #8a6153;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem 1.4rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+    .card-button:hover {
+        background-color: #754a2c;
+    }
+
+/* Reszponzív nézet */
+@media (max-width: 991px) {
+    .card-card {
+        margin-left: 2rem;
+        max-width: 90%;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .card-card {
+        align-items: center;
+        text-align: center;
+        margin-left: 1rem;
+    }
+
+    .card-text3 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 479px) {
+    .card-card {
+        padding: 1.5rem;
+        margin-left: 0.5rem;
+    }
+
+    .card-button {
+        width: 100%;
+        text-align: center;
+    }
+}

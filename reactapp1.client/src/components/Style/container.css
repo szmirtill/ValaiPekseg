@@ -1,0 +1,117 @@
+﻿/* FŐ TARTÓKONTAINER */
+.container-container1 {
+    width: 100%;
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #ffffff; /* Fehér háttér az oldalhoz */
+    overflow: visible;
+}
+
+/* CÍMSOR */
+.container-text1 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #5a3b26;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* BEVEZETŐ SZÖVEG BLOKK */
+.container-container2 {
+    display: flex;
+    justify-content: center;
+    max-width: 1200px;
+    padding: 0 2rem;
+    margin-bottom: 3rem;
+}
+
+/* BEVEZETŐ SZÖVEG STÍLUSA */
+.container-text4 {
+    font-size: 1.2rem;
+    color: #4a2c1d;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* KÉPKONTAINER: KÉT KÉP EGYSORBAN */
+.container-container3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 2.5rem;
+    box-sizing: border-box;
+    padding: 0 4rem;
+}
+
+/* BAL ÉS JOBB OLDALI KÉPKONTAINER */
+.container-container4,
+.container-container5 {
+    flex: 1 1 500px;
+}
+
+/* KÉPEK STÍLUSA */
+.container-image1,
+.container-image2 {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.15), 0 8px 9px -5px rgba(0, 0, 0, 0.06);
+}
+
+/* KÉPEK POZICIONÁLÁSA – OPTIKAI KIHANGSÚLYOZÁS */
+.container-image1 {
+    margin-left: 1rem;
+    margin-right: -1rem;
+}
+
+.container-image2 {
+    margin-top: 8rem;
+    margin-left: -1rem;
+}
+
+/* 🔁 RESPONSIVE NÉZETEK 🔁 */
+@media (max-width: 991px) {
+    .container-container1 {
+        padding: 4rem 2rem;
+    }
+
+    .container-text1 {
+        font-size: 2.4rem;
+    }
+
+    .container-text4 {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+
+    .container-container3 {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .container-image2 {
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .container-text1 {
+        font-size: 2rem;
+    }
+
+    .container-text4 {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .container-container1 {
+        padding: 3rem 1rem;
+    }
+}

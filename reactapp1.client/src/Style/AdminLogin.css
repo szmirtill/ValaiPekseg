@@ -1,0 +1,104 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E);
+    margin: 0;
+    padding: 0;
+}
+
+.admin-login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.admin-login-box {
+    display: flex;
+    width: 1000px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.admin-login-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.admin-login-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #5C4033;
+    margin-bottom: 10px;
+}
+
+.admin-login-left p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.admin-login-left input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #ffffff; /* ✅ Fehér háttér */
+    color: #000000; /* ✅ Fekete szöveg */
+    font-size: 16px;
+}
+
+.admin-login-left .forgot {
+    font-size: 13px;
+    color: #5C4033;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.admin-login-left button[type="submit"] {
+    width: 200px; /* ✅ Kisebb szélesség */
+    padding: 10px 15px; /* ✅ Kisebb magasság */
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #D9A065, #C7864D);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    align-self: center; /* ✅ Gomb középre igazítása */
+    font-size: 15px;
+}
+
+    .admin-login-left button[type="submit"]:hover {
+        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+    }
+
+.admin-login-right {
+    flex: 1;
+    background: #eee;
+}
+
+    .admin-login-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}

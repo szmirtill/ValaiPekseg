@@ -1,0 +1,87 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(51, 29, 19, 0.6); /* sötétbarna átlátszó háttér */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #fff8f0; /* krémszínû háttér */
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 420px;
+    text-align: center;
+    border: 2px solid #d6a675; /* halvány arany szegély */
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .modal-content h2 {
+        color: #8b5e3c; /* barna */
+        margin-bottom: 1rem;
+    }
+
+    .modal-content p {
+        color: #5a3b26;
+        font-size: 1rem;
+    }
+
+    .modal-content input[type="number"] {
+        width: 100%;
+        padding: 0.6rem;
+        margin-top: 1rem;
+        border: 2px solid #d6a675; /* aranybarna keret */
+        border-radius: 8px;
+        background-color: white;
+        font-size: 1rem;
+        font-family: 'Segoe UI', sans-serif;
+        color: #4a3a2b;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+
+        .modal-content input[type="number"]:focus {
+            border-color: #a0622b; /* fókusz szín */
+        }
+
+.modal-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+    .modal-buttons button {
+        padding: 0.6rem 1.4rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 0.95rem;
+        transition: background-color 0.3s ease;
+    }
+
+        .modal-buttons button:first-child {
+            background-color: #dcd2c0; /* világos barna/krém */
+            color: #4a3a2b;
+        }
+
+            .modal-buttons button:first-child:hover {
+                background-color: #c8b69c;
+            }
+
+        .modal-buttons button:last-child {
+            background-color: #a0622b; /* pékség narancsbarna */
+            color: white;
+        }
+
+            .modal-buttons button:last-child:hover {
+                background-color: #854d1e;
+            }

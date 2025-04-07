@@ -1,0 +1,132 @@
+.about-container {
+    background: linear-gradient(to bottom, #fdf4e7, #f8e3c3);
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    color: #4a3a2b;
+}
+
+.header {
+    background-color: #a0622b;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .header nav ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 2rem;
+    }
+
+        .header nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+            .header nav ul li a:hover {
+                color: #ffd79a;
+            }
+
+.about-wrapper {
+    max-width: 1100px;
+    margin: 2.5rem auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.about-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #8b5e3c;
+    margin-bottom: 1rem;
+}
+
+.about-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    color: #5f4633;
+}
+
+.about-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-text {
+    flex: 1;
+}
+
+    .about-text h2 {
+        color: #a0622b;
+        margin-bottom: 1rem;
+    }
+
+    .about-text p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+.sustainability-section {
+    background-color: #f9e8d2;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+}
+
+    .sustainability-section h2 {
+        color: #7b4a25;
+        margin-bottom: 1rem;
+    }
+
+    .sustainability-section ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .sustainability-section li {
+        font-size: 1rem;
+        margin: 0.5rem 0;
+    }
+
+.contact-section {
+    text-align: center;
+    padding: 2rem 0 1rem;
+}
+
+    .contact-section h2 {
+        color: #8b5e3c;
+        margin-bottom: 1rem;
+    }
+
+.contact-details p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+}
+
+.contact-details a {
+    color: #a0622b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+    .contact-details a:hover {
+        text-decoration: underline;
+    }

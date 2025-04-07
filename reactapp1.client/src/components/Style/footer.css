@@ -1,0 +1,47 @@
+﻿.footer-footer {
+    width: 100%;
+    min-height: 80px; /* Csökkentett magasság */
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("https://images.unsplash.com/photo-1504400739660-22ebeb14f00a?ixid=M3w5MTMyMXwwfDF8c2VhcmNofDU5fHxiYWtlcnl8ZW58MHx8fHwxNzQzNjA3NjE4fDA&ixlib=rb-4.0.3&w=1400");
+}
+
+.footer-container1 {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Középre igazítás */
+    text-align: center;
+    gap: 0.5rem;
+    max-width: 1320px;
+    padding: 1.5rem 2rem; /* Kisebb padding */
+}
+
+.footer-text1 {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.footer-text2 {
+    font-size: 1rem;
+}
+
+/* Reszponzív nézet */
+@media(max-width: 767px) {
+    .footer-container1 {
+        padding: 1rem;
+    }
+
+    .footer-text1 {
+        font-size: 1.1rem;
+    }
+
+    .footer-text2 {
+        font-size: 0.95rem;
+    }
+}

@@ -1,0 +1,129 @@
+﻿/* FŐ TARTÓKONTAINER */
+.contaier-contaier {
+    width: 100%;
+    padding: 6rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    overflow: visible; /* Ne legyen külön görgetés */
+}
+
+/* CÍMSOR */
+.contaier-container1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+}
+
+.contaier-text10 {
+    color: #5a3b26;
+    font-size: 2.6rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+
+/* KÉP + SZÖVEG BLOKKOK */
+.contaier-container2,
+.contaier-container4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* KÉPEK */
+.contaier-image1,
+.contaier-image2 {
+    width: 260px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 8px 26px -4px rgba(0, 0, 0, 0.15), 0 8px 9px -5px rgba(0, 0, 0, 0.06);
+}
+
+/* SZÖVEGBLOKKOK */
+.contaier-container3,
+.contaier-container5 {
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+/* ELVÁLASZTÓ VONALAK */
+.contaier-divider1,
+.contaier-divider2 {
+    width: 90%;
+    height: 1px;
+    margin: 4rem 0;
+    background-color: #ddd;
+    opacity: 0.5;
+}
+
+/* SZÖVEG STÍLUSOK */
+.contaier-text11,
+.contaier-text12,
+.contaier-text13,
+.contaier-text14,
+.contaier-text15,
+.contaier-text16,
+.contaier-text17,
+.contaier-text18 {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #3a2d24;
+}
+
+/* ✅ RESZPONZÍV NÉZETEK */
+@media (max-width: 991px) {
+    .contaier-contaier {
+        padding: 4rem 2rem;
+    }
+
+    .contaier-text10 {
+        font-size: 2.2rem;
+    }
+
+    .contaier-image1,
+    .contaier-image2 {
+        width: 220px;
+    }
+
+    .contaier-container3,
+    .contaier-container5 {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .contaier-container2,
+    .contaier-container4 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contaier-divider1,
+    .contaier-divider2 {
+        margin: 2rem 0;
+    }
+}
+
+@media (max-width: 479px) {
+    .contaier-text10 {
+        font-size: 1.8rem;
+    }
+
+    .contaier-image1,
+    .contaier-image2 {
+        width: 100%;
+        max-width: 300px;
+    }
+}

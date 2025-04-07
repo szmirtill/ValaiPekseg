@@ -1,0 +1,35 @@
+/* AdminProducts.css */
+
+.admin-products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+    .admin-products-container h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .admin-products-container input,
+    .admin-products-container select {
+        display: block;
+        margin: 10px 0;
+        padding: 8px;
+        width: 250px;
+    }
+
+    .admin-products-container button {
+        padding: 10px 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+        .admin-products-container button:hover {
+            background-color: #218838;
+        }

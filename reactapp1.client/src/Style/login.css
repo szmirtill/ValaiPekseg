@@ -1,0 +1,99 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #ffefdb; /* Fehér háttér */
+    display: flex;
+    justify-content: center; /* Középre igazítja vízszintesen */
+    align-items: center; /* Középre igazítja függõlegesen */
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; /* A teljes magasságot kitölti */
+    background-color: #ffefdb; /* Fehér háttér */
+}
+
+.login-box {
+    display: flex;
+    width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-left {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.login-left h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: #5C4033;
+    margin-bottom: 20px;
+}
+
+.login-left input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    color: #000000;
+    font-size: 16px;
+}
+
+.login-left button {
+    width: 200px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #8b5e3c;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    align-self: center;
+    font-size: 15px;
+}
+
+    .login-left button:hover {
+        background: #754a2c;
+    }
+
+.login-right {
+    flex: 1;
+    background: #eee;
+}
+
+    .login-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.error {
+    color: red;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
