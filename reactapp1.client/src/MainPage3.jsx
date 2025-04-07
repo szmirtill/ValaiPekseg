@@ -1,12 +1,12 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
-import LoginRequiredModal from './components/LoginRequiredModal'; // importáljuk a modalt
+import LoginRequiredModal from './components/LoginRequiredModal';
 import './Style/MainPage3.css';
 
 function MainPage3() {
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
-    const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false); // új állapot a modalhoz
+    const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false);
 
     const categories = [
         { id: 1, name: "Helyben Sütött" },
@@ -47,20 +47,25 @@ function MainPage3() {
     };
 
     const addToCart = () => {
-        // Ha nincs bejelentkezve a felhasználó, akkor megjelenik a modal
         setShowLoginRequiredModal(true);
     };
 
     return (
         <div className="mainpage3-container">
+            {/* ✅ Tökéletesen elrendezett navbar */}
             <header className="header">
-                <nav>
-                    <ul>
-                        <li><a href="/pekseg">Főoldal</a></li>
-                        <li><a href="/about">Rólunk</a></li>
-                        <li><a href="/mainpage">Bejelentkezés</a></li>
-                        <li><a href="/registration">Regisztráció</a></li>
-                    </ul>
+                <nav className="navbar">
+                    <div className="navbar-left">
+                        <span className="logo">Valai Pékség</span>
+                    </div>
+                    <div className="navbar-center">
+                        <a href="/pekseg">Főoldal</a>
+                        <a href="/termekek">Termékek</a>
+                    </div>
+                    <div className="navbar-right">
+                        <button className="nav-button" onClick={("/mainpage")}>Belépés</button>
+                        <button className="nav-button" onClick={("/admin/login")  }>Admin</button>
+                    </div>
                 </nav>
             </header>
 
@@ -105,10 +110,9 @@ function MainPage3() {
                 </div>
             </div>
 
-            {/* A modal itt jelenik meg */}
             <LoginRequiredModal
                 isOpen={showLoginRequiredModal}
-                onClose={() => setShowLoginRequiredModal(false)} // Bezárja a modalt
+                onClose={() => setShowLoginRequiredModal(false)}
             />
         </div>
     );
