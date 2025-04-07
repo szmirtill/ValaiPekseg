@@ -1,3 +1,4 @@
+/* Alap reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,7 @@
 
 html, body {
     min-height: 100%;
-    background-image: linear-gradient( to bottom, #FDF6E3 0%, #FAE9D1 20%, #F8E1C4 40%, #F1D1AD 60%, #EBC79E 80%, #E0AF86 90%, #C78C5A 100% );
+    background-image: linear-gradient(to bottom, #FDF6E3 0%, #FAE9D1 20%, #F8E1C4 40%, #F1D1AD 60%, #EBC79E 80%, #E0AF86 90%, #C78C5A 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,50 +15,102 @@ html, body {
     color: #5C4033;
 }
 
-
-/* Fejléc */
+/* ✅ Fejléc */
 .header {
-    background-color: #8B5E3C;
-    width: 100%;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1320px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
-nav ul {
-    list-style: none;
+.navbar {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 2rem;
+    width: 100%;
 }
 
-    nav ul li a {
+
+/* Bal oldali logó */
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #5a3b26;
+}
+
+/* Középen menü */
+.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+}
+
+    .navbar-center a {
         text-decoration: none;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: #5a3b26;
+        transition: color 0.3s ease;
     }
 
-/* Fő konténer */
-.mainpage3-container {
-    padding-top: 20px; /* nagyobb távolság a sáv alatt */
+        .navbar-center a:hover {
+            color: #a0622b;
+        }
+
+/* Jobb oldali gombok */
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
 }
 
+.nav-button {
+    background-color: #7a4b27;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
+
+    .nav-button:hover {
+        background-color: #5c361a;
+    }
+
+/* ✅ Tartalom eltolás a navbar miatt */
+.mainpage3-container {
+    padding-top: 100px;
+}
 
 .main-layout {
     display: flex;
     max-width: 1600px;
-    margin: 40px auto 0 auto; /* felső margó 40px a sáv alatt */
+    margin: 40px auto 0 auto;
     padding: 20px;
     gap: 40px;
     align-items: flex-start;
 }
 
-
-/* Oldalsáv */
+/* ✅ Oldalsáv */
 .sidebar {
     width: 250px;
     background-color: #FAEBD7;
@@ -92,6 +145,7 @@ nav ul {
         cursor: pointer;
     }
 
+/* ✅ Szűrő gomb */
 .filter-button {
     width: 100%;
     margin-top: 20px;
@@ -108,7 +162,7 @@ nav ul {
         background: linear-gradient(to bottom, #BF8B50, #A76A44);
     }
 
-/* Termékek */
+/* ✅ Termékek */
 .product-list {
     flex-grow: 1;
     display: grid;
@@ -116,7 +170,6 @@ nav ul {
     gap: 25px;
 }
 
-/* Termékkártyák */
 .product-card {
     background: white;
     padding: 15px;
@@ -128,10 +181,22 @@ nav ul {
 
 .product-image {
     width: 100%;
-    aspect-ratio: 1 / 1; /* négyzetes megjelenítés */
-    object-fit: cover; /* kitölti a négyzetet, levág ha kell */
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
     border-radius: 8px;
     display: block;
     margin: 0 auto 12px auto;
-    background-color: #fdfdfd; /* háttér a betöltés előtt */
+    background-color: #fdfdfd;
+}
+
+/* ✅ Kosár gomb (inaktív) */
+.buy-button.disabled {
+    margin-top: 10px;
+    background-color: #ccc;
+    color: #555;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: not-allowed;
 }
