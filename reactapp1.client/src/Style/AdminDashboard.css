@@ -1,177 +1,153 @@
-/* Alapstílus */
-body {
+ï»¿/* Alap reset */
+* {
     margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #fffaf0, #eacaa0);
-    height: 100vh;
-    overflow: hidden;
-}
-
-/* Fõ elrendezés */
-.admin-dashboard {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-}
-
-/* Oldalsáv – fix pozíció, teljes magasság */
-.admin-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: #8B5E3C;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    padding: 0;
     box-sizing: border-box;
-    z-index: 1000;
-    padding: 0;
 }
 
-/* Menü konténer */
-.modern-sidebar {
+html, body {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #fdf6e3, #f8e1c4, #ebc79e);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+}
+
+/* âœ… FejlÃ©c navbar */
+.header {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 230px;
-    height: 100vh;
-    background-color: #8B5E3C; /* CSODA BARNA */
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 90%;
+    max-width: 1320px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+}
+
+.navbar {
     display: flex;
-    flex-direction: column;
-    padding: 20px 0;
-    font-family: 'Segoe UI', sans-serif;
-    z-index: 999;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    width: 100%;
 }
 
-.sidebar-section {
-    margin-bottom: 30px;
-    padding: 0 20px;
+.navbar-left {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #5c4033;
 }
 
-.section-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: #f3e1c9; /* világos barna / krém cím */
-    margin-bottom: 10px;
-    text-transform: uppercase;
+.navbar-center {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebar-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-    .sidebar-section ul li {
-        padding: 10px 15px;
-        color: #fffaf0;
-        cursor: pointer;
-        border-radius: 8px;
-        transition: background 0.2s;
+    .navbar-center a {
+        text-decoration: none;
+        font-size: 1.1rem;
         font-weight: 500;
-        text-transform: uppercase; /* <-- EZ KELL A NAGYBETÛKHÖZ */
+        color: #5c4033;
+        transition: color 0.3s ease;
     }
 
-        .sidebar-section ul li:hover {
-            background-color: #a46e4c; /* világosabb barna hover */
+        .navbar-center a:hover {
+            color: #a0622b;
         }
 
-        .sidebar-section ul li.logout {
-            color: white;
-            margin-top: auto;
-        }
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
 
-            .sidebar-section ul li.logout:hover {
-                background-color: #a46e4c;
-                color: white;
-            }
+.nav-button {
+    background-color: #d6a675;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
+}
 
-/* Tartalom rész */
-.dashboard-content {
-    margin-left: 250px;
-    flex-grow: 1;
-    height: 100vh;
-    overflow-y: auto;
-    padding: 40px;
-    padding-top: 30px; /* pontosan illesztve a menühöz */
-    background-color: #fffdf8;
-    box-sizing: border-box;
+    .nav-button:hover {
+        background-color: #bf8b50;
+    }
+
+/* âœ… Tartalom elrendezÃ©se */
+.admin-dashboard {
+    
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
-/* Fejléc */
-.dashboard-header h1 {
-    color: #5c4033;
-    font-size: 32px;
-    margin: 0 0 30px 0;
+/* FejlÃ©c cÃ­mek */
+.dashboard-header {
+    margin-bottom: 30px;
 }
 
-/* Statisztikai kártyák */
+    .dashboard-header h1 {
+        font-size: 32px;
+        font-weight: 700;
+        color: #5C4033;
+        margin-bottom: 10px;
+    }
+
+    .dashboard-header h3 {
+        font-size: 20px;
+        color: #8B5E3C;
+    }
+
+/* Statisztika boxok */
 .stats-overview {
     display: flex;
     gap: 30px;
-    margin-bottom: 40px;
     flex-wrap: wrap;
+    margin-top: 10px;
 }
 
 .stat-box {
     flex: 1;
-    min-width: 250px;
+    min-width: 320px;
+    min-height: 220px;
     background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+    .stat-box:hover {
+        transform: translateY(-4px);
+    }
+
     .stat-box h4 {
-        color: #7a5638;
-        font-size: 16px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        color: #a0622b;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
 
     .stat-box .value {
-        font-size: 26px;
+        font-size: 25px;
         font-weight: bold;
         color: #333;
-        margin-bottom: 6px;
     }
-
-.trend {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-    .trend.up {
-        color: #2e7d32;
-    }
-
-    .trend.down {
-        color: #d32f2f;
-    }
-
-.note {
-    font-size: 13px;
-    color: #7a5a3a;
-}
-
-/* Diagram szekció */
-.charts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-}
-
-.chart-box {
-    background: #fff8f0;
-    border: 2px dashed #b3815b;
-    border-radius: 12px;
-    padding: 30px;
-    text-align: center;
-    color: #7a5a3a;
-    font-size: 16px;
-}
