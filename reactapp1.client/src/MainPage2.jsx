@@ -94,29 +94,35 @@ function MainPage2() {
     return (
         <div className="mainpage2-container">
             <header className="header">
-                <nav>
-                    <ul>
-                        <li><a href="/pekseg">Főoldal</a></li>
-                        <li><a href="/about">Rólunk</a></li>
-                    </ul>
-                </nav>
-                <div className="user-menu">
-                    <button className="user-btn" onClick={() => setDropdownOpen(!dropdownOpen)}>
-                        {username} ▼
-                    </button>
-                    {dropdownOpen && (
-                        <div className="dropdown-menu">
-                            <a href="/cart">Kosár</a>
-                            <a href="/orders">Rendeléseim</a>
-                            <a href="/profile">Adatok módosítása</a>
-                            <button className="logout-btn" onClick={handleLogout}>Kijelentkezés</button>
-                        </div>
-                    )}
+                <div className="navbar">
+                    <div className="navbar-left2">
+                        <span className="logo">Valai Pékség</span>
+                    </div>
+
+                    <div className="navbar-center2">
+                        <a href="/pekseg">Főoldal</a>
+                        <a href="/products">Termékek</a>
+                    </div>
+
+                    <div className="user-menu">
+                        <button className="user-btn" onClick={() => setDropdownOpen(!dropdownOpen)}>
+                            {username} ▼
+                        </button>
+                        {dropdownOpen && (
+                            <div className="dropdown-menu">
+                                <a href="/cart">Kosár</a>
+                                <a href="/orders">Rendeléseim</a>
+                                <a href="/profile">Adatok módosítása</a>
+                                <button className="logout-btn" onClick={handleLogout}>Kijelentkezés</button>
+                            </div>
+                        )}
+                    </div>
                 </div>
+                
             </header>
 
             <div className="content">
-                <p className="intro-text">Fedezd fel a Valai Pékség friss pékáruit!</p>
+               
                 <div className="main-layout">
                     <aside className="sidebar">
                         <h2>Kategóriák</h2>

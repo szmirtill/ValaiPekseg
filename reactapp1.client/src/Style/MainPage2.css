@@ -13,63 +13,81 @@ body, html {
 
 html, body {
     background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E) !important;
-    height: 100%;
-    width: 100%;
     font-family: 'Poppins', sans-serif;
     color: #5C4033;
     overflow-x: hidden;
 }
 
-.mainpage2-container {
-    padding-top: 20px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+/* ✅ Fejléc (navbar) */
+.header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1320px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
-/* Header */
-.header {
-    background-color: #8B5E3C;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 12px 24px;
-    z-index: 1000;
+/* ✅ Navbar szerkezete */
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.6rem 2rem;
+    width: 100%;
 }
 
-nav ul {
-    list-style: none;
+/* ✅ Bal logó */
+.navbar-left2 .logo {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #5a3b26;
+}
+
+/* ✅ Középső menü */
+.navbar-center2 {
     display: flex;
-    gap: 30px;
+    gap: 2rem;
 }
 
-    nav ul li a {
+    .navbar-center2 a {
         text-decoration: none;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: #5a3b26;
+        transition: color 0.3s ease;
     }
 
+        .navbar-center2 a:hover {
+            color: #a0622b;
+        }
+
+/* ✅ Jobb oldali felhasználói gomb */
 .user-menu {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .user-btn {
-    background: linear-gradient(to bottom, #D9A065, #C7864D);
+    background-color: #d6a675;
     color: white;
-    padding: 8px 16px;
+    padding: 0.5rem 1.2rem;
     border: none;
     border-radius: 12px;
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 1rem;
     cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease;
 }
 
     .user-btn:hover {
-        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+        background-color: #bf8b50;
     }
 
 .dropdown-menu {
@@ -103,7 +121,15 @@ nav ul {
             background: #F7F7F7;
         }
 
-/* Layout */
+/* ✅ Tartalom eltolás a navbar miatt */
+.mainpage2-container {
+    padding-top: 120px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ✅ Layout */
 .main-layout {
     display: flex;
     flex-grow: 1;
@@ -114,7 +140,7 @@ nav ul {
     align-items: flex-start;
 }
 
-/* Sidebar */
+/* ✅ Oldalsáv */
 .sidebar {
     flex-shrink: 0;
     width: 260px;
@@ -150,10 +176,11 @@ nav ul {
         height: 18px;
     }
 
+/* ✅ Szűrő gomb */
 .filter-button {
     margin-top: 20px;
     width: 100%;
-    background: linear-gradient(to bottom, #D9A065, #C7864D);
+    background: #d6a675;
     color: white;
     font-weight: bold;
     padding: 10px;
@@ -163,10 +190,10 @@ nav ul {
 }
 
     .filter-button:hover {
-        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+        background: #bf8b50;
     }
 
-/* Product list */
+/* ✅ Termékek */
 .product-list {
     flex-grow: 1;
     display: grid;
@@ -190,9 +217,10 @@ nav ul {
     margin-bottom: 10px;
 }
 
+/* ✅ Kosár gomb */
 .buy-button {
     margin-top: 10px;
-    background: linear-gradient(to bottom, #D9A065, #C7864D);
+    background: #d6a675;
     color: white;
     border: none;
     padding: 10px 14px;
@@ -202,10 +230,10 @@ nav ul {
 }
 
     .buy-button:hover {
-        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+        background: #bf8b50;
     }
 
-/* ÚJ: mennyiség input stílusa */
+/* ✅ Mennyiség mező */
 .quantity-input {
     width: 60px;
     padding: 6px;
@@ -217,11 +245,7 @@ nav ul {
     border-radius: 6px;
 }
 
-body {
-    overflow-y: scroll !important;
-}
-
-/* Mobile responsive */
+/* ✅ Mobilbarát */
 @media (max-width: 768px) {
     .main-layout {
         flex-direction: column;
@@ -239,26 +263,14 @@ body {
         grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     }
 
-    .header {
+    .navbar {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    nav ul {
-        flex-direction: column;
         gap: 10px;
     }
 
-    .filter-button {
-        padding: 10px;
-        font-size: 14px;
+    .navbar-center2 {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
-
-@media (max-width: 768px) {
-    .sidebar {
-        position: static !important;
-        top: unset !important;
-    }
-}
-
