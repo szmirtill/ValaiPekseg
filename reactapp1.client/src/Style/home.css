@@ -1,158 +1,183 @@
-
-.home-container1 {
+ï»¿.home-container1 {
     width: 100%;
     height: auto;
     display: flex;
     min-height: 100vh;
     align-items: center;
     flex-direction: column;
-    background-color: #ffffff; /* <-- FEHÉR háttér */
+    background-color: #ffefdb;
 }
 
 .home-text10 {
     display: inline-block;
-    color: white; /* Ez fogja láthatóvá tenni */
+    color: white;
     font-weight: 600;
 }
- 
+
 .home-hero {
-  width: 100%;
-  display: flex;
-  max-width: 1320px;
-  padding-left: var(--dl-layout-space-unitandahalfunit);
-  padding-right: var(--dl-layout-space-unitandahalfunit);
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    max-width: 1320px;
+    padding-left: var(--dl-layout-space-unitandahalfunit);
+    padding-right: var(--dl-layout-space-unitandahalfunit);
+    justify-content: center;
 }
- 
+
 .home-container2 {
-  width: 100%;
-  display: flex;
-  position: relative;
-  max-width: 1320px;
-  min-height: 85vh;
-  align-items: flex-start;
-  flex-direction: column;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    position: relative;
+    max-width: 1320px;
+    min-height: 85vh;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
 }
- 
+
 .home-text11 {
-  display: inline-block;
-  text-align: center;
-  margin-right: var(--dl-layout-space-tripleunit);
-  margin-bottom: var(--dl-layout-space-unit);
-  padding-right: var(--dl-layout-space-tripleunit);
+    display: inline-block;
+    text-align: center;
+    margin-right: var(--dl-layout-space-tripleunit);
+    margin-bottom: var(--dl-layout-space-unit);
+    padding-right: var(--dl-layout-space-tripleunit);
 }
 
 .home-text12 {
     display: inline-block;
-    color: white; /* Ez fogja láthatóvá tenni */
+    color: white;
     font-weight: 600;
 }
- 
+
 .home-text13 {
-  display: inline-block;
+    display: inline-block;
 }
- 
+
 .home-text14 {
-  display: inline-block;
+    display: inline-block;
 }
- 
+
 .home-image1 {
-  top: 0px;
-  left: auto;
-  right: 0px;
-  width: 50%;
-  bottom: 0px;
-  height: 80vh;
-  position: absolute;
-  object-fit: cover;
-  object-position: right;
-  border-bottom-left-radius: 10rem;
+    top: 0px;
+    left: auto;
+    right: 0px;
+    width: 50%;
+    bottom: 0px;
+    height: 80vh;
+    position: absolute;
+    object-fit: cover;
+    object-position: right;
+    border-bottom-left-radius: 10rem;
 }
- 
+
 .home-text15 {
-  display: inline-block;
+    display: inline-block;
 }
- 
+
 .home-text16 {
-  display: inline-block;
+    display: inline-block;
 }
- 
+
 .home-testimonials {
-  flex: 0 0 auto;
-  display: flex;
-  position: relative;
-  align-items: center;
-  flex-direction: column;
-  background-size: cover;
-  background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
+    flex: 0 0 auto;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url("https://play.teleporthq.io/static/svg/default-img.svg");
 }
- 
+
 .home-image2 {
-  top: auto;
-  left: 0px;
-  right: 0px;
-  width: 100%;
-  bottom: auto;
-  height: 100%;
-  position: absolute;
-  object-fit: cover;
+    top: auto;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    bottom: auto;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
 }
- 
+
 .home-bottom-wave-image {
-  top: auto;
-  left: auto;
-  right: 0px;
-  width: 100%;
-  bottom: -5px;
-  height: 118px;
-  position: absolute;
-  object-fit: cover;
+    top: auto;
+    left: auto;
+    right: 0px;
+    width: 100%;
+    bottom: -5px;
+    height: 118px;
+    position: absolute;
+    object-fit: cover;
 }
- 
+
 .home-top-wave-image {
-  top: -5px;
-  left: auto;
-  right: 0px;
-  width: 100%;
-  bottom: auto;
-  position: absolute;
-  object-fit: cover;
+    top: -5px;
+    left: auto;
+    right: 0px;
+    width: 100%;
+    bottom: auto;
+    position: absolute;
+    object-fit: cover;
 }
- 
+
 .home-text17 {
-  color: var(--dl-color-secondary-600);
-  display: inline-block;
-  margin-bottom: var(--dl-layout-space-halfunit);
+    color: var(--dl-color-secondary-600);
+    display: inline-block;
+    margin-bottom: var(--dl-layout-space-halfunit);
 }
- 
+
 .home-text18 {
-  background-color: rgb(255, 255, 255);
+    background-color: rgb(255, 255, 255);
 }
- 
+
+/* âœ… GombstÃ­lus frissÃ­tve */
+.button,
+.home-button,
+.home-container2 .button {
+    background-color: #d6a675;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    padding: 0.6rem 1.4rem;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+    .button:hover,
+    .home-button:hover {
+        background-color: #bf8b50;
+    }
+
+/* âœ… MobilnÃ©zet */
 @media(max-width: 991px) {
-  .home-hero {
-    padding-left: var(--dl-layout-space-tripleunit);
-    padding-right: var(--dl-layout-space-tripleunit);
-  }
-  .home-container2 {
-    max-width: 960px;
-  }
+    .home-hero {
+        padding-left: var(--dl-layout-space-tripleunit);
+        padding-right: var(--dl-layout-space-tripleunit);
+    }
+
+    .home-container2 {
+        max-width: 960px;
+    }
 }
- 
+
 @media(max-width: 767px) {
-  .home-text11 {
-    text-align: center;
-    margin-right: 0px;
-    padding-right: 0px;
-  }
-  .home-image1 {
-    display: none;
-  }
-  .home-text15 {
-    font-size: 1.3rem;
-  }
-  .home-text16 {
-    color: #000000;
-  }
+    .home-text11 {
+        text-align: center;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+
+    .home-image1 {
+        display: none;
+    }
+
+    .home-text15 {
+        font-size: 1.3rem;
+    }
+
+    .home-text16 {
+        color: #000000;
+    }
 }
