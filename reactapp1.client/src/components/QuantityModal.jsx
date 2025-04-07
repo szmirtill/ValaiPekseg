@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import './Style/QuantityModal.css';
 
 export default function QuantityModal({ isOpen, onClose, onConfirm, product }) {
@@ -34,3 +35,13 @@ export default function QuantityModal({ isOpen, onClose, onConfirm, product }) {
         </div>
     );
 }
+
+// ✅ PropTypes validáció
+QuantityModal.propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    onClose: PropTypes.func.isRequired,
+    onConfirm: PropTypes.func.isRequired,
+    product: PropTypes.shape({
+        nev: PropTypes.string.isRequired,
+    }),
+};

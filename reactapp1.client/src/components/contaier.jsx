@@ -9,11 +9,10 @@ const Contaier = ({ heading, imageAlt1, imageAlt11 }) => {
         <section className="contaier-contaier">
             <div className="contaier-container1">
                 <h1 className="contaier-text10 HeadingTwo">
-                    {heading ?? (
-                        <h3 className="contaier-text19 HeadingOne">
-                            <span className="contaier-text20">Szolgáltatásaink</span>
-                            <br />
-                        </h3>
+                    {heading ? (
+                        <h1 className="contaier-text10 HeadingTwo">{heading}</h1>
+                    ) : (
+                        <h1 className="contaier-text10 HeadingTwo">Szolgáltatásaink</h1>
                     )}
                 </h1>
             </div>

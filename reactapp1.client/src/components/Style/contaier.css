@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #ffefdb;
     box-sizing: border-box;
     overflow: visible; /* Ne legyen külön görgetés */
 }
@@ -25,6 +25,7 @@
     font-size: 2.6rem;
     font-weight: 800;
     margin-bottom: 2rem;
+    
 }
 
 /* KÉP + SZÖVEG BLOKKOK */
@@ -87,8 +88,9 @@
         padding: 4rem 2rem;
     }
 
-    .contaier-text10 {
-        font-size: 2.2rem;
+    .contaier-text10,
+    .contaier-text10 * {
+        background: transparent !important;
     }
 
     .contaier-image1,
