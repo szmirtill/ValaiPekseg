@@ -2,21 +2,20 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #ffefdb; /* Fehér háttér */
+    background-color: #ffefdb;
     display: flex;
-    justify-content: center; /* Középre igazítja vízszintesen */
-    align-items: center; /* Középre igazítja függõlegesen */
+    justify-content: center;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
 }
-
 
 .main-page {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: 100vh; /* A teljes magasságot kitölti */
-    background-color: #ffefdb; /* Fehér háttér */
+    height: 100vh;
+    background-color: #ffefdb;
 }
 
 .login-box {
@@ -66,7 +65,7 @@ html, body {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: #8b5e3c;
+    background: #d6a675; /* ÚJ szín */
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -77,7 +76,7 @@ html, body {
 }
 
     .login-left button:hover {
-        background: #754a2c;
+        background: #bf8b50; /* ÚJ hover szín */
     }
 
 .login-right {
