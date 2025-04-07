@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Style/MainPage2.css';
 import QuantityModal from './components/QuantityModal';
+import LogoutModal from './components/LogoutModal';
 
 function MainPage2() {
     const navigate = useNavigate();
@@ -12,6 +13,7 @@ function MainPage2() {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
+    const [showLogoutModal, setShowLogoutModal] = useState(false);
 
     useEffect(() => {
         const storedUsername = localStorage.getItem('username');
@@ -85,9 +87,13 @@ function MainPage2() {
     };
 
     const handleLogout = () => {
+        setShowLogoutModal(true);
+    };
+
+    const confirmLogout = () => {
         localStorage.removeItem("userId");
         localStorage.removeItem("username");
-        alert("Sikeres kijelentkezés!");
+        setShowLogoutModal(false);
         navigate("/");
     };
 
@@ -118,11 +124,9 @@ function MainPage2() {
                         )}
                     </div>
                 </div>
-                
             </header>
 
             <div className="content">
-               
                 <div className="main-layout">
                     <aside className="sidebar">
                         <h2>Kategóriák</h2>
@@ -176,6 +180,12 @@ function MainPage2() {
                 onClose={() => setShowModal(false)}
                 onConfirm={handleConfirmQuantity}
                 product={selectedProduct}
+            />
+
+            <LogoutModal
+                isOpen={showLogoutModal}
+                onClose={() => setShowLogoutModal(false)}
+                onConfirm={confirmLogout}
             />
         </div>
     );
