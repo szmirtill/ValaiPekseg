@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AdminProductUpdate from "../components/AdminProductUpdate"; // Importáljuk az új modális komponenst
@@ -123,8 +124,8 @@ const AdminProducts = () => {
                                     />
                                 </td>
                                 <td>
-                                    <button onClick={() => handleUpdate(termek.id)}>Módosítás</button>
-                                    <button onClick={() => handleDelete(termek.id)}>Törlés</button>
+                                    <button className="ProductEdit" onClick={() => handleUpdate(termek.id)}>Módosítás</button>
+                                    <button className="ProductDelete" onClick={() => handleDelete(termek.id)}>Törlés</button>
                                 </td>
                             </tr>
                         ))}

@@ -1,21 +1,22 @@
-// src/admin/AdminUsers.jsx
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/AdminUsers.css";
+import UserUpdate from "../components/userUpdate"; // Importáld a UserUpdate komponenst
 
 const AdminUsers = () => {
     const navigate = useNavigate();
-
     const [users, setUsers] = useState([]);
     const [selectedUserId, setSelectedUserId] = useState(null);
-    const [adminPassword, setAdminPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [newPassword, setNewPassword] = useState("");
+    const [email, setEmail] = useState('');
 
+    // API hívás felhasználók lekérése
     useEffect(() => {
         fetch("https://localhost:7136/api/vevo")
             .then((res) => res.json())
-            .then((data) => setUsers(data))
+            .then((data) => {
+                setUsers(data); // Ha van adat, töltse be a 'users' tömbbe
+            })
             .catch((err) => console.error("Hiba a felhasználók lekérdezésekor:", err));
     }, []);
 
@@ -27,18 +28,18 @@ const AdminUsers = () => {
         });
 
         if (res.ok) {
-            setUsers(users.filter((u) => u.id !== id));
+            setUsers(users.filter((u) => u.id !== id)); // Frissíti a táblázatot törlés után
         } else {
             alert("Nem sikerült törölni a felhasználót.");
         }
     };
 
-    const handlePasswordReset = async () => {
+    const handlePasswordReset = async (userId, email, newPassword, adminPassword) => {
         const res = await fetch("https://localhost:7136/api/vevo/reset-password", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                userId: selectedUserId,
+                userId,
                 email,
                 newPassword,
                 adminPassword,
@@ -47,9 +48,7 @@ const AdminUsers = () => {
 
         if (res.ok) {
             alert("Jelszó frissítve!");
-            setAdminPassword("");
-            setEmail("");
-            setNewPassword("");
+            setEmail('');
             setSelectedUserId(null);
         } else {
             const errorText = await res.text();
@@ -57,9 +56,13 @@ const AdminUsers = () => {
         }
     };
 
+    const handleCancelUpdate = () => {
+        setSelectedUserId(null);
+        setEmail('');
+    };
+
     return (
         <div className="admin-users-container">
-            {/* ✅ NAVBAR a fejléc tetején */}
             <header className="header">
                 <nav className="navbar">
                     <div className="navbar-left">
@@ -76,7 +79,10 @@ const AdminUsers = () => {
                     </div>
                 </nav>
             </header>
+
             <h2>Felhasználók kezelése</h2>
+
+            {/* Táblázat, amely tartalmazza az összes felhasználót */}
             <table>
                 <thead>
                     <tr>
@@ -93,38 +99,33 @@ const AdminUsers = () => {
                             <td>{u.felhasznalonev}</td>
                             <td>{u.email}</td>
                             <td>
-                                <button onClick={() => setSelectedUserId(u.id)}>Módosítás</button>
-                                <button onClick={() => handleDelete(u.id)}>Törlés</button>
+                                {selectedUserId !== u.id && (
+                                    <button className="ProductEdit" onClick={() => {
+                                        setSelectedUserId(u.id);
+                                        setEmail(u.email);
+                                    }}>
+                                        Módosítás
+                                    </button>
+                                )}
+                                <button className="ProductDelete" onClick={() => handleDelete(u.id)}>
+                                    Törlés
+                                </button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
 
+            {/* Ha a felhasználó kiválasztásra került, akkor megjelenítjük a jelszó módosító formot */}
             {selectedUserId && (
-                <div className="reset-password-box">
-                    <h3>Jelszó visszaállítása</h3>
-                    <input
-                        type="email"
-                        placeholder="Felhasználó email címe"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Új jelszó"
-                        value={newPassword}
-                        onChange={(e) => setNewPassword(e.target.value)}
-                    />
-                    <input
-                        type="password"
-                        placeholder="Admin jelszó"
-                        value={adminPassword}
-                        onChange={(e) => setAdminPassword(e.target.value)}
-                    />
-                    <button onClick={handlePasswordReset}>Mentés</button>
-                </div>
+                <UserUpdate
+                    userId={selectedUserId}
+                    email={email}
+                    onSubmit={handlePasswordReset}
+                    onCancel={handleCancelUpdate}
+                />
             )}
+
         </div>
     );
 };
