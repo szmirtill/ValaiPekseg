@@ -33,7 +33,7 @@ const Header = ({ rootClassName, button }) => {
                         <div className="header-container3">
                             <button type="button" className="header-button button">
                                 <Link to="/admin/login">
-                                    <span className="header-text1">
+                                    <span className="header-text2">
                                         Admin
                                     </span>
                                 </Link>

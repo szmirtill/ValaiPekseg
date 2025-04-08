@@ -59,7 +59,7 @@
 }
 
 .header-button {
-    background-color: #8b5e3c;
+    background: #d6a675; /* Szín hozzáadása */
     color: white;
     border: none;
     padding: 0.6rem 1.4rem;
@@ -76,6 +76,10 @@
     }
 
 .header-text1 {
+    font-size: 1rem;
+    color: white;
+}
+.header-text2 {
     font-size: 1rem;
     color: white;
 }

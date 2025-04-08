@@ -38,6 +38,7 @@
     margin-top: 1.5rem;
     display: flex;
     justify-content: center;
+    background: #8a6153 !important;
 }
 
     .login-modal-buttons button {
@@ -47,11 +48,11 @@
         cursor: pointer;
         font-weight: bold;
         font-size: 0.95rem;
-        background-color: #a0622b;
+        background: #8a6153 !important; /* 'important' hozzáadása */
         color: white;
         transition: background-color 0.3s ease;
     }
 
         .login-modal-buttons button:hover {
-            background-color: #854d1e;
+            background-color: #854d1e !important; /* Hover szín szintén 'important' hozzáadása */
         }

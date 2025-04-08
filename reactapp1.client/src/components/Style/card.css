@@ -17,16 +17,17 @@
 /* Cím */
 .card-text1 {
     color: #8a6153;
-    font-size: 2.4rem;
+    font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 0.5rem;
+    
     line-height: 1.2;
+    text-align: center; /* Cím középre igazítása */
 }
 
 /* Alcím */
 .card-text2 {
     color: #1e1e2f;
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1.2;
