@@ -1,4 +1,3 @@
-
 /* Alap reset */
 * {
     margin: 0;
@@ -109,16 +108,18 @@ html, body {
     max-width: 1600px;
     margin: 20px auto 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* ✅ Oldalsáv */
 .sidebar {
-    flex: 0 0 250px;
+    flex: 0 0 250px; /* Fix szélesség a sidebarnak */
     background-color: #fffaf6;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* Eltávolítva a sticky pozíciót */
+    position: sticky; /* Ha szükséges fixálás */
+    top: 100px; /* Pozicionálás a fejléc alatt */
 }
 
     .sidebar h2 {
@@ -163,11 +164,13 @@ html, body {
 
 /* ✅ Terméklista */
 .product-list {
-    flex: 1;
+    flex: 1; /* A terméklista elfoglalja a maradék helyet */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 25px;
     align-content: flex-start;
+    padding-left: 20px; /* Jobb margó */
+    margin-top: 15px;
 }
 
 /* ✅ Termékkártyák */
@@ -204,4 +207,3 @@ html, body {
     opacity: 0.8;
     transition: background-color 0.3s ease;
 }
-
