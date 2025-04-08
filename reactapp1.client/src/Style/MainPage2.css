@@ -123,10 +123,7 @@ body, html {
 
 /* ✅ Tartalom eltolás a navbar miatt */
 .mainpage2-container {
-    padding-top: 120px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    padding-top: 100px; /* vagy 140px ha még kell hely */
 }
 
 /* ✅ Layout – egy sorban a sidebar + termékek */
@@ -143,14 +140,16 @@ body, html {
 
 /* ✅ Oldalsáv */
 .sidebar {
-    flex: 0 0 250px;
-    margin-left: 1rem; /* 🔧 ez tolja beljebb a navbar széléhez */
-    background-color: #fffaf6;
+    flex-shrink: 0;
+    width: 260px;
+    background-color: #FAEBD7;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 140px;
+    height: fit-content;
+    transition: all 0.3s ease-in-out;
 }
 
     .sidebar h2 {
@@ -191,9 +190,7 @@ body, html {
     .filter-button:hover {
         background: #bf8b50;
     }
-.mainpage2-container {
-    padding-top: 100px; /* vagy 140px ha még kell hely */
-}
+
 /* ✅ Terméklista */
 .product-list {
     flex-grow: 1;

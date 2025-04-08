@@ -1,61 +1,102 @@
-/* Orders.css */
+ï»¿/* Orders.css - StÃ­lus igazÃ­tva a Cart.css-hez */
 
-.orders-container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: #5C4033; /* Barna szöveg */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+html, body {
+    min-height: 100%;
+    background-color: #ffefdb !important;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+}
+
+/* âœ… RendelÃ©sek kontÃ©ner */
+.orders-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 2px solid #d6a675;
+}
+
+/* âœ… RendelÃ©s kÃ¡rtya */
 .order-card {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    background: #F8E1C4; /* Lágy, pékséghez illõ háttér */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: all 0.3s ease-in-out;
+    background: #F8E1C4;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #d6a675;
 }
 
     .order-card:hover {
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
     }
 
+    /* âœ… CÃ­m */
     .order-card h2 {
-        margin: 0 0 10px;
         font-family: 'Playfair Display', serif;
-        color: #8B5E3C; /* Pékséghez illõ barna */
+        font-size: 1.4rem;
+        margin-bottom: 0.8rem;
+        color: #8B5E3C;
     }
 
+/* âœ… HibaÃ¼zenet */
 .error {
     color: red;
     font-size: 14px;
     margin-top: 10px;
+    text-align: center;
 }
 
+/* âœ… Vissza gomb */
 .back-button {
-    width: 100%;
-    padding: 10px;
-    background: linear-gradient(to bottom, #D9A065, #C7864D); /* Meleg arany színátmenet */
+    padding: 1rem 2rem;
+    background: linear-gradient(to bottom, #D9A065, #C7864D);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease-in-out, transform 0.2s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 90px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
 }
 
-/* Hover effect for button */
-.back-button:hover {
-    background: linear-gradient(to bottom, #BF8B50, #A76A44);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    .back-button:hover {
+        background: linear-gradient(to bottom, #BF8B50, #A76A44);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+    }
+
+/* âœ… ReszponzÃ­v */
+@media (max-width: 768px) {
+    .orders-container {
+        width: 90%;
+        padding: 1.5rem 1rem;
+        margin: 20px auto;
+    }
+
+    .order-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .back-button {
+        font-size: 0.95rem;
+        padding: 0.8rem 1.5rem;
+    }
 }

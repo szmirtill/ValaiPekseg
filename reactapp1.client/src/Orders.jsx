@@ -35,16 +35,11 @@ function Orders() {
             });
     }, [navigate]);
 
-    const handleBack = () => {
-        if (window.history.length > 2) {
-            navigate(-1);
-        } else {
-            navigate("/");
-        }
-    };
+    
 
     return (
         <div className="orders-container">
+            <button className="goToBack" onClick={() => navigate('/mainpage2')}>Vissza</button>
             <h1>Rendelési előzmények</h1>
             {loading ? (
                 <p>Betöltés...</p>
@@ -62,7 +57,7 @@ function Orders() {
             ) : (
                 <p>Nincsenek rendeléseid.</p>
             )}
-            <button onClick={handleBack} className="back-button">← Vissza</button>
+            
         </div>
     );
 }

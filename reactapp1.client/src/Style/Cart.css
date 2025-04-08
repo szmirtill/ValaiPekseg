@@ -1,4 +1,4 @@
-/* Global reset and styling */
+ï»¿/* Global reset and styling */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ html, body {
 }
 
 
-/* Kosár container */
+/* KosÃ¡r container */
 .cart-container {
     position: relative;
     max-width: 800px;
@@ -155,7 +155,7 @@ html, body {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 1.5rem; /* Növeltük a margin-bottom értékét */
+    margin-bottom: 1.5rem; /* NÃ¶veltÃ¼k a margin-bottom Ã©rtÃ©kÃ©t */
     font-size: 1rem; /* Ensuring the text size is consistent */
 }
 
@@ -180,13 +180,13 @@ html, body {
     width: 70px;
     background-color: #d6a675;
     color: white;
-    padding: 8px 16px; /* Kisebb méret */
+    padding: 8px 16px; /* Kisebb mÃ©ret */
     border: none;
     border-radius: 8px;
-    font-size: 14px; /* Kisebb betûméret */
+    font-size: 14px; /* Kisebb betÅ±mÃ©ret */
     cursor: pointer;
     position: absolute;
-    top: 20px; /* Különbözõ pozíció */
+    top: 20px; /* KÃ¼lÃ¶nbÃ¶zÅ‘ pozÃ­ciÃ³ */
     left: 20px; /* Bal oldalon */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -194,3 +194,59 @@ html, body {
     .goToBack:hover {
         background-color: #bf8b50;
     }
+
+/* âœ… ReszponzÃ­v stÃ­lus mobilhoz */
+@media (max-width: 768px) {
+    .cart-container {
+        width: 90%;
+        padding: 1.5rem 1rem;
+        margin: 20px auto;
+    }
+
+        .cart-container h2,
+        .cart-container h3 {
+            padding: 0;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+    .cart-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+        .cart-table table {
+            width: 100%;
+            min-width: 600px;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            font-size: 0.9rem;
+            padding: 10px;
+        }
+
+    .cart-container button.buy-button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .goToBack {
+        position: static;
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+
+    .cart-container input,
+    .cart-container select {
+        font-size: 0.95rem;
+        padding: 0.7rem;
+    }
+
+    .cart-container label {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

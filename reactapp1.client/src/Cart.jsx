@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"; // Hozzáadva a useNavigate
-﻿import { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import './Style/Cart.css';
 import EditQuantityModal from './components/EditQuantityModal';
 import SuccessModal from './components/SuccessModal';
