@@ -73,7 +73,10 @@ const AdminProducts = () => {
                 );
                 setTermekek(updatedTermekek);
                 setUjArak((prev) => ({ ...prev, [id]: "" }));
-                setSuccessMessage("Ár sikeresen frissítve!"); // Beállítjuk a siker üzenetet
+                setSuccessMessage("Ár sikeresen frissítve!");
+                setTimeout(() => {
+                    setSuccessMessage('');
+                }, 3000);// Beállítjuk a siker üzenetet
                 setIsModalOpen(true); // Megnyitjuk a modális ablakot
             } else {
                 setErrorMessage("Nem sikerült frissíteni az árat!"); // Beállítjuk a hiba üzenetet

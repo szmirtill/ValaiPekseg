@@ -6,18 +6,23 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
     const [adminPassword, setAdminPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');  // Hozzáadott állapot a sikerüzenethez
+    const [errorMessage, setErrorMessage] = useState("");
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        onSubmit(userId, email, newPassword, adminPassword).then(() => {
-            setSuccessMessage("Jelszó frissítve!"); // Beállítja a sikeres üzenetet
+
+        try {
+            await onSubmit(userId, email, newPassword, adminPassword); // Az onSubmit függvény meghívása
+            setSuccessMessage("Jelszó frissítve!"); // Sikeres üzenet beállítása
             setNewPassword('');
             setAdminPassword('');
-            setShowModal(false); // Az ablak bezárása a mentés után
-        }).catch((err) => {
-            console.error(err);
-            setSuccessMessage('Hiba történt a jelszó frissítésekor');
-        });
+            setShowModal(false); // Az ablak bezárása
+        } catch (err) {
+            setErrorMessage('Hiba történt a jelszó frissítésekor');
+            setTimeout(() => {
+                setErrorMessage(''); // Hibaüzenet eltüntetése 3 másodperc után
+            }, 3000);
+        }
     };
 
     const toggleModal = () => {

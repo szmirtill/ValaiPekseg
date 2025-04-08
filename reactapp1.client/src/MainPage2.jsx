@@ -15,6 +15,7 @@ function MainPage2() {
     const [showModal, setShowModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showLogoutModal, setShowLogoutModal] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");// Új állapot a siker üzenethez
 
     useEffect(() => {
         const storedUsername = localStorage.getItem('username');
@@ -61,7 +62,11 @@ function MainPage2() {
 
     const handleConfirmQuantity = (mennyiseg) => {
         if (isNaN(mennyiseg) || mennyiseg <= 0) {
-            alert("Érvénytelen mennyiség!");
+            setErrorMessage("Érvénytelen mennyiség!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
+            
             return;
         }
 
@@ -71,13 +76,20 @@ function MainPage2() {
         if (existingItem) {
             const osszesMennyiseg = existingItem.mennyiseg + mennyiseg;
             if (osszesMennyiseg > 10) {
-                alert("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!");
+                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!"); // Beállítjuk a hiba üzenetet
+                setTimeout(() => {
+                    setErrorMessage('');
+                }, 3000);
                 return;
             }
             existingItem.mennyiseg = osszesMennyiseg;
         } else {
             if (mennyiseg > 10) {
-                alert("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!");
+                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!!"); // Beállítjuk a hiba üzenetet
+                setTimeout(() => {
+                    setErrorMessage('');
+                }, 3000);
+                
                 return;
             }
             cart.push({ ...selectedProduct, mennyiseg });
@@ -126,7 +138,12 @@ function MainPage2() {
                     </div>
                 </div>
             </header>
-
+            {/* Hiba üzenet */}
+            {errorMessage && (
+                <div className="error-message">
+                    {errorMessage}
+                </div>
+            )}
             <div className="content">
                 <div className="main-layout">
                     <aside className="sidebar">
