@@ -1,6 +1,8 @@
 .card-card {
     width: 100%;
     max-width: 680px;
+    height: 100%;
+    max-height:480px;
     margin-left: 6rem; /* finoman beljebb húzva */
     background: linear-gradient(to right, #ffffff 70%, #fef6f2);
     border-radius: 1.5rem;
@@ -32,6 +34,10 @@
     margin-bottom: 1.5rem;
     line-height: 1.2;
 }
+.card-text1, .card-text2 {
+    margin-top: 0 !important; /* minden irányba nullázva */
+    padding: 0 !important;
+}
 
 /* Leírás */
 .card-text3 {
@@ -40,7 +46,7 @@
     line-height: 1.7;
     margin-bottom: 2rem;
     max-width: 90%;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* Gombkonténer */
