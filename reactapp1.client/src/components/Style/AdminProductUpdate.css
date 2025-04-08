@@ -1,57 +1,47 @@
-/* src/Style/AdminProductUpdate.css */
-.product-update-modal {
+/* AdminProductUpdateModal.css */
+.success-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.5);
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1001;
+    z-index: 999; /* Magas prioritású, hogy felül legyen minden más tartalom */
 }
 
-.modal-content {
-    background-color: #fff;
-    padding: 30px;
+.success-modal {
+    background: #ffffff;
+    padding: 2rem;
     border-radius: 10px;
-    width: 400px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-    .modal-content h3 {
-        font-size: 22px;
-        color: #5c4033;
-        margin-bottom: 20px;
+    .success-modal h2 {
+        color: #28a745; /* Zöld szín a siker üzenethez */
+        margin-bottom: 0.5rem;
     }
 
-    .modal-content p {
-        margin-bottom: 20px;
+    .success-modal p {
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+        color: #333; /* Sötétszürke szín a szöveghez */
     }
 
-    .modal-content input[type="number"] {
-        padding: 10px;
-        font-size: 16px;
-        width: 100%;
-        margin-bottom: 20px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-    }
-
-    .modal-content button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #d6a675;
-        color: white;
+    .success-modal button {
+        margin-top: 1rem;
+        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
         border: none;
-        border-radius: 8px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 6px;
         cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin: 10px 5px;
     }
 
-        .modal-content button:hover {
-            background-color: #bf8b50;
+        .success-modal button:hover {
+            background-color: #218838; /* Sötétebb zöld a gombon hover esetén */
         }

@@ -53,6 +53,7 @@ function MainPage() {
                         <div className="form-group">
                             <label htmlFor="username">Felhasználónév</label>
                             <input
+                                className="username-input"
                                 type="text"
                                 id="username"
                                 value={username}
@@ -63,6 +64,7 @@ function MainPage() {
                         <div className="form-group">
                             <label htmlFor="password">Jelszó</label>
                             <input
+                                className="password-input"
                                 type="password"
                                 id="password"
                                 value={password}
@@ -81,8 +83,6 @@ function MainPage() {
                                 </button>
                             </div>
                         </div>
-
-
                     </form>
                 </div>
                 <div className="admin-login-right">

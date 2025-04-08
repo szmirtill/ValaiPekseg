@@ -85,6 +85,7 @@ table {
 
 thead {
     background-color: #f8e1c4;
+    
 }
 
     thead th {
@@ -92,7 +93,7 @@ thead {
         font-weight: 600;
         font-size: 16px;
         color: #5c4033;
-        text-align: left;
+        text-align: center;
     }
 
 tbody tr {
@@ -105,14 +106,25 @@ tbody td {
 }
 
 /* ✅ Input mező */
-input[type="number"] {
+.newPrice {
+    
     padding: 6px 10px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 100px;
+    width: 120px; /* Módosítható a kívánt szélességhez */
     margin-right: 8px;
     font-size: 14px;
+    background-color: white !important; /* Fehér háttér biztosítása */
+    color: black !important; /* Fekete szöveg biztosítása */
+    box-sizing: border-box; /* Segít a méretezésnél */
 }
+
+    /* Ha szeretnél egy kicsit különböző színű fókuszálást, hozzáadhatod ezt is */
+    .newPrice:focus {
+        border-color: #a0622b; /* Például narancssárga szegély */
+        outline: none; /* Kiveszi a standard fókusz outline-t */
+    }
+
 
 /* ✅ Gombok */
 button {

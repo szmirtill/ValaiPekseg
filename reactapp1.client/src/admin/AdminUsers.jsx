@@ -1,8 +1,11 @@
 // src/admin/AdminUsers.jsx
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../Style/AdminUsers.css";
 
 const AdminUsers = () => {
+    const navigate = useNavigate();
+
     const [users, setUsers] = useState([]);
     const [selectedUserId, setSelectedUserId] = useState(null);
     const [adminPassword, setAdminPassword] = useState("");
@@ -56,6 +59,23 @@ const AdminUsers = () => {
 
     return (
         <div className="admin-users-container">
+            {/* ✅ NAVBAR a fejléc tetején */}
+            <header className="header">
+                <nav className="navbar">
+                    <div className="navbar-left">
+                        <span className="logo">Valai Pékség Admin</span>
+                    </div>
+
+                    <div className="navbar-center">
+                        <a onClick={() => navigate("/admin/products")}>Termékek</a>
+                        <a onClick={() => navigate("/admin/users")}>Felhasználók</a>
+                    </div>
+
+                    <div className="navbar-right">
+                        <button className="nav-button" onClick={() => navigate("/")}>Kijelentkezés</button>
+                    </div>
+                </nav>
+            </header>
             <h2>Felhasználók kezelése</h2>
             <table>
                 <thead>

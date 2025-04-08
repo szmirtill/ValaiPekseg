@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom"; // Hozzáadva a useNavigate
 ﻿import { useState, useEffect } from "react";
 import './Style/Cart.css';
 import EditQuantityModal from './components/EditQuantityModal';
 import SuccessModal from './components/SuccessModal';
 
 function Cart() {
+    const navigate = useNavigate();
     const [cartItems, setCartItems] = useState([]);
     const [vevoid, setVevoid] = useState(null);
     const [keresztnev, setKeresztnev] = useState('');
@@ -112,6 +114,7 @@ function Cart() {
 
     return (
         <div className="cart-container">
+            <button className="goToBack" onClick={() => navigate('/mainpage2')}>Vissza</button>
             <h2>Kosár tartalma</h2>
             {cartItems.length === 0 ? (
                 <p>Nincs termék a kosárban.</p>

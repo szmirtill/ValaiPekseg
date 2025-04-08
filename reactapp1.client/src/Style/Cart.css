@@ -15,8 +15,10 @@ html, body {
     color: #5C4033;
 }
 
-/* Cart container styling */
+
+/* Kosár container */
 .cart-container {
+    position: relative;
     max-width: 800px;
     margin: 40px auto;
     padding: 2rem;
@@ -28,10 +30,13 @@ html, body {
     border: 2px solid #d6a675;
 }
 
+
     .cart-container h2, .cart-container h3 {
+        padding: 30px;
         color: #8b5e3c;
         margin-bottom: 1rem;
         font-size: 1.6rem;
+        text-align:center;
     }
 
 
@@ -171,3 +176,21 @@ html, body {
 .cart-container div {
     margin-bottom: 1.5rem;
 }
+.goToBack {
+    width: 70px;
+    background-color: #d6a675;
+    color: white;
+    padding: 8px 16px; /* Kisebb méret */
+    border: none;
+    border-radius: 8px;
+    font-size: 14px; /* Kisebb betûméret */
+    cursor: pointer;
+    position: absolute;
+    top: 20px; /* Különbözõ pozíció */
+    left: 20px; /* Bal oldalon */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+    .goToBack:hover {
+        background-color: #bf8b50;
+    }

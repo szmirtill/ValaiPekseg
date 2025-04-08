@@ -1,49 +1,149 @@
+/* Globális reset és alapértelmezett beállítások */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    min-height: 100%;
+    width: 100%; /* Biztosítjuk, hogy a body teljes szélességet vegyen fel */
+    background-color: #ffefdb !important;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    display: flex;
+    justify-content: center; /* Igazítjuk középre */
+}
+
 .profile-page {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    position: relative;
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Segoe UI', sans-serif;
+    color: #5C4033;
+    border: 2px solid #d6a675;
+}
+
+h1 {
+    padding: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #5C4033;
+    margin-bottom: 30px;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     text-align: left;
 }
 
 label {
     font-weight: bold;
+    font-size: 16px;
     display: block;
     margin-bottom: 5px;
+    color: #5C4033;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
+/* Külön stílusok a mezõknek */
+.username-input {
+    width: 100% !important; /* 100%-os szélesség */
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 8px;
     font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 40px;
 }
+
+.email-input {
+    width: 100% !important; /* 100%-os szélesség */
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 40px;
+}
+
+.password-input {
+    width: 100% !important; /* 100%-os szélesség */
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 40px;
+}
+
+.confirm-password-input {
+    width: 100% !important; /* 100%-os szélesség */
+    padding: 14px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #333;
+    height: 40px;
+}
+
+    .username-input:focus,
+    .email-input:focus,
+    .password-input:focus,
+    .confirm-password-input:focus {
+        outline: none;
+        border-color: #28a745;
+        background-color: #ffffff;
+    }
 
 button {
     width: 100%;
-    padding: 10px;
+    padding: 14px;
     background: #28a745;
     color: white;
     border: none;
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 40px;
 }
 
-button:hover {
-    background: #218838;
-}
+    button:hover {
+        background-color: #218838;
+    }
 
 .message {
-    color: green;
+    color: #28a745;
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.error {
+    color: red;
     font-size: 14px;
     margin-top: 10px;
+}
+
+.profile-page img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
 }

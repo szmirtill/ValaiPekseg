@@ -1,59 +1,139 @@
-/* Style/AdminUsers.css */
+﻿/* Alap reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html, body {
+    min-height: 100%;
+    background: linear-gradient(to bottom, #fdf6e3, #f8e1c4, #ebc79e);
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    height: 100%;
+}
+
+/* ✅ Fejléc navbar */
+.header {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 80px;
+    width: 90%;
+    max-width: 1320px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    width: 100%;
+}
+
+/* Konténerek */
+.navbar-left, .navbar-center, .navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+    .navbar-center a {
+        text-decoration: none;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #5c4033;
+        transition: color 0.3s ease;
+    }
+
+        .navbar-center a:hover {
+            color: #a0622b;
+        }
+
+/* ✅ Felhasználók kezelésének container */
 .admin-users-container {
-    padding: 30px;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-    .admin-users-container h2 {
-        margin-bottom: 20px;
-        color: #5C4033;
-    }
-
-    .admin-users-container table {
-        width: 100%;
-        border-collapse: collapse;
-        background: white;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    .admin-users-container th,
-    .admin-users-container td {
-        padding: 10px;
-        text-align: left;
-        border-bottom: 1px solid #ddd;
-    }
-
-    .admin-users-container th {
-        background: #f3e1c9;
-        color: #5C4033;
-        font-weight: bold;
-    }
-
-    .admin-users-container button {
-        margin-right: 10px;
-        padding: 5px 12px;
-        border: none;
-        border-radius: 8px;
-        background: #a46e4c;
-        color: white;
-        cursor: pointer;
-    }
-
-.reset-password-box {
-    margin-top: 30px;
-    background: #fff8ee;
+    width: 90vw; /* Kitölti a képernyő teljes szélességét */
+    margin: 120px auto 60px auto;
     padding: 20px;
-    border: 1px dashed #c49372;
-    border-radius: 12px;
-    width: 400px;
+    background-color: #fffaf6;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    font-family: 'Poppins', sans-serif;
+    color: #5c4033;
+    overflow-x: auto; /* Görgethető ha túl széles */
 }
 
-    .reset-password-box input {
-        width: 100%;
-        padding: 8px;
-        margin: 6px 0;
-        border-radius: 6px;
-        border: 1px solid #ccc;
+    /* Címek */
+    .admin-users-container h2 {
+        text-align: center;
+        font-size: 28px;
+        color: #5c4033;
+        margin-bottom: 30px;
+    }
+
+/* ✅ Táblázat */
+table {
+    width: 100%; /* Kitölti a teljes szélességet */
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f8e1c4;
+}
+
+    thead th {
+        padding: 16px 12px;
+        font-weight: 600;
+        font-size: 16px;
+        color: #5c4033;
+        text-align: center;
+    }
+
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+tbody td {
+    padding: 14px 12px;
+    font-size: 15px;
+    text-align: center; /* Középre igazítja a szöveget a tbody-ban */
+}
+
+/* ✅ Input mezők */
+input[type="email"],
+input[type="password"] {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 200px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    background-color: white;
+    color: black;
+    box-sizing: border-box;
+}
+
+/* ✅ Gombok */
+button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 6px;
+    transition: 0.3s;
+    font-size: 14px;
+    background-color: #d6a675;
+    color: white;
+}
+
+    button:hover {
+        background-color: #bf8b50;
+        opacity: 0.95;
     }

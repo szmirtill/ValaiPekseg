@@ -1,3 +1,4 @@
+
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -46,3 +47,4 @@ QuantityModal.propTypes = {
         nev: PropTypes.string.isRequired,
     }),
 };
+

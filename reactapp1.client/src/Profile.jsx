@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Style/Profile.css';
@@ -66,23 +65,24 @@ function Profile() {
 
     return (
         <div className="profile-page">
+            <button className="goToBack" onClick={() => navigate('/mainpage2')}>Vissza</button>
             <h1>Profil módosítása</h1>
             <form onSubmit={handleUpdate}>
                 <div className="form-group">
                     <label>Felhasználónév</label>
-                    <input type="text" value={username} disabled />
+                    <input className="username-input" type="text" value={username} disabled />
                 </div>
                 <div className="form-group">
                     <label>Új e-mail</label>
-                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <input className="email-input" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
                 </div>
                 <div className="form-group">
                     <label>Új jelszó (ha módosítani szeretnéd)</label>
-                    <input type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
+                    <input className="password-input" type="password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} />
                 </div>
                 <div className="form-group">
                     <label>Jelszó megerősítése</label>
-                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+                    <input className="confirm-password-input" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
                 </div>
                 {message && <p className="message">{message}</p>}
                 <button type="submit">Módosítás</button>

@@ -1,12 +1,14 @@
-// src/admin/AdminProducts.jsx
-import { useEffect, useState } from "react";
-import AdminProductUpdate from "../components/AdminProductUpdate";
-import "../Style/AdminProducts.css";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import AdminProductUpdate from "../components/AdminProductUpdate"; // Importáljuk az új modális komponenst
+import "../Style/AdminProducts.css";  // A termékek táblázat stílusa
 
 const AdminProducts = () => {
     const [termekek, setTermekek] = useState([]);
-    const [showModal, setShowModal] = useState(false);
-    const [selectedProduct, setSelectedProduct] = useState(null);
+    const [ujArak, setUjArak] = useState({});
+    const [successMessage, setSuccessMessage] = useState("");  // Új állapot a siker üzenethez
+    const [isModalOpen, setIsModalOpen] = useState(false); // Új állapot a modális kezelésére
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("https://localhost:7136/api/termekek")
@@ -33,47 +35,107 @@ const AdminProducts = () => {
         }
     };
 
-    const openModal = (product) => {
-        setSelectedProduct(product);
-        setShowModal(true);
+    const handleChange = (e, id) => {
+        const value = e.target.value;
+        setUjArak({ ...ujArak, [id]: value });
     };
 
-    const closeModal = () => {
-        setShowModal(false);
-        setSelectedProduct(null);
+    const handleUpdate = async (id) => {
+        const ujAr = ujArak[id];
+
+        if (!ujAr || isNaN(ujAr)) {
+            alert("Adj meg érvényes árat.");
+            return;
+        }
+
+        try {
+            const res = await fetch(`https://localhost:7136/api/termekek/${id}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(parseFloat(ujAr)),
+            });
+
+            if (res.ok) {
+                const updatedTermekek = termekek.map((t) =>
+                    t.id === id ? { ...t, ar: parseFloat(ujAr) } : t
+                );
+                setTermekek(updatedTermekek);
+                setUjArak((prev) => ({ ...prev, [id]: "" }));
+                setSuccessMessage("Ár sikeresen frissítve!"); // Beállítjuk a siker üzenetet
+                setIsModalOpen(true); // Megnyitjuk a modális ablakot
+            } else {
+                alert("Nem sikerült frissíteni az árat.");
+            }
+        } catch (error) {
+            alert("Hálózati hiba történt.");
+        }
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false); // Bezárjuk a modális ablakot
     };
 
     return (
-        <div className="admin-products-container">
-            <h2>Termékek kezelése</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Termék neve</th>
-                        <th>Ár (Ft)</th>
-                        <th>Kategória</th>
-                        <th>Műveletek</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {termekek.map((termek) => (
-                        <tr key={termek.id}>
-                            <td>{termek.nev}</td>
-                            <td>{termek.ar} Ft</td>
-                            <td>{termek.kategoriaNev}</td>
-                            <td>
-                                <button onClick={() => openModal(termek)}>Új ár</button>
-                                <button onClick={() => handleDelete(termek.id)}>Törlés</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table>
+        <div className="admin-dashboard">
+            {/* ✅ NAVBAR a fejléc tetején */}
+            <header className="header">
+                <nav className="navbar">
+                    <div className="navbar-left">
+                        <span className="logo">Valai Pékség Admin</span>
+                    </div>
 
-            {/* Modal megjelenítése */}
-            {showModal && (
-                <AdminProductUpdate product={selectedProduct} onClose={closeModal} />
-            )}
+                    <div className="navbar-center">
+                        <a onClick={() => navigate("/admin/products")}>Termékek</a>
+                        <a onClick={() => navigate("/admin/users")}>Felhasználók</a>
+                    </div>
+
+                    <div className="navbar-right">
+                        <button className="nav-button" onClick={() => navigate("/pekseg")}>Kijelentkezés</button>
+                    </div>
+                </nav>
+            </header>
+
+            {/* ✅ Tartalom rész */}
+            <main className="admin-products-container">
+                <h2>Termékek kezelése</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Termék neve</th>
+                            <th>Ár (Ft)</th>
+                            <th>Kategória</th>
+                            <th>Új ár</th>
+                            <th>Műveletek</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {termekek.map((termek) => (
+                            <tr key={termek.id}>
+                                <td>{termek.nev}</td>
+                                <td>{termek.ar} Ft</td>
+                                <td>{termek.kategoriaNev}</td>
+                                <td>
+                                    <input className="newPrice"
+                                        type="number"
+                                        placeholder="Új ár"
+                                        value={ujArak[termek.id] || ""}
+                                        onChange={(e) => handleChange(e, termek.id)}
+                                    />
+                                </td>
+                                <td>
+                                    <button onClick={() => handleUpdate(termek.id)}>Módosítás</button>
+                                    <button onClick={() => handleDelete(termek.id)}>Törlés</button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+
+                {/* Siker üzenet modális ablak */}
+                {isModalOpen && (
+                    <AdminProductUpdate message={successMessage} onClose={handleCloseModal} />
+                )}
+            </main>
         </div>
     );
 };

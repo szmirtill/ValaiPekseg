@@ -34,12 +34,14 @@ function AdminLogin() {
                     <p>Kérlek add meg a bejelentkezési adataidat!</p>
                     <form onSubmit={handleSubmit}>
                         <input
+                            className="admin-username-input"
                             type="text"
                             placeholder="Felhasználónév"
                             value={felhasznalonev}
                             onChange={(e) => setFelhasznalonev(e.target.value)}
                         />
                         <input
+                            className="admin-password-input"
                             type="password"
                             placeholder="Jelszó"
                             value={jelszo}
