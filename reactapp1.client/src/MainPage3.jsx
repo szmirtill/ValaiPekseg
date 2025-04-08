@@ -5,6 +5,7 @@ import LoginRequiredModal from './components/LoginRequiredModal';
 import './Style/MainPage3.css';
 
 function MainPage3() {
+    
     const [products, setProducts] = useState([]);
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [showLoginRequiredModal, setShowLoginRequiredModal] = useState(false);
@@ -69,6 +70,7 @@ function MainPage3() {
                         <button className="nav-button" onClick={() => navigate("/admin/login")}>Admin</button>
                     </div>
                 </nav>
+                
             </header>
 
             <div className="main-layout">

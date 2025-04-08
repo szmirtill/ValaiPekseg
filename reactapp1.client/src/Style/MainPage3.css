@@ -1,4 +1,4 @@
-/* Alap reset */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +7,15 @@
 
 html, body {
     min-height: 100%;
-    background-image: linear-gradient(to bottom, #FDF6E3 0%, #FAE9D1 20%, #F8E1C4 40%, #F1D1AD 60%, #EBC79E 80%, #E0AF86 90%, #C78C5A 100%);
+    font-family: 'Poppins', sans-serif;
+    color: #5C4033;
+    background: linear-gradient(to bottom, #FDF6E3 0%, #FAE9D1 20%, #F8E1C4 40%, #F1D1AD 60%, #EBC79E 80%, #E0AF86 90%, #C78C5A 100%);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Poppins', sans-serif;
-    color: #5C4033;
 }
 
-/* ✅ Fejléc */
+/* Header */
 .header {
     position: fixed;
     top: 1rem;
@@ -29,33 +29,30 @@ html, body {
     z-index: 1000;
 }
 
+/* Navbar alap */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 2rem;
+    padding: 0.8rem 2rem;
     width: 100%;
+    flex-wrap: wrap;
 }
 
-/* Bal oldali logó */
-.navbar-left {
-    display: flex;
-    align-items: center;
-}
-
-.logo {
+/* Logo */
+.navbar-left .logo {
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: #5a3b26;
+    line-height: 1.2;
 }
 
-/* Középen menü */
+/* Menü – Főoldal & Termékek */
 .navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     gap: 2rem;
+    justify-content: center;
+    flex: 1;
 }
 
     .navbar-center a {
@@ -75,7 +72,6 @@ html, body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-left: auto;
 }
 
 .nav-button {
@@ -95,41 +91,29 @@ html, body {
         background-color: #bf8b50;
     }
 
-/* ✅ Tartalom eltolás a navbar miatt */
-.mainpage3-container {
-    padding-top: 100px;
-}
-
-/* ✅ Elrendezés: oldalsáv + termékek */
-.main-layout {
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    max-width: 1600px;
-    margin: 20px auto 0 auto;
-    padding: 0 20px;
-    width: 100%;
-}
-
-/* ✅ Oldalsáv */
+/* Oldalsáv */
 .sidebar {
-    flex: 0 0 250px; /* Fix szélesség a sidebarnak */
+    flex: 0 0 250px;
+    margin-left: 1rem; /* 🔧 ez tolja beljebb a navbar széléhez */
     background-color: #fffaf6;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position: sticky; /* Ha szükséges fixálás */
-    top: 100px; /* Pozicionálás a fejléc alatt */
+    position: sticky;
+    top: 140px;
 }
 
     .sidebar h2 {
         font-size: 22px;
         margin-bottom: 20px;
+        color: #5a3b26;
+        font-weight: bold;
     }
 
     .sidebar ul {
         list-style: none;
         padding-left: 0;
+        margin: 0;
     }
 
     .sidebar li {
@@ -137,6 +121,8 @@ html, body {
         display: flex;
         align-items: center;
         gap: 10px;
+        color: #333;
+        font-size: 1rem;
     }
 
     .sidebar input[type="radio"] {
@@ -145,7 +131,7 @@ html, body {
         cursor: pointer;
     }
 
-/* ✅ Szűrő gomb */
+/* Szűrő gomb */
 .filter-button {
     width: 100%;
     margin-top: 20px;
@@ -156,54 +142,50 @@ html, body {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
 }
 
     .filter-button:hover {
         background: #bf8b50;
     }
-
-/* ✅ Terméklista */
-.product-list {
-    flex: 1; /* A terméklista elfoglalja a maradék helyet */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 25px;
-    align-content: flex-start;
-    padding-left: 20px; /* Jobb margó */
-    margin-top: 15px;
+.mainpage3-container {
+    padding-top: 100px; /* vagy 140px ha még kell hely */
 }
+/* ✅ RESPONSIVE – Kis kijelzőn logó eltűnik */
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        padding: 1rem;
+    }
 
-/* ✅ Termékkártyák */
-.product-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    .navbar-left .logo {
+        display: none;
+    }
+
+    .navbar-center {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-start;
+    }
+
+    .navbar-right {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
+    .nav-button {
+        padding: 0.5rem 1.1rem;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
 }
-
-/* ✅ Termékkép */
-.product-image {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 8px;
-    display: block;
-    margin: 0 auto 12px auto;
-    background-color: #fdfdfd;
-}
-
-/* ✅ Kosár gomb (inaktív is) */
-.buy-button.disabled {
-    margin-top: 10px;
-    background-color: #d6a675;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: not-allowed;
-    opacity: 0.8;
-    transition: background-color 0.3s ease;
+        .nav-button:hover {
+            background-color: #bf8b50;
+        }
 }
