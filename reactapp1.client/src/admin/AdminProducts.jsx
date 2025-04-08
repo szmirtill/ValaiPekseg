@@ -7,7 +7,8 @@ import "../Style/AdminProducts.css";  // A termékek táblázat stílusa
 const AdminProducts = () => {
     const [termekek, setTermekek] = useState([]);
     const [ujArak, setUjArak] = useState({});
-    const [successMessage, setSuccessMessage] = useState("");  // Új állapot a siker üzenethez
+    const [successMessage, setSuccessMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState("");// Új állapot a siker üzenethez
     const [isModalOpen, setIsModalOpen] = useState(false); // Új állapot a modális kezelésére
     const navigate = useNavigate();
 
@@ -29,10 +30,17 @@ const AdminProducts = () => {
             if (res.status === 204) {
                 setTermekek(termekek.filter((t) => t.id !== id));
             } else {
-                alert("Nem sikerült törölni a terméket.");
+                setErrorMessage("Nem sikerült törölni a terméket!"); // Beállítjuk a hiba üzenetet
+                setTimeout(() => {
+                    setErrorMessage('');
+                }, 3000);
+                
             }
         } catch (_) {
-            alert("Hiba történt.");
+            setErrorMessage("Hiba történt!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
         }
     };
 
@@ -45,7 +53,10 @@ const AdminProducts = () => {
         const ujAr = ujArak[id];
 
         if (!ujAr || isNaN(ujAr)) {
-            alert("Adj meg érvényes árat.");
+            setErrorMessage("Adj meg egy új árat!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
             return;
         }
 
@@ -65,10 +76,18 @@ const AdminProducts = () => {
                 setSuccessMessage("Ár sikeresen frissítve!"); // Beállítjuk a siker üzenetet
                 setIsModalOpen(true); // Megnyitjuk a modális ablakot
             } else {
-                alert("Nem sikerült frissíteni az árat.");
+                setErrorMessage("Nem sikerült frissíteni az árat!"); // Beállítjuk a hiba üzenetet
+                setTimeout(() => {
+                    setErrorMessage('');
+                }, 3000);
+               
             }
         } catch (error) {
-            alert("Hálózati hiba történt.");
+            setErrorMessage("Hálózati hiba történt!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
+            
         }
     };
 
@@ -99,6 +118,18 @@ const AdminProducts = () => {
             {/* ✅ Tartalom rész */}
             <main className="admin-products-container">
                 <h2>Termékek kezelése</h2>
+                {/* Hiba üzenet */}
+                {errorMessage && (
+                    <div className="error-message">
+                        {errorMessage}
+                    </div>
+                )}
+                {/* Sikeres módosítás üzenete */}
+                {successMessage && (
+                    <div className="success-message">
+                        {successMessage}
+                    </div>
+                )}
                 <table>
                     <thead>
                         <tr>

@@ -1,14 +1,18 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/AdminUsers.css";
 import UserUpdate from "../components/userUpdate"; // Importáld a UserUpdate komponenst
+import DeleteUserModal from "../components/DeleteUserModal"; // Importáld a DeleteUserModal komponenst
 
 const AdminUsers = () => {
     const navigate = useNavigate();
     const [users, setUsers] = useState([]);
     const [selectedUserId, setSelectedUserId] = useState(null);
+    const [selectedUserId2, setSelectedUserId2] = useState(null);
     const [email, setEmail] = useState('');
+    const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+    const [successMessage, setSuccessMessage] = useState(''); // Hozzáadtunk egy állapotot a sikerüzenethez
+    const [errorMessage, setErrorMessage] = useState("")
 
     // API hívás felhasználók lekérése
     useEffect(() => {
@@ -20,20 +24,39 @@ const AdminUsers = () => {
             .catch((err) => console.error("Hiba a felhasználók lekérdezésekor:", err));
     }, []);
 
-    const handleDelete = async (id) => {
-        if (!window.confirm("Biztosan törlöd ezt a felhasználót?")) return;
+    // Törlés gomb kattintás
+    const handleDelete = (id, email) => {
+        setSelectedUserId2(id);  // Kiválasztja a felhasználót a törléshez
+        setEmail(email);         // Beállítja a felhasználó email címét
+        setIsDeleteModalOpen(true);  // Törlés megerősítő modális ablak megjelenítése
+    };
 
-        const res = await fetch(`https://localhost:7136/api/vevo/${id}`, {
+    // Törlés megerősítése
+    const handleConfirmDelete = async () => {
+        const res = await fetch(`https://localhost:7136/api/vevo/${selectedUserId2}`, {
             method: "DELETE",
         });
 
         if (res.ok) {
-            setUsers(users.filter((u) => u.id !== id)); // Frissíti a táblázatot törlés után
+            setUsers(users.filter((u) => u.id !== selectedUserId2)); // Frissíti a táblázatot törlés után
         } else {
-            alert("Nem sikerült törölni a felhasználót.");
+            setErrorMessage("Nem sikerült törölni a felhasználót!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
+            
         }
+
+        setIsDeleteModalOpen(false); // Bezárja a modált
     };
 
+    // Törlés lemondása
+    const handleCancelDelete = () => {
+        setIsDeleteModalOpen(false); // Bezárja a modált anélkül, hogy törölné
+        setSelectedUserId2(null);     // Reseteli a kiválasztott felhasználót
+    };
+
+    // Jelszó módosítása
     const handlePasswordReset = async (userId, email, newPassword, adminPassword) => {
         const res = await fetch("https://localhost:7136/api/vevo/reset-password", {
             method: "PUT",
@@ -47,15 +70,24 @@ const AdminUsers = () => {
         });
 
         if (res.ok) {
-            alert("Jelszó frissítve!");
+            setSuccessMessage("Jelszó frissítve!"); // Beállítjuk a sikeres üzenetet
+            setTimeout(() => {
+                setSuccessMessage('');
+            }, 3000);
+
             setEmail('');
             setSelectedUserId(null);
         } else {
             const errorText = await res.text();
-            alert("Hiba: " + errorText);
+            setErrorMessage("Hiba történt a jelszó frissítésekor!"); // Beállítjuk a hiba üzenetet
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 3000);
+            
         }
     };
 
+    // Módosítás lemondása
     const handleCancelUpdate = () => {
         setSelectedUserId(null);
         setEmail('');
@@ -81,6 +113,18 @@ const AdminUsers = () => {
             </header>
 
             <h2>Felhasználók kezelése</h2>
+            {/* Hiba üzenet */}
+            {errorMessage && (
+                <div className="error-message">
+                    {errorMessage}
+                </div>
+            )}
+            {/* Sikeres módosítás üzenete */}
+            {successMessage && (
+                <div className="success-message">
+                    {successMessage}
+                </div>
+            )}
 
             {/* Táblázat, amely tartalmazza az összes felhasználót */}
             <table>
@@ -107,7 +151,7 @@ const AdminUsers = () => {
                                         Módosítás
                                     </button>
                                 )}
-                                <button className="ProductDelete" onClick={() => handleDelete(u.id)}>
+                                <button className="ProductDelete" onClick={() => handleDelete(u.id, u.email)}>
                                     Törlés
                                 </button>
                             </td>
@@ -126,6 +170,13 @@ const AdminUsers = () => {
                 />
             )}
 
+            {/* Törlés megerősítő modál */}
+            <DeleteUserModal
+                isOpen={isDeleteModalOpen}
+                onClose={handleCancelDelete}
+                onDelete={handleConfirmDelete}
+                userEmail={email}
+            />
         </div>
     );
 };

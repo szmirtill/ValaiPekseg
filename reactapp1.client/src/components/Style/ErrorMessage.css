@@ -1,0 +1,48 @@
+/* Error Overlay */
+.error-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6); /* Átlátszó fekete háttér */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+/* Error Box */
+.error-box {
+    background-color: #f8d7da; /* Piros háttér a hibaüzenethez */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+    /* Error Title */
+    .error-box h3 {
+        color: #721c24; /* Sötét piros szín a hibaüzenet szövegéhez */
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    /* Button Style */
+    .error-box button {
+        background-color: #d6a675; /* Szép világos sárga háttér a gombhoz */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Button Hover */
+        .error-box button:hover {
+            background-color: #bf8b50; /* A gomb színe változik a hover állapotra */
+        }

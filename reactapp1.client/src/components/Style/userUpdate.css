@@ -20,6 +20,13 @@
         visibility: visible;
         opacity: 1;
     }
+.success-message {
+    color: green;
+    font-size: 1.2rem;
+    margin-bottom: 20px; /* A gombok fölött jelenjen meg */
+    text-align: center;
+}
+
 
 .edit-modal-content {
     background: #fff8f0;

@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,11 +5,19 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
     const [newPassword, setNewPassword] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
+    const [successMessage, setSuccessMessage] = useState('');  // Hozzáadott állapot a sikerüzenethez
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(userId, email, newPassword, adminPassword);
-        setShowModal(false); // Az ablak bezárása a mentés után
+        onSubmit(userId, email, newPassword, adminPassword).then(() => {
+            setSuccessMessage("Jelszó frissítve!"); // Beállítja a sikeres üzenetet
+            setNewPassword('');
+            setAdminPassword('');
+            setShowModal(false); // Az ablak bezárása a mentés után
+        }).catch((err) => {
+            console.error(err);
+            setSuccessMessage('Hiba történt a jelszó frissítésekor');
+        });
     };
 
     const toggleModal = () => {
@@ -42,7 +49,12 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
                 </div>
             </div>
 
-            
+            {/* Ha sikerült a módosítás, akkor itt jelenik meg a sikerüzenet */}
+            {successMessage && (
+                <div className="success-message">
+                    {successMessage}
+                </div>
+            )}
         </div>
     );
 }
