@@ -173,8 +173,10 @@ function Cart() {
                     <input type="text" placeholder="Házszám" value={hazszam} onChange={e => setHazszam(e.target.value)} />
                 </>
             )}
-
-            <button onClick={kezeldRendelest}>Vásárlás</button>
+            <div className="vasarlas-container">
+                <button className="vasarlas" onClick={kezeldRendelest}>Vásárlás</button>
+            </div>
+            
 
             <EditQuantityModal
                 isOpen={isModalOpen}

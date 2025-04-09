@@ -10,7 +10,7 @@ import './Style/home.css';
 
 const Home = () => {
     useEffect(() => {
-        document.title = "Valai Pékség – Friss, kézműves pékáru minden nap!";
+        document.title = "Valai Pékség";
     }, []);
 
     return (
