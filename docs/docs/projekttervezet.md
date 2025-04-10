@@ -127,7 +127,6 @@ Itt látható az összes eddigi megredelés.
 
 ---
 
----
 ## Adatok módosítása felület
 
 Itt lehet módosítani a felhasználó adatait.
@@ -142,4 +141,40 @@ Itt lehet módosítani a felhasználó adatait.
 
 ---
 
+## Admin felület
+
+
+### Login:
+- Admin felhasználónév
+- Admin Jelszó
+
+<img src="/img/adminlogin.png" alt="Admin login dizájn" />
+
+---
+
+## Admin felület
+
+
+### Login:
+- Admin felhasználónév
+- Admin Jelszó
+
+<img src="/img/adminlogin.png" alt="Admin login dizájn" />
+
+### Vezérlőpult:
+A jövőben itt lehet látni a statisztikákat
+
+<img src="/img/adminvezerlo.png" alt="Admin vezérlőpult dizájn" />
+
+### Termékek kezelése:
+Itt lehet az árakat módosítani és a termékeket törölni. Amennyiben nem adunk meg új árat, és úgy akarunk módosítani kapunk egy figyelmeztető üzenetet.
+
+<img src="/img/termekkezeles.png" alt="Termékek kezelése dizájn" />
+
+### Felhasználók kezelése:
+Itt lehet új jelszót létrehozni a felhasználók számára, és itt lehet törölni adott felhasználókat.
+
+<img src="/img/felhasznalokezeles.png" alt="Felhasználók kezelése dizájn" />
+
+---
 Ez a projektterv biztosítja, hogy a Valai Pékség online jelenléte modern, biztonságos és felhasználóbarát legyen.
