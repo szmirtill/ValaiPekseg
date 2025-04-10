@@ -20,7 +20,6 @@ namespace MyApp.Controllers
             _context = context;
         }
 
-        // 🔹 Rendelési előzmények lekérése
         [HttpGet("history/{vevoId}")]
         public async Task<IActionResult> GetOrderHistory(int vevoId)
         {
@@ -50,7 +49,6 @@ namespace MyApp.Controllers
             return Ok(rendelesek);
         }
 
-        // 🔹 Rendelés mentése + azonnali visszaküldés a frontendnek
         [HttpPost("mentes")]
         public async Task<IActionResult> MentesRendeles([FromBody] RendelesRequest request)
         {
@@ -59,7 +57,6 @@ namespace MyApp.Controllers
                 return BadRequest("Nincs kiválasztott termék.");
             }
 
-            // 🔧 AUTOMATIKUS "Feldolgozás alatt" státusz beállítása
             var ujRendeles = new Rendeles
             {
                 vevo_id = request.vevo_id,
@@ -95,7 +92,6 @@ namespace MyApp.Controllers
         }
     }
 
-    // DTO osztályok
     public class RendelesRequest
     {
         public int vevo_id { get; set; }
@@ -103,7 +99,7 @@ namespace MyApp.Controllers
 
         public string Keresztnev { get; set; }
         public string Vezeteknev { get; set; }
-        public string SzallitasiMod { get; set; } // "kiszalitas" vagy "pekseghez"
+        public string SzallitasiMod { get; set; } 
         public string? Iranyitoszam { get; set; }
         public string? Varos { get; set; }
         public string? Utca { get; set; }

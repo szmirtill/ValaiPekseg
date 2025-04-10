@@ -16,7 +16,7 @@ namespace MyApp.Models
 
         public int mennyiseg { get; set; }
 
-        public int osszeg { get; set; }  // 🔹 ÚJ: A tétel összértéke
+        public int osszeg { get; set; } 
 
         public Rendeles? Rendeles { get; set; }
         public Termek? Termek { get; set; }

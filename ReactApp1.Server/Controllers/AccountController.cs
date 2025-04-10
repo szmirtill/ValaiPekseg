@@ -17,7 +17,7 @@ namespace MyApp.Controllers
             _context = context;
         }
 
-        // 🔹 1️⃣ Regisztráció végpont
+        
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
@@ -50,7 +50,7 @@ namespace MyApp.Controllers
             return Ok(new { message = "Sikeres regisztráció!", userId = newUser.Id });
         }
 
-        // 🔹 2️⃣ Felhasználói adatok módosítása
+       
         [HttpPut("update")]
         public async Task<IActionResult> UpdateAccount([FromBody] UpdateRequest request)
         {
@@ -76,7 +76,7 @@ namespace MyApp.Controllers
             return Ok(new { message = "Adatok sikeresen frissítve!" });
         }
 
-        // 🔹 3️⃣ Lekérés ID alapján
+       
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(int id)
         {

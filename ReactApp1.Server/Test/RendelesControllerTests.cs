@@ -26,7 +26,7 @@ namespace ReactApp1.Server.Test
 
             _context = new ApplicationDbContext(options);
 
-            // ???? Teszt termék
+            
             _context.Termekek.Add(new Termek
             {
                 Id = 1,
@@ -96,7 +96,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<BadRequestObjectResult>());
         }
 
-        // ✅ ÚJ: Hiányzó kötelező mezők
+        
         [Test]
         public async Task MentesRendeles_MissingNameFields_ReturnsBadRequest()
         {
@@ -113,10 +113,10 @@ namespace ReactApp1.Server.Test
             };
 
             var result = await _controller.MentesRendeles(request);
-            Assert.That(result, Is.InstanceOf<OkObjectResult>()); // jelenleg ez még átmegy, de később validálható
+            Assert.That(result, Is.InstanceOf<OkObjectResult>()); 
         }
 
-        // ✅ ÚJ: Nem létező termék ID (a logika engedi, de teszteljük)
+        
         [Test]
         public async Task MentesRendeles_InvalidProductId_SavesAnyway()
         {
@@ -136,7 +136,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
         }
 
-        // ✅ ÚJ: Negatív mennyiség – engedi, de nem logikus
+        
         [Test]
         public async Task MentesRendeles_NegativeQuantity_AllowsInsert()
         {
@@ -156,11 +156,11 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
         }
 
-        // ✅ ÚJ: Rendelés előzmény lekérése meglévő felhasználóval
+        
         [Test]
         public async Task GetOrderHistory_ValidUserId_ReturnsList()
         {
-            await MentesRendeles_ValidInput_ReturnsOk(); // hogy legyen rendelés
+            await MentesRendeles_ValidInput_ReturnsOk(); 
 
             var result = await _controller.GetOrderHistory(1);
             var okResult = result as OkObjectResult;
@@ -168,8 +168,7 @@ namespace ReactApp1.Server.Test
             Assert.That(okResult, Is.Not.Null);
             Assert.That(okResult.Value, Is.Not.Null);
         }
-
-        // ✅ ÚJ: Előzmény lekérés ismeretlen vevő ID-val
+// ✅ ÚJ: Előzmény lekérés ismeretlen vevő ID-val
         [Test]
         public async Task GetOrderHistory_UnknownUser_ReturnsEmptyList()
         {

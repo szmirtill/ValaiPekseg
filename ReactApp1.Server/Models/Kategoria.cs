@@ -9,8 +9,8 @@ namespace MyApp.Models
         public int Id { get; set; }
 
         [Required]
-        public string Nev { get; set; } = string.Empty; // Kategória neve
+        public string Nev { get; set; } = string.Empty; 
 
-        public List<Termek>? Termekek { get; set; } // Kapcsolat a termékekkel
+        public List<Termek>? Termekek { get; set; } 
     }
 }

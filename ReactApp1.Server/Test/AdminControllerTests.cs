@@ -19,12 +19,11 @@ namespace ReactApp1.Server.Test
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Új adatbázis minden teszthez
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) 
                 .Options;
 
             _context = new ApplicationDbContext(options);
 
-            // Teszt admin létrehozása
             _context.adminok.Add(new Admin
             {
                 id = 1,
@@ -88,8 +87,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
         }
 
-        // ⚠️ HIBÁS TESZT ELTÁVOLÍTVA:
-        // Login_NullRequest_ReturnsBadRequest
+        
 
         [Test]
         public void Login_ExceptionThrown_IsHandled()
@@ -103,7 +101,6 @@ namespace ReactApp1.Server.Test
             Assert.That(ex.Message, Is.EqualTo("Szándékos admin teszt hiba."));
         }
 
-        // Hibadobó kontroller teszthez
         private class BrokenAdminController : ControllerBase
         {
             public async Task<IActionResult> Login(AdminLoginRequest request)

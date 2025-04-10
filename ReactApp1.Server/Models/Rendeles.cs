@@ -23,7 +23,7 @@ namespace MyApp.Models
 
         public string Keresztnev { get; set; }
         public string Vezeteknev { get; set; }
-        public string SzallitasiMod { get; set; } // "kiszalitas" vagy "pekseghez"
+        public string SzallitasiMod { get; set; } 
         public string? Iranyitoszam { get; set; }
         public string? Varos { get; set; }
         public string? Utca { get; set; }

@@ -25,20 +25,17 @@ namespace MyApp.Controllers
                 return BadRequest("Hibás kérés!");
             }
 
-            // 🔹 Felhasználó keresése az adatbázisban
             var user = await _context.vevo.FirstOrDefaultAsync(u => u.felhasznalonev == loginRequest.felhasznalonev);
             if (user == null)
             {
                 return Unauthorized("Felhasználó nem található");
             }
 
-            // 🔹 Jelszó ellenőrzése bcrypt használatával
             if (!BCrypt.Net.BCrypt.Verify(loginRequest.jelszo, user.jelszo))
             {
                 return Unauthorized("Hibás jelszó");
             }
 
-            // 🔹 HIBA KIJAVÍTVA: Visszaadjuk a userId-t is!
             return Ok(new { userId = user.Id, username = user.felhasznalonev });
         }
     }

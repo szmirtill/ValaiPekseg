@@ -110,7 +110,7 @@ namespace ReactApp1.Server.Test
             Assert.That(ex.Message, Is.Not.Null.And.Not.Empty);
         }
 
-        // ✅ ÚJ TESZT: Lekérés létező ID-re
+        
         [Test]
         public async Task GetUser_ValidId_ReturnsUser()
         {
@@ -128,7 +128,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
         }
 
-        // ✅ ÚJ TESZT: Lekérés nem létező ID-re
+        
         [Test]
         public async Task GetUser_InvalidId_ReturnsNotFound()
         {
@@ -136,7 +136,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<NotFoundObjectResult>());
         }
 
-        // ✅ ÚJ TESZT: Adatmódosítás működése
+        
         [Test]
         public async Task UpdateAccount_ValidData_UpdatesSuccessfully()
         {
@@ -160,7 +160,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
         }
 
-        //  TESZT: Adatmódosítás hibás ID-re
+        
         [Test]
         public async Task UpdateAccount_NonexistentUser_ReturnsNotFound()
         {
@@ -175,7 +175,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<NotFoundObjectResult>());
         }
 
-        //  Dummy controller teszteléshez
+        
         private class BrokenAccountController : ControllerBase
         {
             public async Task<IActionResult> Register(RegisterRequest request)

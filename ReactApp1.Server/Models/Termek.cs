@@ -20,7 +20,6 @@ namespace MyApp.Models
         [ForeignKey("kategoria_id")]
         public Kategoria? Kategoria { get; set; }
 
-        // 🔹 ÚJ: képet tároló mező (BLOB)
         public byte[]? Kep { get; set; }
     }
 }

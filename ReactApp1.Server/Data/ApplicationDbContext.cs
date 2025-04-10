@@ -13,14 +13,14 @@ namespace MyApp.Data
         public DbSet<Rendeles> rendelesek { get; set; }
         public object Rendelesek { get; internal set; }
         public DbSet<RendelesTetel> rendeles_tetelek { get; set; }
-        public DbSet<Kategoria> Kategoriak { get; set; } // 🔹 ÚJ: Kategóriák tábla
+        public DbSet<Kategoria> Kategoriak { get; set; } 
         public DbSet<Admin> adminok { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<vevo>()
                 .HasIndex(u => u.email)
-                .IsUnique(); // Az email egyedi kell, hogy legyen
+                .IsUnique(); 
 
             modelBuilder.Entity<Rendeles>()
                 .HasMany(r => r.Termekek)
@@ -30,7 +30,7 @@ namespace MyApp.Data
             modelBuilder.Entity<Kategoria>()
                 .HasMany(k => k.Termekek)
                 .WithOne(t => t.Kategoria)
-                .HasForeignKey(t => t.kategoria_id); // 🔹 Kapcsolat beállítása
+                .HasForeignKey(t => t.kategoria_id);
         }
     }
 }

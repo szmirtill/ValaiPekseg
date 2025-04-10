@@ -17,7 +17,6 @@ namespace MyApp.Controllers
             _context = context;
         }
 
-        // 🔐 Admin bejelentkezés
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AdminLoginRequest request)
         {

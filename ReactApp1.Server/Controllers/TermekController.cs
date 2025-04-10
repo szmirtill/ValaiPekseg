@@ -1,6 +1,4 @@
-﻿// Controllers/TermekekController.cs
-
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyApp.Data;
 using System;
@@ -20,7 +18,6 @@ namespace MyApp.Controllers
             _context = context;
         }
 
-        // 🔹 Termékek lekérdezése a képekkel együtt
         [HttpGet]
         public async Task<IActionResult> GetTermekek([FromQuery] int? kategoriaId)
         {
@@ -46,7 +43,6 @@ namespace MyApp.Controllers
             return Ok(termekek);
         }
 
-        // 🔴 TERMÉK TÖRLÉSE
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteTermek(int id)
         {
@@ -60,7 +56,6 @@ namespace MyApp.Controllers
             return NoContent();
         }
 
-        // ✏️ TERMÉK MÓDOSÍTÁSA (csak ár)
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTermek(int id, [FromBody] decimal ujAr)
         {

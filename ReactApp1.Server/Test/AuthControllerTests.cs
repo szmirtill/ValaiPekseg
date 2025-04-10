@@ -18,12 +18,12 @@ namespace ReactApp1.Server.Test
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: System.Guid.NewGuid().ToString()) // Egyedi DB minden teszthez
+                .UseInMemoryDatabase(databaseName: System.Guid.NewGuid().ToString())
                 .Options;
 
             _context = new ApplicationDbContext(options);
 
-            // ???? Bcrypt-tel titkosított felhasználó
+            
             var hashedPassword = BCrypt.Net.BCrypt.HashPassword("teszt123");
 
             _context.vevo.Add(new vevo
@@ -130,13 +130,13 @@ namespace ReactApp1.Server.Test
             Assert.That(ex.Message, Is.EqualTo("Szándékos hiba teszt"));
         }
 
-        // ???? ÚJ: Kisbetű-nagybetű érzékenység (username case sensitive)
+        
         [Test]
         public async Task Login_UsernameCaseMismatch_ReturnsUnauthorized()
         {
             var request = new LoginRequestModel
             {
-                felhasznalonev = "TesztUser", // nagybetű
+                felhasznalonev = "TesztUser", 
                 jelszo = "teszt123"
             };
 
@@ -144,21 +144,21 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
         }
 
-        // ???? ÚJ: Jelszó whitespace karakterrel – sikertelen belépés
+        
         [Test]
         public async Task Login_PasswordWithWhitespace_ReturnsUnauthorized()
         {
             var request = new LoginRequestModel
             {
                 felhasznalonev = "tesztuser",
-                jelszo = " teszt123 " // whitespace elöl-hátul
+                jelszo = " teszt123 " 
             };
 
             var result = await _controller.Login(request);
             Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
         }
 
-        // ???? ÚJ: Üres LoginRequestModel mezők
+       
         [Test]
         public async Task Login_EmptyFields_ReturnsBadRequest()
         {
@@ -186,7 +186,7 @@ namespace ReactApp1.Server.Test
             Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
         }
 
-        // ???? Dummy controller hibadobáshoz
+        
         private class BrokenAuthController : ControllerBase
         {
             public async Task<IActionResult> Login(LoginRequestModel loginRequest)

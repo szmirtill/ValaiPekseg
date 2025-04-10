@@ -25,12 +25,12 @@ namespace ReactApp1.Server.Test
 
             _context = new ApplicationDbContext(options);
 
-            // ???? Teszt kategóriák
+            
             var kat1 = new Kategoria { Id = 1, Nev = "Péksütemény" };
             var kat2 = new Kategoria { Id = 2, Nev = "Édesség" };
             _context.Kategoriak.AddRange(kat1, kat2);
 
-            // ???? Teszt termékek
+           
             _context.Termekek.AddRange(
                 new Termek
                 {
@@ -157,8 +157,8 @@ namespace ReactApp1.Server.Test
         [Test]
         public async Task DeleteTermek_AlreadyDeleted_ReturnsNotFound()
         {
-            await _controller.DeleteTermek(1); // első törlés
-            var result = await _controller.DeleteTermek(1); // második törlés
+            await _controller.DeleteTermek(1); 
+            var result = await _controller.DeleteTermek(1); 
             Assert.That(result, Is.InstanceOf<NotFoundResult>());
         }
     }
