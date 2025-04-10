@@ -7,7 +7,7 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
     const [adminPassword, setAdminPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [successMessage, setSuccessMessage] = useState(''); 
-    const [errorMessage, setErrorMessage] = useState("");
+    const [setErrorMessage] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -18,7 +18,7 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
             setNewPassword('');
             setAdminPassword('');
             setShowModal(false);
-        } catch (err) {
+        } catch {
             setErrorMessage('Hiba történt a jelszó frissítésekor');
             setTimeout(() => {
                 setErrorMessage('');

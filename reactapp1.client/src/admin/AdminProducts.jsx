@@ -36,7 +36,7 @@ const AdminProducts = () => {
                 }, 3000);
                 
             }
-        } catch (_) {
+        } catch {
             setErrorMessage("Hiba történt!"); 
             setTimeout(() => {
                 setErrorMessage('');
@@ -85,7 +85,7 @@ const AdminProducts = () => {
                 }, 3000);
                
             }
-        } catch (error) {
+        } catch {
             setErrorMessage("Hálózati hiba történt!");
             setTimeout(() => {
                 setErrorMessage('');
