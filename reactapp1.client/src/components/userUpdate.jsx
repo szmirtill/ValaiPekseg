@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -5,22 +6,22 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
     const [newPassword, setNewPassword] = useState('');
     const [adminPassword, setAdminPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [successMessage, setSuccessMessage] = useState('');  // Hozzáadott állapot a sikerüzenethez
+    const [successMessage, setSuccessMessage] = useState(''); 
     const [errorMessage, setErrorMessage] = useState("");
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            await onSubmit(userId, email, newPassword, adminPassword); // Az onSubmit függvény meghívása
-            setSuccessMessage("Jelszó frissítve!"); // Sikeres üzenet beállítása
+            await onSubmit(userId, email, newPassword, adminPassword); 
+            setSuccessMessage("Jelszó frissítve!"); 
             setNewPassword('');
             setAdminPassword('');
-            setShowModal(false); // Az ablak bezárása
+            setShowModal(false);
         } catch (err) {
             setErrorMessage('Hiba történt a jelszó frissítésekor');
             setTimeout(() => {
-                setErrorMessage(''); // Hibaüzenet eltüntetése 3 másodperc után
+                setErrorMessage('');
             }, 3000);
         }
     };
@@ -31,7 +32,7 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
 
     return (
         <div>
-            {/* Overlay a felugró ablakhoz */}
+           
             <div className={`edit-modal-overlay ${showModal ? 'show' : ''}`} onClick={toggleModal}>
                 <div className="edit-modal-content" onClick={(e) => e.stopPropagation()}>
                     <h2>Jelszó visszaállítása</h2>
@@ -54,7 +55,7 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
                 </div>
             </div>
 
-            {/* Ha sikerült a módosítás, akkor itt jelenik meg a sikerüzenet */}
+            
             {successMessage && (
                 <div className="success-message">
                     {successMessage}
@@ -64,7 +65,7 @@ function UserUpdate({ userId, email, onSubmit, onCancel }) {
     );
 }
 
-// PropTypes validálás
+
 UserUpdate.propTypes = {
     userId: PropTypes.number.isRequired,
     email: PropTypes.string.isRequired,

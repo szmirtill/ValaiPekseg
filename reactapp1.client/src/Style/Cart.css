@@ -1,5 +1,4 @@
-﻿/* Global reset and styling */
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,8 +14,6 @@ html, body {
     color: #5C4033;
 }
 
-
-/* Kosár container */
 .cart-container {
     position: relative;
     max-width: 800px;
@@ -30,7 +27,6 @@ html, body {
     border: 2px solid #d6a675;
 }
 
-
     .cart-container h2, .cart-container h3 {
         padding: 30px;
         color: #8b5e3c;
@@ -39,8 +35,6 @@ html, body {
         text-align:center;
     }
 
-
-/* Table styling */
 .cart-table {
     width: 100%;
     border-collapse: collapse;
@@ -103,7 +97,6 @@ html, body {
                 background-color: #a77b4f;
             }
 
-/* Total price styling */
 .cart-container h3:last-child {
     margin-top: 20px;
     font-size: 1.3rem;
@@ -111,7 +104,6 @@ html, body {
     color: #8b5e3c;
 }
 
-/* Cart actions button */
 .cart-container button.buy-button {
     padding: 1rem 2rem;
     background: #d6a675;
@@ -131,7 +123,6 @@ html, body {
         background: #a77b4f;
     }
 
-/* Form elements styling */
 .cart-container input,
 .cart-container select {
     width: 100%;
@@ -150,29 +141,26 @@ html, body {
         border-color: #8b5e3c;
     }
 
-/* Radio button styling */
 .cart-container label {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 1.5rem; /* Növeltük a margin-bottom értékét */
-    font-size: 1rem; /* Ensuring the text size is consistent */
+    margin-bottom: 1.5rem; 
+    font-size: 1rem; 
 }
 
     .cart-container label input {
-        margin: 0; /* Remove default margin */
-        width: auto; /* Ensures the radio button doesn't stretch */
-        height: auto; /* Maintains a consistent size */
+        margin: 0; 
+        width: auto; 
+        height: auto; 
     }
 
-/* Empty cart message */
 .cart-container .empty-cart-message {
     color: #8b5e3c;
     font-size: 1.2rem;
     text-align: center;
 }
 
-/* Padding and spacing for cart container */
 .cart-container div {
     margin-bottom: 1.5rem;
 }
@@ -180,14 +168,14 @@ html, body {
     width: 70px;
     background-color: #d6a675;
     color: white;
-    padding: 8px 16px; /* Kisebb méret */
+    padding: 8px 16px; 
     border: none;
     border-radius: 8px;
-    font-size: 14px; /* Kisebb betűméret */
+    font-size: 14px;
     cursor: pointer;
     position: absolute;
-    top: 20px; /* Különböző pozíció */
-    left: 20px; /* Bal oldalon */
+    top: 20px;
+    left: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -220,7 +208,6 @@ html, body {
         background-color: #bf8b50;
     }
 
-/* ✅ Reszponzív stílus mobilhoz */
 @media (max-width: 768px) {
     .cart-container {
         width: 90%;

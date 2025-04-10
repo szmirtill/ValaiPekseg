@@ -1,10 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect } from 'react';
-
 import Header from './components/header';
 import Card from './components/card';
 import Container from './components/container';
-import Contaier from './components/contaier'; // Ha elírás, írd át Container-re
+import Contaier from './components/contaier';
 import Footer from './components/footer';
 import './Style/home.css';
 

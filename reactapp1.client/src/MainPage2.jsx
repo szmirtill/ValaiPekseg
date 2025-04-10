@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -15,7 +14,7 @@ function MainPage2() {
     const [showModal, setShowModal] = useState(false);
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [showLogoutModal, setShowLogoutModal] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");// Új állapot a siker üzenethez
+    const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
         const storedUsername = localStorage.getItem('username');
@@ -62,7 +61,7 @@ function MainPage2() {
 
     const handleConfirmQuantity = (mennyiseg) => {
         if (isNaN(mennyiseg) || mennyiseg <= 0) {
-            setErrorMessage("Érvénytelen mennyiség!"); // Beállítjuk a hiba üzenetet
+            setErrorMessage("Érvénytelen mennyiség!"); 
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
@@ -76,7 +75,7 @@ function MainPage2() {
         if (existingItem) {
             const osszesMennyiseg = existingItem.mennyiseg + mennyiseg;
             if (osszesMennyiseg > 10) {
-                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!"); // Beállítjuk a hiba üzenetet
+                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!"); 
                 setTimeout(() => {
                     setErrorMessage('');
                 }, 3000);
@@ -85,7 +84,7 @@ function MainPage2() {
             existingItem.mennyiseg = osszesMennyiseg;
         } else {
             if (mennyiseg > 10) {
-                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!!"); // Beállítjuk a hiba üzenetet
+                setErrorMessage("Ebből a termékből legfeljebb 10 darabot vásárolhatsz!!"); 
                 setTimeout(() => {
                     setErrorMessage('');
                 }, 3000);
@@ -138,7 +137,7 @@ function MainPage2() {
                     </div>
                 </div>
             </header>
-            {/* Hiba üzenet */}
+            
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}

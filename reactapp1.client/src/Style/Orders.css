@@ -1,6 +1,4 @@
-﻿/* Orders.css - Stílus igazítva a Cart.css-hez */
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,7 +14,6 @@ html, body {
     color: #5C4033;
 }
 
-/* ✅ Rendelések konténer */
 .orders-container {
     position: relative;
     max-width: 800px;
@@ -28,7 +25,6 @@ html, body {
     border: 2px solid #d6a675;
 }
 
-/* ✅ Rendelés kártya */
 .order-card {
     background: #F8E1C4;
     border-radius: 10px;
@@ -44,7 +40,6 @@ html, body {
         box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
     }
 
-    /* ✅ Cím */
     .order-card h2 {
         font-family: 'Playfair Display', serif;
         font-size: 1.4rem;
@@ -52,7 +47,6 @@ html, body {
         color: #8B5E3C;
     }
 
-/* ✅ Hibaüzenet */
 .error {
     color: red;
     font-size: 14px;
@@ -60,7 +54,6 @@ html, body {
     text-align: center;
 }
 
-/* ✅ Vissza gomb */
 .back-button {
     padding: 1rem 2rem;
     background: linear-gradient(to bottom, #D9A065, #C7864D);
@@ -83,7 +76,6 @@ html, body {
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
     }
 
-/* ✅ Reszponzív */
 @media (max-width: 768px) {
     .orders-container {
         width: 90%;

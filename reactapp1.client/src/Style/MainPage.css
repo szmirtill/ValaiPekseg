@@ -1,9 +1,6 @@
-/* MainPage.css */
-
-
 body {
     font-family: 'Arial', sans-serif;
-    background: #ffffff !important; /* FEHÉR HÁTTÉR */
+    background: #ffffff !important; 
     display: flex;
     justify-content: center;
     align-items: center;

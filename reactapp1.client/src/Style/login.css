@@ -1,4 +1,3 @@
-/* ADMIN LOGIN – LOGINKINÉZETHEZ IGAZÍTVA */
 html, body {
     height: 100%;
     margin: 0;
@@ -52,10 +51,9 @@ html, body {
     margin-bottom: 20px;
 }
 
-/* Külön class a felhasználónév inputhoz */
 .username-input {
-    width: 100%; /* 100%-os szélesség */
-    padding: 12px; /* A mezõ kitöltésére szolgáló belsõ tér növelése */
+    width: 100%; 
+    padding: 12px; 
     margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -65,10 +63,9 @@ html, body {
     height: 40px;
 }
 
-/* Külön class a jelszó inputhoz */
 .password-input {
-    width: 100% !important; /* 100%-os szélesség */
-    padding: 12px; /* A mezõ kitöltésére szolgáló belsõ tér növelése */
+    width: 100% !important;
+    padding: 12px; 
     margin-bottom: 15px;
     border-radius: 10px;
     border: 1px solid #ccc;
@@ -79,7 +76,7 @@ html, body {
 }
     .username-input:focus, .password-input:focus {
         outline: none;
-        border: 1px solid black !important; /* Az alapértelmezett border szín */
+        border: 1px solid black !important; 
     }
 
 .login-left button {
@@ -87,7 +84,7 @@ html, body {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: #d6a675; /* Új szín */
+    background: #d6a675;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -98,7 +95,7 @@ html, body {
 }
 
     .login-left button:hover {
-        background: #bf8b50; /* Hover szín */
+        background: #bf8b50; 
     }
 
 .login-right {

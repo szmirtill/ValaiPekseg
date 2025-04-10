@@ -1,4 +1,3 @@
-
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
@@ -38,7 +37,6 @@ export default function QuantityModal({ isOpen, onClose, onConfirm, product }) {
     );
 }
 
-// ✅ PropTypes validáció
 QuantityModal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     onClose: PropTypes.func.isRequired,

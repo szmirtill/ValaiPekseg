@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -15,7 +14,6 @@ body, html {
     overflow-x: hidden;
 }
 
-/* ✅ Fejléc (navbar) */
 .header {
     position: fixed;
     top: 1rem;
@@ -29,7 +27,6 @@ body, html {
     z-index: 1000;
 }
 
-/* ✅ Navbar szerkezete */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -39,14 +36,12 @@ body, html {
     flex-wrap: wrap;
 }
 
-/* ✅ Bal logó */
 .navbar-left2 .logo {
     font-weight: bold;
     font-size: 1.3rem;
     color: #5a3b26;
 }
 
-/* ✅ Középső menü */
 .navbar-center2 {
     display: flex;
     gap: 2rem;
@@ -66,7 +61,6 @@ body, html {
             color: #a0622b;
         }
 
-/* ✅ Jobb oldali gombok */
 .user-menu {
     display: flex;
     align-items: center;
@@ -121,12 +115,10 @@ body, html {
             background: #F7F7F7;
         }
 
-/* ✅ Tartalom eltolás a navbar miatt */
 .mainpage2-container {
-    padding-top: 100px; /* vagy 140px ha még kell hely */
+    padding-top: 100px; 
 }
 
-/* ✅ Layout – egy sorban a sidebar + termékek */
 .main-layout {
     display: flex;
     flex-direction: row;
@@ -138,7 +130,6 @@ body, html {
     flex-wrap: nowrap;
 }
 
-/* ✅ Oldalsáv */
 .sidebar {
     flex-shrink: 0;
     width: 260px;
@@ -174,7 +165,6 @@ body, html {
         height: 18px;
     }
 
-/* ✅ Szűrő gomb */
 .filter-button {
     margin-top: 20px;
     width: 100%;
@@ -190,8 +180,6 @@ body, html {
     .filter-button:hover {
         background: #bf8b50;
     }
-
-/* ✅ Terméklista */
 .product-list {
     flex-grow: 1;
     display: grid;
@@ -215,7 +203,6 @@ body, html {
     margin-bottom: 10px;
 }
 
-/* ✅ Kosár gomb */
 .buy-button {
     margin-top: 10px;
     background: #d6a675;
@@ -231,7 +218,6 @@ body, html {
         background: #bf8b50;
     }
 
-/* ✅ Mennyiség mező */
 .quantity-input {
     width: 60px;
     padding: 6px;
@@ -243,7 +229,6 @@ body, html {
     border-radius: 6px;
 }
 
-/* ✅ Mobilbarát */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: row;
@@ -254,7 +239,7 @@ body, html {
     }
 
     .navbar-left2 .logo {
-        display: none; /* 🔥 Kis képernyőn eltüntetjük a logót */
+        display: none; 
     }
 
     .navbar-center2 {

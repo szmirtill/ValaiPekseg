@@ -8,8 +8,6 @@ const AdminDashboard = () => {
 
     return (
         <div className="admin-dashboard">
-
-            {/* Fejléc NAVBAR felül */}
             <header className="header">
                 <nav className="navbar">
                     <div className="navbar-left">
@@ -26,8 +24,6 @@ const AdminDashboard = () => {
                     </div>
                 </nav>
             </header>
-
-            {/* Tartalom a navbar alatt */}
             <main className="dashboard-content">
                 <header className="dashboard-header">
                     <h1>Admin Vezérlőpult</h1>

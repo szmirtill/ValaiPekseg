@@ -1,8 +1,7 @@
-﻿/* Alapértelmezett stílusok az egész alkalmazásra */
-body {
+﻿body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E); /* Meleg pékség háttér */
-    color: #5C4033; /* Barna szöveg */
+    background: linear-gradient(to bottom, #FDF6E3, #F8E1C4, #EBC79E); 
+    color: #5C4033;
     margin: 0;
     padding: 0;
 }
@@ -21,11 +20,10 @@ a {
         color: #A76A44;
     }
 
-/* Buttons */
 button {
     width: 100%;
     padding: 10px;
-    background: linear-gradient(to bottom, #D9A065, #C7864D); /* Meleg arany színátmenet */
+    background: linear-gradient(to bottom, #D9A065, #C7864D); 
     color: white;
     border: none;
     border-radius: 8px;
@@ -34,17 +32,14 @@ button {
     transition: background 0.3s ease-in-out, transform 0.2s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-    /* Hover effect for button */
     button:hover {
         background: linear-gradient(to bottom, #BF8B50, #A76A44);
         transform: translateY(-2px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
     }
 
-/* Kosár és kijelentkezés gombok */
 .buy-button, .logout-btn, .user-btn {
-    background-color: #28A745; /* Zöld szín */
+    background-color: #28A745; 
     color: white;
     padding: 10px 15px;
     font-size: 16px;
@@ -59,7 +54,6 @@ button {
         background-color: #218838;
     }
 
-/* Fejléc */
 .header {
     background-color: #8B5E3C;
     color: white;
@@ -98,7 +92,6 @@ button {
                     color: #F4E1C1;
                 }
 
-/* Felhasználói menü */
 .user-menu {
     display: flex;
     gap: 15px;
@@ -137,7 +130,6 @@ button {
         background: #F7F7F7;
     }
 
-/* Termékek listája */
 .product-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -170,7 +162,6 @@ button {
         margin-bottom: 10px;
     }
 
-/* Reszponzivitás */
 @media (max-width: 768px) {
     .header {
         flex-direction: column;

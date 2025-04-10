@@ -1,15 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import AdminProductUpdate from "../components/AdminProductUpdate"; // Importáljuk az új modális komponenst
-import "../Style/AdminProducts.css";  // A termékek táblázat stílusa
+import AdminProductUpdate from "../components/AdminProductUpdate"; 
+import "../Style/AdminProducts.css"; 
 
 const AdminProducts = () => {
     const [termekek, setTermekek] = useState([]);
     const [ujArak, setUjArak] = useState({});
     const [successMessage, setSuccessMessage] = useState("");
-    const [errorMessage, setErrorMessage] = useState("");// Új állapot a siker üzenethez
-    const [isModalOpen, setIsModalOpen] = useState(false); // Új állapot a modális kezelésére
+    const [errorMessage, setErrorMessage] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false); 
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -30,14 +30,14 @@ const AdminProducts = () => {
             if (res.status === 204) {
                 setTermekek(termekek.filter((t) => t.id !== id));
             } else {
-                setErrorMessage("Nem sikerült törölni a terméket!"); // Beállítjuk a hiba üzenetet
+                setErrorMessage("Nem sikerült törölni a terméket!"); 
                 setTimeout(() => {
                     setErrorMessage('');
                 }, 3000);
                 
             }
         } catch (_) {
-            setErrorMessage("Hiba történt!"); // Beállítjuk a hiba üzenetet
+            setErrorMessage("Hiba történt!"); 
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
@@ -53,7 +53,7 @@ const AdminProducts = () => {
         const ujAr = ujArak[id];
 
         if (!ujAr || isNaN(ujAr)) {
-            setErrorMessage("Adj meg egy új árat!"); // Beállítjuk a hiba üzenetet
+            setErrorMessage("Adj meg egy új árat!"); 
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
@@ -76,17 +76,17 @@ const AdminProducts = () => {
                 setSuccessMessage("Ár sikeresen frissítve!");
                 setTimeout(() => {
                     setSuccessMessage('');
-                }, 3000);// Beállítjuk a siker üzenetet
-                setIsModalOpen(true); // Megnyitjuk a modális ablakot
+                }, 3000);
+                setIsModalOpen(true); 
             } else {
-                setErrorMessage("Nem sikerült frissíteni az árat!"); // Beállítjuk a hiba üzenetet
+                setErrorMessage("Nem sikerült frissíteni az árat!"); 
                 setTimeout(() => {
                     setErrorMessage('');
                 }, 3000);
                
             }
         } catch (error) {
-            setErrorMessage("Hálózati hiba történt!"); // Beállítjuk a hiba üzenetet
+            setErrorMessage("Hálózati hiba történt!");
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
@@ -95,12 +95,12 @@ const AdminProducts = () => {
     };
 
     const handleCloseModal = () => {
-        setIsModalOpen(false); // Bezárjuk a modális ablakot
+        setIsModalOpen(false); 
     };
 
     return (
         <div className="admin-dashboard">
-            {/* ✅ NAVBAR a fejléc tetején */}
+            
             <header className="header">
                 <nav className="navbar">
                     <div className="navbar-left">
@@ -118,16 +118,13 @@ const AdminProducts = () => {
                 </nav>
             </header>
 
-            {/* ✅ Tartalom rész */}
             <main className="admin-products-container">
                 <h2>Termékek kezelése</h2>
-                {/* Hiba üzenet */}
                 {errorMessage && (
                     <div className="error-message">
                         {errorMessage}
                     </div>
                 )}
-                {/* Sikeres módosítás üzenete */}
                 {successMessage && (
                     <div className="success-message">
                         {successMessage}
@@ -166,7 +163,6 @@ const AdminProducts = () => {
                     </tbody>
                 </table>
 
-                {/* Siker üzenet modális ablak */}
                 {isModalOpen && (
                     <AdminProductUpdate message={successMessage} onClose={handleCloseModal} />
                 )}

@@ -1,5 +1,4 @@
-﻿/* ADMIN LOGIN – LOGINKINÉZETHEZ IGAZÍTVA */
-html, body {
+﻿html, body {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -68,7 +67,7 @@ html, body {
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
-    background: #d6a675; /* ÚJ szín */
+    background: #d6a675;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -79,7 +78,7 @@ html, body {
 }
 
     .admin-login-left button[type="submit"]:hover {
-        background: #bf8b50; /* ÚJ hover szín */
+        background: #bf8b50; 
     }
 
 .admin-login-right {

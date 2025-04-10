@@ -24,7 +24,7 @@ function MainPage3() {
 
     useEffect(() => {
         fetchProducts();
-    }, [selectedCategory]); // fontos, hogy frissüljön, ha vált kategóriát
+    }, [selectedCategory]); 
 
     const fetchProducts = () => {
         let url = "https://localhost:7136/api/termekek";

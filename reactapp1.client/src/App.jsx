@@ -14,7 +14,7 @@ import MainPage3 from "./MainPage3";
 import AdminLogin from './admin/AdminLogin';
 import AdminDashboard from './admin/AdminDashboard';
 import AdminProducts from './admin/AdminProducts';
-import AdminUsers from './admin/AdminUsers'; // ✅ HOZZÁADVA
+import AdminUsers from './admin/AdminUsers';
 
 function App() {
     return (
@@ -34,7 +34,7 @@ function App() {
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route path="/admin/dashboard" element={<AdminDashboard />} />
                     <Route path="/admin/products" element={<AdminProducts />} />
-                    <Route path="/admin/users" element={<AdminUsers />} /> {/* ✅ HOZZÁADVA */}
+                    <Route path="/admin/users" element={<AdminUsers />} /> 
                 </Routes>
             </div>
         </Router>

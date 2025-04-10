@@ -4,7 +4,7 @@
     font-weight: 400;
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #ffffff; /* Fehér háttér */
+    background-color: #ffffff; 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -27,7 +27,7 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
-    background-color: #ffffff; /* Fehér háttér a body-nál is */
+    background-color: #ffffff; 
 }
 
 h1 {
@@ -59,7 +59,7 @@ button {
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;
-        background-color: #ffffff; /* Fehér háttér a :root elemnél is */
+        background-color: #ffffff; 
     }
 
     a:hover {

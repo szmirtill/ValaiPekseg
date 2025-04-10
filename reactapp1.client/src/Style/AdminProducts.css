@@ -1,5 +1,4 @@
-﻿/* Alap reset */
-* {
+﻿* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +13,6 @@ html, body {
     height: 100%;
 }
 
-/* ✅ Fejléc navbar */
 .header {
     position: fixed;
     top: 1rem;
@@ -29,7 +27,6 @@ html, body {
     z-index: 1000;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -38,7 +35,6 @@ html, body {
     width: 100%;
 }
 
-/* Konténerek */
 .navbar-left, .navbar-center, .navbar-right {
     display: flex;
     align-items: center;
@@ -56,7 +52,6 @@ html, body {
             color: #a0622b;
         }
 
-/* ✅ Termékek kezelésének container */
 .admin-products-container {
     width: 90vw;
     margin: 120px auto 60px auto;
@@ -76,12 +71,11 @@ html, body {
         margin-bottom: 30px;
     }
 
-/* ✅ Táblázat */
 table {
     width: 100%;
     border-collapse: collapse;
     min-width: 700px;
-    overflow-x: auto; /* Görgethető ha túl széles */
+    overflow-x: auto; 
 }
 
 thead {
@@ -106,7 +100,6 @@ tbody td {
     text-align: center;
 }
 
-/* ✅ Input mező */
 .newPrice {
     padding: 6px 10px;
     border: 1px solid #ccc;
@@ -124,7 +117,6 @@ tbody td {
         outline: none;
     }
 
-/* ✅ Gombok */
 .ProductEdit,
 .ProductDelete {
     padding: 6px 12px;
@@ -153,7 +145,6 @@ button:nth-of-type(2) {
     margin-right: 0;
 }
 
-/* ✅ Reszponzív stílus NAVBAR KIVÉTELÉVEL */
 @media (max-width: 768px) {
     .admin-products-container {
         width: 95vw;

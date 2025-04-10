@@ -129,7 +129,6 @@
     background-color: rgb(255, 255, 255);
 }
 
-/* ✅ Gombstílus frissítve */
 .button,
 .home-button,
 .home-container2 .button {
@@ -150,7 +149,6 @@
         background-color: #bf8b50;
     }
 
-/* ✅ Mobilnézet */
 @media(max-width: 991px) {
     .home-hero {
         padding-left: var(--dl-layout-space-tripleunit);

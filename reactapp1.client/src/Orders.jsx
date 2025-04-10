@@ -35,8 +35,6 @@ function Orders() {
             });
     }, [navigate]);
 
-    
-
     return (
         <div className="orders-container">
             <button className="goToBack" onClick={() => navigate('/mainpage2')}>Vissza</button>

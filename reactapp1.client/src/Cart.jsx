@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom"; // Hozzáadva a useNavigate
+import { useNavigate } from "react-router-dom"; 
 import { useState, useEffect } from "react";
 import './Style/Cart.css';
 import EditQuantityModal from './components/EditQuantityModal';
@@ -15,13 +15,9 @@ function Cart() {
     const [varos, setVaros] = useState('');
     const [utca, setUtca] = useState('');
     const [hazszam, setHazszam] = useState('');
-
-    // Mennyiség módosító modal
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItemId, setSelectedItemId] = useState(null);
     const [selectedQuantity, setSelectedQuantity] = useState(1);
-
-    // Sikeres rendelés modal
     const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     useEffect(() => {
