@@ -8,15 +8,16 @@ sidebar_label: Bevezetés
 
 ## Előszó
 
-Projektünket **Szentes Mirtill** és **Nagy Máté János** közösen készítettük el, amely a **Valai Pékség** nevet viseli. A projekt témájának kiválasztásakor fontos szempont volt, hogy egy olyan területtel foglalkozzunk, amelyhez személyesen is kötődünk, és amelyben szívesen mélyedünk el.
+Projektünket **Szentes Mirtill** és **Nagy Máté János** közösen készítettük el, amely a **Valai Pékség** nevet viseli. A projekt témájának kiválasztásakor fontos szempont volt, hogy egy olyan területtel foglalkozzunk, amelyhez személyesen is kötődünk, és amelyben szívesen mélyedünk el. A pékség, mint téma közel áll hozzánk, mivel mindketten szeretjük a friss pékárukat, és érdekesnek találtuk a helyi vállalkozások digitalizációs lehetőségeit.
 
-A pékség, mint téma közel áll hozzánk, mivel mindketten szeretjük a friss pékárukat, és érdekesnek találtuk a helyi vállalkozások digitalizációs lehetőségeit. A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a **Valai Pékség** név volt az, amely leginkább visszaadta a projekt által képviselt barátságos és autentikus hangulatot.
+A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a Valai Pékség név volt az, amely leginkább visszaadta a projekt által képviselt barátságos és autentikus hangulatot.
+
 
 ---
 
 ## Feladatmegosztás
 
-A projekt során a feladatokat és a munkafolyamatokat egyenlően osztottuk meg, hogy mindketten maximálisan hozzájárulhassunk a Valai Pékség webalkalmazásának megvalósításához. Az alábbiakban részletezzük, ki melyik feladatot végezte el:
+A projekt során a feladatokat és a munkafolyamatokat egyenlően osztottuk el, hogy mindketten maximálisan hozzájárulhassunk a Valai Pékség webalkalmazásának megvalósításához. **Az alábbiakban részletezem, hogy ki melyik feladatot végezte el a projekt során:**
 
 ### Szentes Mirtill feladatai:
 - 🎨 **Design**: Felhasználói felület és élmény tervezése
@@ -33,13 +34,16 @@ A projekt során a feladatokat és a munkafolyamatokat egyenlően osztottuk meg,
 - 🗓️ **Projektmenedzsment és ütemezés**
 - ✅ **Tesztelés**: Funkcionalitás és hibamentes működés ellenőrzése
 
+
 Ezzel a feladatmegosztással biztosítottuk, hogy a projekt minden részlete precízen kidolgozott legyen, és mindketten maximálisan hozzájáruljunk a sikeres megvalósításhoz.
 
 ---
 
 ## A projekt célja
 
-A projekt célja, hogy a Valai Pékség számára egy **modern és felhasználóbarát webalkalmazást** hozzunk létre, amely lehetővé teszi a pékség online jelenlétének biztosítását és üzleti működésének digitalizálását.
+A projekt célja, hogy a **Valai Pékség** számára egy **modern és felhasználóbarát** webalkalmazást hozzunk létre, amely lehetővé teszi a pékség online jelenlétének biztosítását és üzleti működésének digitalizálását. Az alkalmazás elsődleges funkciói között szerepel a pékség termékeinek részletes bemutatása, az online rendelési lehetőség biztosítása. 
+
+Az online rendelési felület lehetővé teszi, hogy a vásárlók kényelmesen, akár otthonról, vagy útközben rendeljenek friss pékárut, miközben a pékség munkatársai könnyedén kezelhetik és nyomon követhetik az érkező rendeléseket.
 
 ### Fő funkciók:
 - Termékek részletes bemutatása
