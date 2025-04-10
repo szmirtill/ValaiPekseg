@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../Style/AdminUsers.css";
 import UserUpdate from "../components/userUpdate";
-import DeleteUserModal from "../components/DeleteUserModal"; 
+import DeleteUserModal from "../components/DeleteUserModal";
 
 const AdminUsers = () => {
     const navigate = useNavigate();
@@ -12,22 +12,22 @@ const AdminUsers = () => {
     const [selectedUserId2, setSelectedUserId2] = useState(null);
     const [email, setEmail] = useState('');
     const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-    const [successMessage, setSuccessMessage] = useState(''); 
+    const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState("")
 
     useEffect(() => {
         fetch("https://localhost:7136/api/vevo")
             .then((res) => res.json())
             .then((data) => {
-                setUsers(data); 
+                setUsers(data);
             })
             .catch((err) => console.error("Hiba a felhasználók lekérdezésekor:", err));
     }, []);
 
     const handleDelete = (id, email) => {
-        setSelectedUserId2(id); 
-        setEmail(email);         
-        setIsDeleteModalOpen(true);  
+        setSelectedUserId2(id);
+        setEmail(email);
+        setIsDeleteModalOpen(true);
     };
 
     const handleConfirmDelete = async () => {
@@ -36,20 +36,19 @@ const AdminUsers = () => {
         });
 
         if (res.ok) {
-            setUsers(users.filter((u) => u.id !== selectedUserId2)); 
+            setUsers(users.filter((u) => u.id !== selectedUserId2));
         } else {
-            setErrorMessage("Nem sikerült törölni a felhasználót!"); 
+            setErrorMessage("Nem sikerült törölni a felhasználót!");
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
-            
         }
 
         setIsDeleteModalOpen(false);
     };
 
     const handleCancelDelete = () => {
-        setIsDeleteModalOpen(false); 
+        setIsDeleteModalOpen(false);
         setSelectedUserId2(null);
     };
 
@@ -74,12 +73,10 @@ const AdminUsers = () => {
             setEmail('');
             setSelectedUserId(null);
         } else {
-            const errorText = await res.text();
             setErrorMessage("Hiba történt a jelszó frissítésekor!");
             setTimeout(() => {
                 setErrorMessage('');
             }, 3000);
-            
         }
     };
 
@@ -108,13 +105,13 @@ const AdminUsers = () => {
             </header>
 
             <h2>Felhasználók kezelése</h2>
-            
+
             {errorMessage && (
                 <div className="error-message">
                     {errorMessage}
                 </div>
             )}
-            
+
             {successMessage && (
                 <div className="success-message">
                     {successMessage}

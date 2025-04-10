@@ -1,8 +1,7 @@
-
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Style/QuantityModal.css'; // ugyanazt a CSS-t használjuk
+import './Style/QuantityModal.css';
 
 export default function LoginRequiredModal({ isOpen, onClose }) {
     if (!isOpen) return null;
