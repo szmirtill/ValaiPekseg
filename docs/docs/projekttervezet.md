@@ -51,11 +51,14 @@ A felhasználói felület célja, hogy a látogatók számára egyszerű, mégis
 
 A főoldalon a termékek listája látható, képekkel kiegészítve. A termékekre kattintva részletes információk jelennek meg. A bal oldali sávban **kategóriaszűrés** segíti a gyors keresést.
 
+<img src="/img/fooldal.png" alt="Főoldal dizájn" />
+
 ---
 
 ## Regisztrációs felület
 
 A regisztráció során a felhasználó megadhatja adatait, amelyeket a rendszer biztonságosan, titkosítással tárol.
+
 
 ### Bekért adatok:
 - Felhasználónév
@@ -66,6 +69,7 @@ A regisztráció során a felhasználó megadhatja adatait, amelyeket a rendszer
 - A termékek bejelentkezés nélkül is böngészhetők.
 - **Rendeléshez bejelentkezés szükséges** – ellenkező esetben hibaüzenet jelenik meg.
 
+<img src="/img/registration.png" alt="Regisztráció dizájn" />
 ---
 
 ## Bejelentkezés felület
@@ -82,6 +86,7 @@ A regisztráció során a felhasználó megadhatja adatait, amelyeket a rendszer
 - A felhasználó a főoldalra kerül.
 - A menüben a „Bejelentkezés” és „Regisztráció” helyett „Kijelentkezés” látható.
 
+<img src="/img/login.png" alt="Bejelentkezés dizájn" />
 ---
 
 ## Termékek felület
@@ -94,18 +99,46 @@ A termékek oldalán kategóriákra bontva jelennek meg a termékek:
 
 A termékeket bárki megnézheti, de rendeléshez szükséges a bejelentkezés. Ha nem jelentkezett be, a rendszer figyelmezteti.
 
+<img src="/img/termekek.png" alt="Termékek dizájn" />
 ---
 
-## Rendelés felület
+## Kosár felület
 
 A rendelési folyamat a kosárból indítható.
 
 ### Tartalom:
-- **Rendelés összesítése**: Termékek ára, szállítási költség, végösszeg.
+- **Rendelés összesítése**: Termékek ára, végösszeg.
 - **Vásárlási adatok**:
   - Név
   - Szállítási cím
-  - Telefonszám
+
+<img src="/img/rendeles.png" alt="Kosár dizájn" />
+
+---
+
+## Rendeléseim felület
+
+Itt látható az összes eddigi megredelés.
+
+### Tartalom:
+- **Rendelés összesítése**: Az összes rendelés dátuma és állapota.
+
+<img src="/img/rendeleseim.png" alt="Rendeléseim dizájn" />
+
+---
+
+---
+## Adatok módosítása felület
+
+Itt lehet módosítani a felhasználó adatait.
+
+### Tartalom:
+- Felhasználónév
+- Új e-mail
+- Új jelszó és annak megerősítése
+
+
+<img src="/img/profilmodositas.png" alt="Adatok módosítása dizájn" />
 
 ---
 
