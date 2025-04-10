@@ -28,3 +28,21 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+.footer {
+  background-color: #000000 !important; /* Sötétbarna háttér */
+  color: #f7f1e6 !important;            /* Világos szöveg */
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.footer a {
+  color: #f7f1e6 !important;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #e0b26b !important;
+  text-decoration: underline;
+}
+

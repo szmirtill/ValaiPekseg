@@ -2,25 +2,26 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
 import Heading from '@theme/Heading';
+
 import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          🥖 {siteConfig.title || 'Valai Pékség'}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          {siteConfig.tagline || 'Digitális pékségdokumentáció ASP.NET + React alapon'}
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
             to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            📄 Dokumentáció megtekintése
           </Link>
         </div>
       </div>
@@ -32,11 +33,16 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title="Főoldal – Valai Pékség"
+      description="Online pékség dokumentáció – ASP.NET & React projekt">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <div className="container" style={{ textAlign: 'center', padding: '2rem 0' }}>
+          <h2>Üdvözlünk a Valai Pékség webdokumentációjában! 🥐</h2>
+          <p>
+            Itt minden információt megtalálsz a rendszer felépítéséről, működéséről és fejlesztési lehetőségeiről.
+          </p>
+        </div>
       </main>
     </Layout>
   );

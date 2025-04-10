@@ -1,47 +1,65 @@
 ---
+title: Bevezetés
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 📌 Bevezetés
 
-Let's discover **Docusaurus in less than 5 minutes**.
+## Előszó
 
-## Getting Started
+Projektünket **Szentes Mirtill** és **Nagy Máté János** közösen készítettük el, amely a **Valai Pékség** nevet viseli.  
+A projekt témájának kiválasztásakor fontos szempont volt, hogy egy olyan területtel foglalkozzunk, amelyhez személyesen is kötődünk, és amelyben szívesen mélyedünk el.  
+A pékség témája közel áll hozzánk, mivel szeretjük a friss pékárukat, és érdekesnek találtuk a helyi vállalkozások digitalizációs lehetőségeit.
 
-Get started by **creating a new site**.
+A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a **Valai Pékség** név adta vissza legjobban azt a barátságos és autentikus hangulatot, amit képviselni szeretnénk.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+---
 
-### What you'll need
+## 👥 Feladatmegosztás
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+### Szentes Mirtill feladatai:
+- 🎨 **Design**: Az alkalmazás megjelenése, navigációja és vizuális megjelenése.
+- 📱 **Reszponzív dizájn**: Mobil- és asztali nézet optimalizálása.
+- 📝 **Dokumentáció**: Technikai leírások és működés bemutatása.
+- 💻 **Frontend fejlesztés**: Terméklista, vásárlói felület, vizuális oldalak.
 
-## Generate a new site
+### Nagy Máté János feladatai:
+- 🧠 **Backend fejlesztés**: Rendelési logika, adatok kezelése.
+- 🗄️ **Adatbázis tervezés**: Struktúra, biztonságos tárolás.
+- 🔌 **API fejlesztés**: Backend és frontend közötti adatkapcsolat biztosítása.
 
-Generate a new Docusaurus site using the **classic template**.
+### Közös feladatok:
+- 🗓️ **Projekt menedzsment**: Feladatok ütemezése, nyomon követés.
+- 🧪 **Tesztelés**: Az alkalmazás funkcióinak ellenőrzése, hibák javítása.
 
-The classic template will automatically be added to your project after you run the command:
+---
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## 🎯 A projekt célja
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+A célunk egy **modern, felhasználóbarát webalkalmazás** létrehozása a Valai Pékség számára, amely:
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+- Bemutatja a termékeket (képpel, leírással)
+- Lehetővé teszi az **online rendelést**
+- Támogatja az **adminisztrációs műveleteket**
 
-## Start your site
+---
 
-Run the development server:
+## 👥 Célcsoport
 
-```bash
-cd my-website
-npm run start
-```
+- **Magánszemélyek**: Akik friss pékárut szeretnének rendelni kényelmesen, akár otthonról.
+- **Pékség munkatársai**: Akik kezelik a rendeléseket, készleteket és szállítást.
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+---
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+## 🔮 Hosszú távú célok
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+A rendszer célja, hogy:
+
+- **Bemutassa a digitalizáció előnyeit** a helyi vállalkozások számára
+- **Egyszerű és élvezetes vásárlási élményt** nyújtson
+- **Személyre szabott szolgáltatásokat** kínáljon (pl. házhoz szállítás, egyedi ajánlatok)
+- **Biztonságos és skálázható** technológiai alapot adjon a növekedéshez
+
+---
+
+✅ Ez a projekt nemcsak a technikai tudásunkat bővítette, hanem hozzájárult a csapatmunka és problémamegoldó képességeink fejlődéséhez is.

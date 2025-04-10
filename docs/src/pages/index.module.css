@@ -1,13 +1,30 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+  background-color: #fce8c9; /* Világos pékséges háttér */
+  color: #5b3c11; /* Barna szöveg */
+ 
+  background-size: cover;
+  background-position: center;
+  border-bottom: 2px solid #e0b26b;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.button--secondary {
+  background-color: #e0b26b !important;
+  color: #ffffff !important;
+  border: none;
+  transition: 0.3s ease;
+}
+
+.button--secondary:hover {
+  background-color: #d19d56 !important;
 }
 
 @media screen and (max-width: 996px) {
