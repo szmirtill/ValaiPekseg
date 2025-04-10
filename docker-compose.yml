@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: valai-mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: valai_pekseg
+      MYSQL_USER: valaiuser
+      MYSQL_PASSWORD: valai123
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - valai-net
+
+  backend:
+    build:
+      context: ./ReactApp1.Server
+      dockerfile: Dockerfile
+    container_name: valai-backend
+    depends_on:
+      - mysql
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=valai_pekseg;user=valaiuser;password=valai123
+    ports:
+      - "7136:80"
+    networks:
+      - valai-net
+
+volumes:
+  mysql-data:
+
+networks:
+  valai-net:
