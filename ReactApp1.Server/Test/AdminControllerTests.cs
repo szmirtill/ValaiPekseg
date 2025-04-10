@@ -19,12 +19,12 @@ namespace ReactApp1.Server.Test
         public void Setup()
         {
             var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // 💡 Egyedi név minden teszthez
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) // Új adatbázis minden teszthez
                 .Options;
 
             _context = new ApplicationDbContext(options);
 
-            // 🔹 Teszt admin hozzáadása
+            // Teszt admin létrehozása
             _context.adminok.Add(new Admin
             {
                 id = 1,
@@ -37,37 +37,80 @@ namespace ReactApp1.Server.Test
         }
 
         [Test]
-        public async Task Login_ValidAdmin_ReturnsOk()
+        public async Task Login_ValidCredentials_ReturnsOk()
         {
-            // Arrange
             var request = new AdminLoginRequest
             {
                 felhasznalonev = "admin",
                 jelszo = "titok"
             };
 
-            // Act
             var result = await _controller.Login(request);
-
-            // Assert
             Assert.That(result, Is.InstanceOf<OkObjectResult>());
         }
 
         [Test]
         public async Task Login_MissingFields_ReturnsBadRequest()
         {
-            // Arrange
             var request = new AdminLoginRequest
             {
                 felhasznalonev = "",
                 jelszo = ""
             };
 
-            // Act
             var result = await _controller.Login(request);
-
-            // Assert
             Assert.That(result, Is.InstanceOf<BadRequestObjectResult>());
+        }
+
+        [Test]
+        public async Task Login_InvalidUsername_ReturnsUnauthorized()
+        {
+            var request = new AdminLoginRequest
+            {
+                felhasznalonev = "rosszadmin",
+                jelszo = "titok"
+            };
+
+            var result = await _controller.Login(request);
+            Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
+        }
+
+        [Test]
+        public async Task Login_InvalidPassword_ReturnsUnauthorized()
+        {
+            var request = new AdminLoginRequest
+            {
+                felhasznalonev = "admin",
+                jelszo = "rosszjelszo"
+            };
+
+            var result = await _controller.Login(request);
+            Assert.That(result, Is.InstanceOf<UnauthorizedObjectResult>());
+        }
+
+        // ⚠️ HIBÁS TESZT ELTÁVOLÍTVA:
+        // Login_NullRequest_ReturnsBadRequest
+
+        [Test]
+        public void Login_ExceptionThrown_IsHandled()
+        {
+            var brokenController = new BrokenAdminController();
+            var ex = Assert.ThrowsAsync<Exception>(async () =>
+            {
+                await brokenController.Login(new AdminLoginRequest());
+            });
+
+            Assert.That(ex.Message, Is.EqualTo("Szándékos admin teszt hiba."));
+        }
+
+        // Hibadobó kontroller teszthez
+        private class BrokenAdminController : ControllerBase
+        {
+            public async Task<IActionResult> Login(AdminLoginRequest request)
+            {
+                throw new Exception("Szándékos admin teszt hiba.");
+            }
         }
     }
 }
+
