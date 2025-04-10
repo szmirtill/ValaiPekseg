@@ -15,7 +15,7 @@ function HomepageHeader() {
           🥖 {siteConfig.title || 'Valai Pékség'}
         </Heading>
         <p className="hero__subtitle">
-          {siteConfig.tagline || 'Digitális pékségdokumentáció ASP.NET + React alapon'}
+          {siteConfig.tagline || 'Digitális pékségdokumentáció'}
         </p>
         <div className={styles.buttons}>
           <Link
@@ -40,7 +40,13 @@ export default function Home() {
         <div className="container" style={{ textAlign: 'center', padding: '2rem 0' }}>
           <h2>Üdvözlünk a Valai Pékség webdokumentációjában! 🥐</h2>
           <p>
-            Itt minden információt megtalálsz a rendszer felépítéséről, működéséről és fejlesztési lehetőségeiről.
+            A Valai Pékség dokumentációs oldala részletes betekintést nyújt abba, hogyan épül fel és működik egy modern, 
+            webalapú pékségi rendszer. A projekt célja egy olyan alkalmazás létrehozása, amely egyszerre szolgálja ki a vásárlók 
+            igényeit – online rendelés, profilkezelés, kosárfunkció – és az adminisztrációs feladatokat is, például termékek kezelése, 
+            rendelések nyomon követése és statisztikák megjelenítése.
+
+            A weboldal ASP.NET és React technológiákra épül, az adatokat egy MySQL adatbázis tárolja, és a rendszer minden funkcióját 
+            részletes dokumentációval, képernyőképekkel és példakódokkal mutatjuk be.
           </p>
         </div>
       </main>

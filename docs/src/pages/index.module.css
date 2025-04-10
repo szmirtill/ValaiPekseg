@@ -1,9 +1,8 @@
 .heroBanner {
   padding: 4rem 0;
   text-align: center;
-  background-color: #fce8c9; /* Világos pékséges háttér */
-  color: #5b3c11; /* Barna szöveg */
- 
+  background-color: #fce8c9; 
+  color: #5b3c11; 
   background-size: cover;
   background-position: center;
   border-bottom: 2px solid #e0b26b;
@@ -33,8 +32,4 @@
   }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+

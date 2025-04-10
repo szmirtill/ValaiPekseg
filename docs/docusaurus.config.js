@@ -69,7 +69,7 @@ const config = {
             items: [
               {
                 label: 'Valai Pékség GitHub',
-                href: 'https://github.com/valai-pekseg',
+                href: 'https://github.com/szmirtill/ValaiPekseg',
               },
             ],
           },
