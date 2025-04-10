@@ -1,89 +1,92 @@
 ---
+id: adatbazis
 title: Adatbázis
-sidebar_position: 3
+sidebar_label: Adatbázis
 ---
 
-# 🗄️ Adatbázis
+# Adatbázis
 
-Az alkalmazás adatkezeléséhez **MySQL-alapú adatbázist** használtunk. A backend oldalon az **Entity Framework Core** ORM segítségével kezeltük a táblákat és kapcsolatokat.
+Az alkalmazásunk adatkezeléséhez **MySQL-alapú adatbázist** használunk, amelyet az **ASP.NET backendben az Entity Framework Core ORM** és a **Visual Studio 2022** segítségével kezelünk. Fejlesztés során az adatbázist helyi MySQL szerveren futtattuk, míg az éles környezetben egy távoli adatbázis-kiszolgálóra kerül.
 
-## 🔧 Adatbázis jellemzői
+Az adatkapcsolatot és a lekérdezések végrehajtását az **ASP.NET Web API** biztosítja, amely a **React frontend** számára továbbítja az adatokat.
 
-- **ORM**: Entity Framework Core
-- **Kapcsolat**: ASP.NET API és MySQL között
-- **Kezelés**: Visual Studio 2022 és phpMyAdmin
-- **Biztonság**: Jelszó titkosítás, jogosultsági szintek
+## Főbb jellemzők
+
+- **Struktúra:** Táblák külön kezelik a felhasználókat, termékeket, rendelések adatait.
+- **Kapcsolatok:** Optimalizált idegen kulcsokkal az adatintegritásért.
+- **Kezelés:** Az Entity Framework Core ORM egyszerűsíti a migrációkat és lekérdezéseket.
+- **Biztonság:** Titkosított adatok, jogosultsági szintek.
+- **Hatékonyság:** Indexelés és optimalizált lekérdezések biztosítják a gyors válaszidőt.
 
 ---
 
-## 📋 Főbb táblák és mezők
+## Táblák
 
-### 🔑 `adminok`
-- `id`: egyedi azonosító (PRIMARY KEY)
-- `felhasznalonev`: egyedi (UNIQUE)
-- `jelszo`
+### 1. Adminok
 
-### 📦 `kategoriak`
+- Adatok: `id`, `felhasznalonev`, `jelszo`
+- `id`: PRIMARY KEY
+- `felhasznalonev`: UNIQUE
+
+---
+
+### 2. Kategóriák
+
+- Adatok: `id`, `nev`
 - `id`: egyedi azonosító
-- `nev`: egyedi kategórianév (UNIQUE)
-
-### 🍞 `termekek`
-- `id`: termék azonosító
-- `nev`, `leiras`, `ar`
-- `kategoria_id`: idegen kulcs (`kategoriak.id`)
-- `kep_url`: kép blobként vagy URL-ként
-
-### 🧾 `rendelesek`
-- `id`: rendelés azonosító
-- `vevo_id`: idegen kulcs (`vevo.id`)
-- `rendeles_datum`, `allapot`
-
-### 📦 `keszlet`
-- `id`: készlet azonosító
-- `termek_neve`, `mennyiseg`, `ar`
-- `kategoria_id`: idegen kulcs (`kategoriak.id`)
-
-### 📦 `rendeles_tetelek`
-- `id`: tétel azonosító
-- `rendeles_id`: idegen kulcs (`rendelesek.id`)
-- `termek_id`: idegen kulcs (`termekek.id`)
-- `mennyiseg`, `osszeg`
-
-### 👤 `vevo`
-- `id`: vásárló azonosító
-- `felhasznalonev`, `email`, `jelszo`, `regisztracio_datum`
-- `felhasznalonev` és `email`: UNIQUE kulcs
+- `nev`: UNIQUE – nem lehet duplikált
 
 ---
 
-## 🔗 Kapcsolatok és szabályok
+### 3. Termékek
 
-### 🧩 Kategóriák – Termékek/Készlet
-
-- A `kategoriak.id` idegen kulcsként szerepel a `termekek` és `keszlet` táblákban.
-- Ha törlünk egy kategóriát, a kapcsolódó mezők **NULL** értéket kapnak (ON DELETE SET NULL).
-
-### 👥 Vevők – Rendelések
-
-- A `vevo.id` szerepel a `rendelesek.vevo_id` mezőben.
-- Ha törlünk egy vevőt, a hozzá tartozó rendelések **automatikusan törlődnek** (ON DELETE CASCADE).
-
-### 🧾 Rendelések – Tételek
-
-- Egy rendeléshez több `rendeles_tetelek` sor tartozhat.
-- Ha törlünk egy rendelést, a kapcsolódó tételek is törlődnek (ON DELETE CASCADE).
-
-### 🥐 Tételek – Termékek
-
-- A `termek_id` kapcsolatot hoz létre a `termekek` táblával.
-- Termék törlés esetén a kapcsolódó tételek is törlődnek.
+- Adatok: `id`, `nev`, `leiras`, `ar`, `kategoria_id`, `kep_url`
+- `kategoria_id`: idegen kulcs a `kategoriak` táblára
+- Kategória törlés esetén: `SET NULL`
 
 ---
 
-## 🧠 ER Adatmodell szemlélet
+### 4. Rendelések
 
-Az adatbázis relációi biztosítják, hogy az adatok konzisztensen és megbízhatóan kezelhetők legyenek.  
-A **CASCADE** és **SET NULL** szabályok automatikusan fenntartják az adatintegritást.
+- Adatok: `id`, `vevo_id`, `rendeles_datum`, `allapot`
+- `vevo_id`: idegen kulcs a `vevo` táblára
+- Törlés esetén: `ON DELETE CASCADE`
 
-> Ez az adatbázis-struktúra lehetővé teszi a **termékek**, **rendelések** és **felhasználók** gyors és hatékony nyomon követését.
+---
 
+### 5. Készlet
+
+- Adatok: `id`, `termek_nev`, `mennyiseg`, `ar`, `kategoria_id`
+- `kategoria_id`: idegen kulcs → `SET NULL` kategória törlésnél
+
+---
+
+### 6. Rendelés tételek
+
+- Adatok: `id`, `rendeles_id`, `termek_id`, `mennyiseg`, `osszeg`
+- Kapcsolatok:
+  - `rendeles_id` → `rendelesek`
+  - `termek_id` → `termekek`
+  - Mindkettő: `ON DELETE CASCADE`
+
+---
+
+### 7. Vevők
+
+- Adatok: `id`, `felhasznalonev`, `email`, `jelszo`, `regisztracio_datum`
+- `felhasznalonev`, `email`: UNIQUE
+
+---
+
+## ER Adatmodell és integritási szabályok
+
+A kapcsolatok úgy lettek kialakítva, hogy az egyik táblában bekövetkező változások automatikusan tükröződnek a másikban. Például:
+
+- **Kategóriák ↔ Termékek/Készlet:** kategória törlésekor a kapcsolódó sorok `NULL` értéket kapnak.
+- **Vevők ↔ Rendelések:** vevő törlésekor a kapcsolódó rendelések is törlődnek (`CASCADE`).
+- **Rendelések ↔ Tételek:** rendelés törlése esetén a tételek is törlődnek.
+- **Tételek ↔ Termékek:** termék törlése esetén a kapcsolódó rendelés tételek törlődnek.
+
+---
+
+Ez az adatbázis-struktúra biztosítja az alkalmazás megbízható és hatékony működését: a **termékek**, **rendelések**, **készletek** nyomon követését, valamint a **felhasználói adatok biztonságos** és **konzisztens** kezelését.

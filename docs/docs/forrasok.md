@@ -1,45 +1,63 @@
 ---
+id: forrasok
 title: Források
-sidebar_position: 9
+sidebar_label: Források
 ---
 
-# 📚 Források
+# Források
 
-A projekt során többféle forrást és eszközt használtunk a fejlesztés, dokumentálás, tervezés és tesztelés támogatására.  
-Az alábbiakban összegyűjtöttük a legfontosabbakat:
-
----
-
-## 📦 Használt technológiák
-
-| Név | Funkció | Hivatalos oldal |
-|-----|---------|------------------|
-| **React** | Frontend keretrendszer | [https://react.dev](https://react.dev) |
-| **ASP.NET Core** | Backend API fejlesztés | [https://learn.microsoft.com/aspnet](https://learn.microsoft.com/aspnet) |
-| **Entity Framework Core** | ORM az adatbázis-kezeléshez | [https://learn.microsoft.com/ef/core](https://learn.microsoft.com/ef/core) |
-| **MySQL** | Relációs adatbázis | [https://www.mysql.com](https://www.mysql.com) |
-| **XAMPP** | Lokális szerverkörnyezet | [https://www.apachefriends.org](https://www.apachefriends.org) |
+A Valai Pékség webalkalmazás fejlesztése során számos forrásból és eszközből merítettünk, hogy biztosítsuk a projekt sikeres és gördülékeny megvalósítását.
 
 ---
 
-## 🧪 Tesztelés és eszközök
+## 📘 Fejlesztési dokumentációk és segédanyagok
 
-- **Postman** – REST API végpontok tesztelése: [https://www.postman.com](https://www.postman.com)  
-- **Visual Studio 2022** – Backend fejlesztés (C#, EF, API)
-- **Visual Studio Code** – Frontend fejlesztés (JSX, CSS)
-- **TeleportHQ** – Weboldal dizájn és prototípus készítő: [https://teleporthq.io](https://teleporthq.io)
-- **GitHub** – Verziókezelés és kódtárolás: [https://github.com](https://github.com)
-
----
-
-## 📚 Dokumentációk és segédletek
-
-- React dokumentáció: [https://reactjs.org/docs](https://reactjs.org/docs)
-- ASP.NET Core API dokumentáció: [https://learn.microsoft.com/aspnet/core/web-api](https://learn.microsoft.com/aspnet/core/web-api)
-- Entity Framework Core: [https://learn.microsoft.com/ef/core](https://learn.microsoft.com/ef/core)
-- W3Schools (HTML, CSS alapok): [https://www.w3schools.com](https://www.w3schools.com)
-- Stack Overflow – Problémák megoldása közösségi alapon: [https://stackoverflow.com](https://stackoverflow.com)
+- **HTML és CSS dokumentáció** – *MDN Web Docs*: Részletes leírások és példák a modern webfejlesztéshez.  
+- **JavaScript és React dokumentáció** – *React hivatalos dokumentáció*: A React könyvtár hivatalos útmutatója.  
+- **ASP.NET Core dokumentáció** – *Microsoft Learn*: Útmutató az ASP.NET és Entity Framework használatához.  
+- **MySQL dokumentáció** – *MySQL Reference Manual*: Az adatbázis-kezelés alapjai és haladó technikák.
 
 ---
 
-Ezek a források nélkülözhetetlenek voltak a projekt során, és sokat segítettek a hibák elhárításában, valamint az új technológiák elsajátításában.
+## 🛠️ Tervezési és fejlesztési eszközök
+
+- **TeleportHQ** – Weboldal UI/UX tervezés és prototípus készítés.
+- **GitHub** – Verziókövetés és projekt tárolása, csapatmunka támogatással.
+- **Visual Studio 2022** – Backend fejlesztés ASP.NET Core környezetben.
+- **Visual Studio Code** – Frontend fejlesztés könnyűsúlyú szerkesztőben.
+
+---
+
+## 🧱 Könyvtárak és keretrendszerek
+
+- **React** – Komponensalapú JavaScript könyvtár a frontendhez.
+- **Bootstrap / Tailwind CSS** – Stílusok és reszponzív dizájn.
+- **Axios** – HTTP kérések kezelése frontend és backend között.
+- **Entity Framework Core** – ORM rendszer a MySQL adatbázis kezelésére.
+
+---
+
+## 🧪 Tesztelési és hibakeresési eszközök
+
+- **Postman** – REST API tesztelésére és hibakeresésre.
+- **Google Chrome DevTools** – Fejlesztői eszközök a böngészőben.
+- **Jest + React Testing Library** – Egység- és integrációs tesztelés React projektekben.
+
+---
+
+## 🗃️ Adatbázis és szerverkezelés
+
+- **MySQL Workbench** – Grafikus kezelőfelület adatbázisokhoz.
+- **Docker** – Konténerizált környezet létrehozása és futtatása.
+
+---
+
+## 🧰 Segédprogramok
+
+- **ChatGPT** – Fejlesztési tanácsok és hibakeresési segítség.
+- **Cody** – Kódkiegészítés és fejlesztői asszisztencia.
+- **W3Schools** – Alapvető programozási példák és leírások.
+
+---
+
+Ezek az eszközök és forrásanyagok segítették a fejlesztést, a hibakeresést és a dokumentáció elkészítését. Mindegyik kulcsfontosságú volt a projekt hatékony kivitelezéséhez.

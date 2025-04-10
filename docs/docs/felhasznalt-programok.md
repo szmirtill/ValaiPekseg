@@ -1,85 +1,92 @@
 ---
+id: felhasznalt-programok
 title: Felhasznált programok
-sidebar_position: 2
+sidebar_label: Felhasznált programok
 ---
 
-# ⚙️ Felhasznált programok
+# Felhasznált programok
 
-Ebben a fejezetben bemutatjuk azokat az eszközöket és fejlesztőkörnyezeteket, amelyeket a Valai Pékség projekt során használtunk.
+## Discord
 
----
+A Discord egy sokoldalú kommunikációs platform, amelyet a projekt során elsősorban az egymás közötti kommunikációra használtunk.
 
-## 💬 Discord
+Az alkalmazás lehetővé tette, hogy:
 
-A **Discord**-ot a csapatkommunikációhoz használtuk.
+- 📞 Hívásokat bonyolítsunk le, amelyek során részletesen megbeszélhettük a projekt különböző részeit és megoldásait.
+- 🖼️ Részfeladatok screenshot-jainak tárolását és megosztását végezzük el.
+- 📚 Archiválással visszakereshetők maradtak a korábbi beszélgetések és anyagok.
 
-- Hanghívások a projekt megbeszélésére
-- Képernyőképek és fájlok megosztása
-- Archivált beszélgetések visszakeresése
-- Folyamatos, valós idejű együttműködés
-
----
-
-## 🎨 TeleportHQ
-
-A **TeleportHQ** segítségével terveztük meg az alkalmazás vizuális kinézetét.
-
-- Főoldal, regisztráció, rendelés és bejelentkezés látványterve
-- Könnyen testreszabható és platformfüggetlen
-- Segített gyors prototípusok készítésében
+A Discord intuitív felülete és stabil teljesítménye nagyban hozzájárult a hatékony csapatmunkához.
 
 ---
 
-## 🧑‍💻 Visual Studio Code
+## TeleportHQ
 
-A **VS Code** volt az elsődleges szerkesztő a frontend fejlesztéséhez.
+A TeleportHQ egy online, kollaborációra optimalizált design és fejlesztési eszköz.
 
-- React, HTML, CSS, JavaScript/TypeScript támogatás
-- Bővítmények (pl. Prettier, ESLint) a hatékony munkához
-- GitHub integráció a verziókezeléshez
-- Kényelmes hibakeresés és live server funkciók
+Fő funkciói a projekt során:
 
----
-
-## 🛠️ Visual Studio 2022
-
-A **Visual Studio 2022**-t a backend, azaz az ASP.NET Web API fejlesztésére használtuk.
-
-- Entity Framework Core és migrációk
-- Beépített hibakereső és kódkiegészítés
-- REST API-k és kontroller alapú fejlesztés
-- MySQL adatbázis-kezelés C#-ból
+- 🎨 Weboldaltervek készítése: főoldal, regisztrációs, bejelentkezési és rendelési felület.
+- 🌐 Platformfüggetlen elérhetőség: csak internetkapcsolat szükséges.
 
 ---
 
-## 🌐 XAMPP + phpMyAdmin
+## Visual Studio Code
 
-Az adatbázis kezelést **XAMPP** környezetben végeztük.
+A Visual Studio Code volt az elsődleges fejlesztési környezetünk a **React frontend** fejlesztéséhez.
 
-- Helyi szerver futtatás MySQL adatbázissal
-- phpMyAdmin felület a táblák és adatok vizuális kezeléséhez
-- Tesztelési lehetőségek helyi környezetben
-
----
-
-## 🐙 GitHub
-
-A **GitHub** szolgált verziókezelésre és kódmegosztásra.
-
-- Kód tárolása és visszakereshetősége
-- Verziókövetés, pull request-ek és egyesítések
-- Együttműködés, megoszthatóság, nyilvános repo
+### Előnyei:
+- 🧠 Technológiai támogatás: React, TypeScript, HTML, CSS.
+- 🧩 Bővítmények: automatikus kódkiegészítés, hibakereső, GitHub integráció.
+- 🔁 Verziókövetés: Git használata a kódbázison belül.
 
 ---
 
-## 📊 PowerPoint
+## Visual Studio 2022
 
-A projekt bemutatásához **PowerPoint** prezentációkat készítettünk.
+A Visual Studio 2022-t használtuk az **ASP.NET Core backend** fejlesztésére.
 
-- Diák a funkciókról, dizájnról, működésről
-- Képek, animációk, jegyzetek beágyazása
-- PDF-be konvertálható, jól használható bemutatók
+### Előnyei:
+- ⚙️ Korszerű eszközök: hibakereső, kódkiegészítés, Entity Framework támogatás.
+- 🧭 Projektmenedzsment: egyszerű API-fejlesztés.
+- 🔗 Git integráció: közvetlen verziókövetés a környezetben.
 
 ---
 
-Ezek az eszközök biztosították a projekt gördülékeny lebonyolítását, a fejlesztés, tesztelés és prezentáció minden szakaszában.
+## XAMPP
+
+Az XAMPP egy könnyen telepíthető szoftvercsomag, amely webszervereket és eszközöket tartalmaz.
+
+### Funkciók:
+- 🗄️ Adatbáziskezelés: PhpMyAdmin segítségével.
+- 🖥️ Helyi szerver: alkalmazás tesztelése gyorsan és egyszerűen.
+- 🧰 Kompatibilitás: több operációs rendszeren is használható.
+
+---
+
+## GitHub
+
+A GitHub volt a projekt verziókövetési és kódtárolási platformja.
+
+### Előnyei:
+- 💾 Kód tárolása: biztonságos hozzáférés.
+- 🧮 Verziókezelés: szakaszok és visszaállítások.
+- 👥 Csapatmunka: pull/merge requestek.
+- 🌍 Nyilvános hozzáférés: megoszthatóság külső szereplőkkel.
+
+A GitHub nemcsak a kód tárolásában, hanem a fejlesztési folyamat dokumentálásában is kulcsszerepet játszott.
+
+---
+
+## Microsoft PowerPoint
+
+A PowerPointot a projekt bemutatásához használtuk.
+
+### Funkciók:
+- 📊 Diavetítések: tartalmak vizuális bemutatása.
+- 🎞️ Multimédia: képek, videók, animációk.
+- 🤝 Együttműködés: közös szerkesztés.
+- 🖌️ Professzionális dizájn: sablonok és testreszabás.
+- 📤 Exportálás: PDF, PPTX, videó formátum.
+
+A PowerPoint lehetővé tette, hogy a fejlesztési eredményeket érthetően és látványosan mutassuk be.

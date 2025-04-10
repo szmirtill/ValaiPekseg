@@ -1,6 +1,6 @@
 // @ts-check
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -28,11 +28,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
+          sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/valai-pekseg/dokumentacio/edit/main/',
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: require.resolve('./src/css/custom.css'),
         },
       }),
     ],
@@ -66,7 +66,6 @@ const config = {
         style: 'dark',
         links: [
           {
-            
             items: [
               {
                 label: 'Valai Pékség GitHub',

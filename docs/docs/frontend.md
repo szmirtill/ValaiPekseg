@@ -1,81 +1,111 @@
 ---
+id: frontend
 title: Frontend
-sidebar_position: 4
+sidebar_label: Frontend
 ---
 
-# 🎨 Frontend
+# Frontend
 
-A Valai Pékség frontendje **React** keretrendszerre épül, modern felépítésű, moduláris komponensekkel.  
-A cél egy **letisztult, felhasználóbarát és mobilbarát** felület létrehozása volt, amely a vásárló és az adminisztrátor számára is könnyen kezelhető.
-
----
-
-## ⚛️ Technológiai alapok
-
-- **React** – komponensalapú felépítés
-- **CSS modulok** – egyedi stílus minden komponenshez
-- **React Router** – útvonalak kezelése (pl. /login, /main, /admin)
-- **Fetch API / Axios** – kommunikáció a backenddel
-- **LocalStorage** – bejelentkezési adatok és kosár ideiglenes tárolása
+Az alkalmazásunk felhasználói felülete a modern és reszponzív **React.js** keretrendszer segítségével készült. A React lehetővé teszi az újrafelhasználható komponensek kialakítását, a gyors renderelést és az egyszerű állapotkezelést. A fejlesztést a **Visual Studio Code** környezetben végeztük, külön `frontend` mappában. A React alkalmazás külön **Node.js** környezetben fut, és az **ASP.NET backenddel** kommunikál HTTP-kérések útján.
 
 ---
 
-## 🧩 Főbb komponensek
+## Főbb jellemzők
 
-### 🔐 Login.jsx / Registration.jsx
-- Bejelentkezés és regisztráció felület
-- Űrlapkezelés, validáció, hibaüzenetek
-- Token vagy session azonosítás LocalStorage segítségével
-
-### 🏠 MainPage.jsx
-- Főoldal bejelentkezés után
-- Termékek listázása, szűrés, vásárlás gomb
-- Kategória alapú szűrés
-
-### 🛒 Cart.jsx
-- Kosár megjelenítése
-- Mennyiség módosítás, termék eltávolítás
-- Rendelés leadása (POST a backendre)
-
-### 👤 EditProfile.jsx
-- Felhasználói fiók módosítása
-- Email és jelszó frissítése biztonsági ellenőrzéssel
-
-### 🛍️ Admin oldal komponensek
-- **AdminDashboard.jsx**: statisztikák, összesített adatok
-- **AdminProducts.jsx**: termékek listázása, ár szerkesztése, törlés
-- **AdminOrders.jsx**: rendelések kezelése, állapotváltás
+- **Modularitás:** Minden funkció saját komponensben lett megvalósítva.
+- **Navigáció:** A `react-router-dom` segítségével többoldalas SPA élményt biztosítunk.
+- **Dizájn:** Saját CSS-alapú, reszponzív stílusokat alkalmaztunk.
+- **Állapotkezelés:** `useState`, `useEffect` és `localStorage` a bejelentkezés és kosár kezeléséhez.
+- **Képfeldolgozás:** `URL.createObjectURL()` segítségével jelenítjük meg a backendből kapott BLOB-képeket.
 
 ---
 
-## 💡 Design szempontok
+## Komponensek
 
-- **Letisztult színvilág**: világos, barátságos dizájn
-- **Egységes elrendezés**: kártyás termékmegjelenítés
-- **Könnyű navigáció**: sidebar, menük, gombok
-- **Animációk**: hover effektek, interakciók visszajelzései
+### 1. Login
 
----
-
-## 📱 Reszponzivitás
-
-A frontend teljes mértékben **mobilbarát**, minden komponens rugalmasan igazodik a kijelző méretéhez.
-
-### Megoldások:
-- **CSS Grid & Flexbox**: dinamikus elrendezés
-- **Media Query-k**: egyedi stílus mobil nézethez
-- **Hamburger menü**: szűk képernyőkön automatikus átváltás
+- Email és jelszó megadásával történik a bejelentkezés.
+- Az adatok POST kérésként a `/api/Auth/login` végpontra kerülnek.
+- Sikeres bejelentkezés után a felhasználót a főoldalra irányítjuk, és az adatait elmentjük a `localStorage`-ba.
 
 ---
 
-## 🧪 Tesztelés
+### 2. Registration
 
-A frontend tesztelését manuálisan végeztük:
-
-- Böngésző kompatibilitás (Chrome, Edge)
-- Különböző képernyőméreteken való viselkedés
-- Navigációs hibák és vizuális elcsúszások ellenőrzése
+- Új felhasználók regisztrációja (felhasználónév, email, jelszó).
+- POST kérés a `/api/Account/register` végpontra.
+- Sikeres regisztráció után átirányítás a bejelentkezési oldalra.
 
 ---
 
-A frontend célja, hogy egyszerre legyen **esztétikus, intuitív és funkcionális**, támogatva mind a felhasználók, mind az adminok munkáját.
+### 3. MainPage2
+
+- A főoldalon az összes termék megjelenik.
+- GET kérés tölti be az adatokat a backendből.
+- A termékek kártyás elrendezésben jelennek meg: név, ár, kép, kategória.
+- Kosárba helyezés: számmező (1–10 mennyiség).
+
+---
+
+### 4. Cart
+
+- A kosárban a felhasználó módosíthatja a mennyiségeket.
+- A „Rendelés leadása” POST kérést küld, amely menti az adatokat a `rendeles` és `rendeles_tetelek` táblákba.
+- A rendelés állapota: **Feldolgozás alatt**.
+
+---
+
+### 5. EditProfile
+
+- Felhasználói adatok módosítása (email, jelszó).
+- Hitelesítés: email + jelenlegi jelszó.
+- PUT kérés segítségével frissülnek az adatok.
+
+---
+
+### 6. AdminDashboard
+
+- Admin statisztikai nézet.
+- Kártyákon jelennek meg a legfontosabb mutatók.
+- Recharts könyvtárat használunk a diagramokhoz.
+
+---
+
+### 7. AdminOrders
+
+- Minden **Feldolgozás alatt** rendelés listázása.
+- Állapot módosítható: „Kiszállítva” / „Teljesítve”.
+- Módosítás után automatikusan törlődik az adatbázisból (backend kezeli).
+
+---
+
+### 8. AdminProducts
+
+- Az összes termék listázása táblázatban.
+- Ár módosítása PUT kéréssel.
+- Termék keresés + törlés DELETE kéréssel.
+
+> ⚠️ Az admin oldalak csak bejelentkezett admin számára érhetők el.
+
+---
+
+## Reszponzivitás és dizájn
+
+- Mobil- és asztali kompatibilitás.
+- Minden komponenshez külön CSS fájl (`Style/` mappában).
+- Flexbox és Grid elrendezések.
+- Hamburger menü mobil eszközökhöz.
+- Termékek kártyás elrendezése automatikusan igazodik a kijelzőhöz.
+
+---
+
+## Felhasználói élmény és biztonság
+
+- Adatok módosítása csak hitelesítés után.
+- Kosárkezelés valós időben történik.
+- Az admin felületen csak nem teljesített rendelések jelennek meg.
+- BLOB képek biztonságosan betöltve a React komponensekbe.
+
+---
+
+Ez a frontend-struktúra biztosítja a **felhasználóbarát működést**, a **megbízható adatkezelést**, valamint a **professzionális adminisztrációs funkciókat**. A **moduláris React architektúra** lehetővé teszi a projekt jövőbeni bővítését és egyszerű karbantartását.

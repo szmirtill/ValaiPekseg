@@ -1,65 +1,62 @@
 ---
+id: bevezetes
 title: Bevezetés
-sidebar_position: 1
+sidebar_label: Bevezetés
 ---
 
-# 📌 Bevezetés
+# Bevezetés
 
 ## Előszó
 
-Projektünket **Szentes Mirtill** és **Nagy Máté János** közösen készítettük el, amely a **Valai Pékség** nevet viseli.  
-A projekt témájának kiválasztásakor fontos szempont volt, hogy egy olyan területtel foglalkozzunk, amelyhez személyesen is kötődünk, és amelyben szívesen mélyedünk el.  
-A pékség témája közel áll hozzánk, mivel szeretjük a friss pékárukat, és érdekesnek találtuk a helyi vállalkozások digitalizációs lehetőségeit.
+Projektünket **Szentes Mirtill** és **Nagy Máté János** közösen készítettük el, amely a **Valai Pékség** nevet viseli. A projekt témájának kiválasztásakor fontos szempont volt, hogy egy olyan területtel foglalkozzunk, amelyhez személyesen is kötődünk, és amelyben szívesen mélyedünk el.
 
-A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a **Valai Pékség** név adta vissza legjobban azt a barátságos és autentikus hangulatot, amit képviselni szeretnénk.
+A pékség, mint téma közel áll hozzánk, mivel mindketten szeretjük a friss pékárukat, és érdekesnek találtuk a helyi vállalkozások digitalizációs lehetőségeit. A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a **Valai Pékség** név volt az, amely leginkább visszaadta a projekt által képviselt barátságos és autentikus hangulatot.
 
 ---
 
-## 👥 Feladatmegosztás
+## Feladatmegosztás
+
+A projekt során a feladatokat és a munkafolyamatokat egyenlően osztottuk meg, hogy mindketten maximálisan hozzájárulhassunk a Valai Pékség webalkalmazásának megvalósításához. Az alábbiakban részletezzük, ki melyik feladatot végezte el:
 
 ### Szentes Mirtill feladatai:
-- 🎨 **Design**: Az alkalmazás megjelenése, navigációja és vizuális megjelenése.
-- 📱 **Reszponzív dizájn**: Mobil- és asztali nézet optimalizálása.
-- 📝 **Dokumentáció**: Technikai leírások és működés bemutatása.
-- 💻 **Frontend fejlesztés**: Terméklista, vásárlói felület, vizuális oldalak.
+- 🎨 **Design**: Felhasználói felület és élmény tervezése
+- 📱 **Reszponzív dizájn**: Optimális működés különböző eszközökön
+- 📄 **Dokumentáció**: Fejlesztés technikai leírása, használt technológiák
+- 💻 **Frontend fejlesztés**: Termékoldalak, vásárlói felület
 
 ### Nagy Máté János feladatai:
-- 🧠 **Backend fejlesztés**: Rendelési logika, adatok kezelése.
-- 🗄️ **Adatbázis tervezés**: Struktúra, biztonságos tárolás.
-- 🔌 **API fejlesztés**: Backend és frontend közötti adatkapcsolat biztosítása.
+- 🖥️ **Backend fejlesztés**: Szerverlogika, API, adatok kezelése
+- 🗂️ **Adatbázis tervezés és kezelés**
+- 🔄 **API kommunikáció**: Frontend és backend összekötése
 
 ### Közös feladatok:
-- 🗓️ **Projekt menedzsment**: Feladatok ütemezése, nyomon követés.
-- 🧪 **Tesztelés**: Az alkalmazás funkcióinak ellenőrzése, hibák javítása.
+- 🗓️ **Projektmenedzsment és ütemezés**
+- ✅ **Tesztelés**: Funkcionalitás és hibamentes működés ellenőrzése
+
+Ezzel a feladatmegosztással biztosítottuk, hogy a projekt minden részlete precízen kidolgozott legyen, és mindketten maximálisan hozzájáruljunk a sikeres megvalósításhoz.
 
 ---
 
-## 🎯 A projekt célja
+## A projekt célja
 
-A célunk egy **modern, felhasználóbarát webalkalmazás** létrehozása a Valai Pékség számára, amely:
+A projekt célja, hogy a Valai Pékség számára egy **modern és felhasználóbarát webalkalmazást** hozzunk létre, amely lehetővé teszi a pékség online jelenlétének biztosítását és üzleti működésének digitalizálását.
 
-- Bemutatja a termékeket (képpel, leírással)
-- Lehetővé teszi az **online rendelést**
-- Támogatja az **adminisztrációs műveleteket**
+### Fő funkciók:
+- Termékek részletes bemutatása
+- Online rendelés lehetősége
+- Kosárkezelés és rendeléskövetés
 
----
-
-## 👥 Célcsoport
-
-- **Magánszemélyek**: Akik friss pékárut szeretnének rendelni kényelmesen, akár otthonról.
-- **Pékség munkatársai**: Akik kezelik a rendeléseket, készleteket és szállítást.
+### Célcsoportok:
+- 🧍‍♀️ **Magánszemélyek**: Akik kényelmesen, online szeretnének rendelni
+- 🧑‍🍳 **Pékség munkatársai**: Rendelések kezelése és adminisztráció
 
 ---
 
-## 🔮 Hosszú távú célok
+A projekt hosszú távú célja, hogy bemutassa a digitalizáció előnyeit a helyi vállalkozások számára. Az online jelenlét és az automatizált rendszerek révén a pékség gördülékenyebb működést és nagyobb versenyképességet érhet el.
 
-A rendszer célja, hogy:
-
-- **Bemutassa a digitalizáció előnyeit** a helyi vállalkozások számára
-- **Egyszerű és élvezetes vásárlási élményt** nyújtson
-- **Személyre szabott szolgáltatásokat** kínáljon (pl. házhoz szállítás, egyedi ajánlatok)
-- **Biztonságos és skálázható** technológiai alapot adjon a növekedéshez
+Emellett célunk volt az is, hogy az alkalmazás:
+- személyre szabott szolgáltatásokat kínáljon (pl. házhoz szállítás),
+- autentikus és barátságos hangulatot közvetítsen,
+- valamint egy **stabil és biztonságos platformot** nyújtson, amely képes kezelni a növekvő rendelési igényeket és a vásárlók adatainak védelmét is biztosítja.
 
 ---
-
-✅ Ez a projekt nemcsak a technikai tudásunkat bővítette, hanem hozzájárult a csapatmunka és problémamegoldó képességeink fejlődéséhez is.

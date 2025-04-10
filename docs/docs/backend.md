@@ -1,99 +1,94 @@
 ---
+id: backend
 title: Backend
-sidebar_position: 5
+sidebar_label: Backend
 ---
 
-# 🧠 Backend
+# Backend
 
-A Valai Pékség szerveroldali logikáját **ASP.NET Core Web API** segítségével valósítottuk meg.  
-A backend biztosítja az adatbázis-kezelést, felhasználói hitelesítést, rendeléslogikát és admin funkciókat.
+Az alkalmazás backendje **ASP.NET Core Web API** technológiával készült a **Visual Studio 2022** fejlesztői környezetben. A szerveroldali logika biztosítja az adatbázis-kezelést, a felhasználói hitelesítést, a rendelések feldolgozását és az adminisztrációs műveleteket.
 
----
-
-## ⚙️ Technológiai alapok
-
-- **ASP.NET Core 7.0**
-- **Entity Framework Core** – ORM az adatbázis kezeléshez
-- **MySQL** – relációs adatbázis
-- **C#** nyelv
-- **RESTful API** – szabványos végpontok
+A backend az **Entity Framework Core ORM** segítségével kommunikál a **MySQL** adatbázissal, így az adatkezelés hatékony, biztonságos és jól karbantartható.
 
 ---
 
-## 🗂️ Főbb backend fájlok és feladatkörük
+## Főbb jellemzők
 
-| Fájl                  | Szerep |
-|-----------------------|--------|
-| `Program.cs`          | API konfigurálása, adatbázis kapcsolat |
-| `ApplicationDbContext.cs` | EF DbContext – táblák regisztrálása |
-| `Models/*.cs`         | Adatmodellek (pl. Vevo, Termek, Rendeles stb.) |
-| `Controllers/*.cs`    | Végpontok, adatműveletek logikája |
-| `appsettings.json`    | Adatbázis kapcsolat és beállítások |
+- **REST API architektúra** – minden funkció önálló végponton keresztül érhető el.
+- **Biztonság** – titkosított jelszavak és jogosultság-alapú elérés.
+- **Modularitás** – külön controllerek minden funkcióhoz.
+- **ORM** – az adatbázis-kezelést az Entity Framework Core biztosítja.
+- **Képtárolás** – a termékképek BLOB-ként tárolódnak az adatbázisban.
 
 ---
 
-## 🔐 Hitelesítés és jogosultság
+## Fő komponensek és végpontok
 
-### `/api/Auth/login`
-- Felhasználói bejelentkezés ellenőrzése
-- Email + jelszó párosítás
-- Siker esetén válasz: „Sikeres bejelentkezés!”
+### 🔐 AuthController
 
-### `/api/Account/register`
-- Regisztrációs végpont
-- Új vevő mentése az adatbázisba
-
----
-
-## 📦 Termékek kezelése
-
-### `/api/Termekek`
-- GET: Összes termék lekérdezése
-- POST: Új termék feltöltése (admin)
-- PUT: Termék árának módosítása
-- DELETE: Termék törlése
+- **Funkció:** Felhasználók bejelentkezése  
+- **Végpont:** `POST /api/Auth/login`  
+- **Bemenet:** email, jelszó  
+- **Működés:**
+  - Ellenőrzi az e-mail és jelszó egyezését.
+  - Siker esetén visszaad egy sikerüzenetet vagy tokent.
 
 ---
 
-## 🧾 Rendelések kezelése
+### 👤 AccountController
 
-### `/api/Rendeles`
-- GET: Vevő rendeléseinek lekérése
-- POST: Új rendelés létrehozása
-- PUT: Rendelés állapotának módosítása
-- DELETE: Rendelés törlése (admin vagy teljesített állapot után)
-
----
-
-## 🧠 Controller osztályok
-
-### `AuthController.cs`
-- Bejelentkezés, jelszóellenőrzés
-- Token nélküli hitelesítés (egyszerű login)
-
-### `AccountController.cs`
-- Felhasználók regisztrációja, módosítása
-
-### `VevoController.cs`
-- Felhasználói fiókok listázása, törlése, módosítása (admin)
-
-### `TermekekController.cs`
-- Termékek CRUD műveletei
-
-### `RendelesController.cs`
-- Rendelések kezelése, rendelésállapot váltás
+- **Funkció:** Regisztráció és felhasználói profil módosítása  
+- **Végpontok:**
+  - `POST /api/Account/register` – új felhasználó
+  - `PUT /api/Account/update-profile` – email/jelszó módosítás
+- **Működés:**
+  - Regisztrációnál ellenőrzi az email és felhasználónév egyediségét.
+  - Profilmódosításnál hitelesíti a jelszót.
 
 ---
 
-## 🧪 Tesztelés
+### 🛒 VevoController (Admin)
 
-A backend API-t **Postman** segítségével teszteltük:
-
-- Bejelentkezés teszt JSON küldéssel
-- Új rendelés POST kéréssel
-- Állapot módosítása PUT metódussal
-- Hibakezelés ellenőrzése (pl. rossz email/jelszó)
+- **Funkció:** Felhasználók admin általi kezelése  
+- **Végpontok:**
+  - `GET /api/Vevo` – felhasználók listázása
+  - `PUT /api/Vevo/{id}` – módosítás
+  - `DELETE /api/Vevo/{id}` – törlés
 
 ---
 
-A backend biztosítja az adatbiztonságot, a megbízható működést és az összes adat logikailag rendezett kezelését.
+### 🥖 TermekController
+
+- **Funkció:** Termékek kezelése  
+- **Végpontok:**
+  - `GET /api/Termek` – összes termék
+  - `PUT /api/Termek/{id}` – ár módosítása
+  - `DELETE /api/Termek/{id}` – törlés
+- **Képek kezelése:**
+  - BLOB formátumban
+  - `application/octet-stream` MIME típusban érkeznek a frontendhez
+
+---
+
+### 📦 RendelesController
+
+- **Funkció:** Rendelések kezelése  
+- **Végpontok:**
+  - `POST /api/Rendeles` – rendelés létrehozása
+  - `GET /api/Rendeles/user/{id}` – adott felhasználó rendelései
+  - `PUT /api/Rendeles/status/{id}` – rendelés állapotának frissítése
+- **Állapotkezelés:**
+  - Alapértelmezett: **Feldolgozás alatt**
+  - Ha **Kiszállítva** vagy **Teljesítve**, automatikusan törlésre kerül (beleértve a rendelés tételeit is)
+
+---
+
+### 📊 AdminDashboardController
+
+- **Funkció:** Admin statisztikák szolgáltatása
+- **Végpont:** `GET /api/AdminDashboard/statistics`
+- **Kimenet:** Grafikonokhoz szükséges adatok – eladások, kategóriaeloszlás stb.
+
+---
+
+A backend így biztosítja a webalkalmazás minden szerveroldali funkcióját, és lehetővé teszi az adatok hatékony, biztonságos kezelését mind a felhasználók, mind az adminisztrátorok számára.

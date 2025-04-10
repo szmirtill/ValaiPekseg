@@ -1,76 +1,59 @@
 ---
-title: Fejlesztési javaslatok
-sidebar_position: 7
+id: fejlesztes
+title: Fejlesztések
+sidebar_label: Fejlesztések
 ---
 
-# 🚀 Fejlesztési javaslatok
+# Fejlesztések
 
-A Valai Pékség alkalmazás már most is teljes funkcionalitással rendelkezik, ugyanakkor a jövőben számos fejlesztési lehetőség nyitva áll.  
-Ebben a fejezetben összegyűjtöttük azokat az ötleteket, amelyekkel az alkalmazás még továbbfejleszthető, hogy még hatékonyabban szolgálja a vásárlókat és az adminisztrátorokat.
+A Valai Pékség webalkalmazás jelenlegi verziója stabil alapot biztosít a digitális rendelési rendszerhez, azonban a jövőben számos fejlesztési lehetőség áll rendelkezésre, amelyekkel tovább bővíthető a funkcionalitás és javítható a felhasználói élmény.
 
 ---
 
-## 📱 Mobilalkalmazás
+## 🧁 Kiterjesztett termékkategóriák
 
-Egy különálló mobilapplikáció létrehozása:
+- Új kategóriák bevezetése, például:
+  - **Gluténmentes**
+  - **Vegán**
+  - **Laktózmentes**
+- Ezzel bővül a célközönség és személyre szabottabb kínálat valósítható meg.
 
-- React Native vagy Flutter alapokon
-- Push értesítések rendelés állapotáról
-- Offline mód korlátozott funkcionalitással
-- Felhasználóbarát mobil UI
+---
+
+## 👤 Felhasználói profil
+
+- **Részletes profiloldal** kialakítása, ahol a regisztrált felhasználók:
+  - Megtekinthetik **korábbi rendeléseiket**.
+  - **Módosíthatják** személyes adataikat (email, jelszó).
+  - Beállíthatják a rendelési előzmények mentését vagy értesítési preferenciáikat.
+
+---
+
+## 🌟 Értékelések és vélemények
+
+- Minden terméknél lehetőség legyen:
+  - **Értékelést (csillagokat)** adni.
+  - **Szöveges véleményt** írni.
+- Ez növeli a vásárlói bizalmat, és visszajelzést nyújt az üzemeltetők számára.
 
 ---
 
 ## 🔔 Push értesítések
 
-Webes vagy mobil értesítések integrálása:
-
-- Új akciókról, termékekről
-- Rendelés állapotának változásáról
-- Kosárban hagyott termékekről
-
----
-
-## 🛒 Okos kosár funkció
-
-- Kosár automatikus mentése bejelentkezés után
-- Elmentett kedvenc termékek
-- Hasonló termékek ajánlása
+- Push vagy email alapú értesítések bevezetése:
+  - Új termék megjelenésekor.
+  - Akciók indulásakor.
+  - Rendelés **állapotának frissítésekor** (pl. „Kiszállítva”).
 
 ---
 
-## 🔍 Kereső és szűrő fejlesztése
+## 📱 Mobilalkalmazás
 
-- Összetett kereső (termék neve, leírása, kategória alapján)
-- Ár szerinti szűrés
-- Kiemelt, akciós termékek külön listázása
-
----
-
-## 📈 Admin statisztikák bővítése
-
-- Részletes eladási statisztikák (nap/hét/hónap)
-- Legkeresettebb termékek
-- Vásárlói szokások elemzése (pl. mikor van a legtöbb rendelés)
-- CSV vagy Excel export lehetőség
+- A webalkalmazás mellett egy **natív mobilalkalmazás** készítése is tervben van:
+  - **iOS** és **Android** verzió.
+  - Ugyanazok a funkciók, mint a webes változatban.
+  - További lehetőségek, mint QR-kódos bejelentkezés, értesítések, offline elérés stb.
 
 ---
 
-## 💳 Online fizetés integrálása
-
-- Bankkártyás fizetés (pl. Stripe, SimplePay)
-- Fizetés utáni automatikus státuszváltás
-- Számla generálása PDF-ben
-
----
-
-## 🧾 Szállítás és rendelés követés
-
-- Szállítási cím kezelése a felhasználói fiókban
-- Rendelés követése (pl. "Készül", "Úton van", "Kiszállítva")
-- Szállítási idő becslése, térképes követés integrálása
-
----
-
-Ezek a fejlesztési ötletek hosszú távon hozzájárulhatnak ahhoz, hogy az alkalmazás még komplexebb, modernebb és versenyképesebb legyen.  
-A cél az, hogy a Valai Pékség digitális megoldása **folyamatosan fejlődjön a felhasználók igényeinek megfelelően**.
+Ezek a fejlesztések hozzájárulnak a Valai Pékség digitális jelenlétének **folyamatos bővítéséhez**, és biztosítják, hogy a felhasználók számára mindig **modern és kényelmes élményt** nyújtson a rendszer.

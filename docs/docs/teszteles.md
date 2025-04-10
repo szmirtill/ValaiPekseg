@@ -1,67 +1,54 @@
 ---
+id: teszteles
 title: Tesztelés
-sidebar_position: 6
+sidebar_label: Tesztelés
 ---
 
-# 🧪 Tesztelés
+# Tesztelés
 
-A Valai Pékség alkalmazásának működését több szinten és különböző módszerekkel teszteltük.  
-A cél az volt, hogy minden funkció stabilan, hibamentesen működjön, és a felhasználói élmény is zavartalan legyen.
+A fejlesztési folyamat fontos része volt a rendszer **átfogó tesztelése**, amely több szinten történt annak érdekében, hogy a webalkalmazás minden funkciója megbízhatóan működjön, és biztonságosan használható legyen.
 
 ---
 
 ## ✅ Funkcionális tesztelés
 
-A funkcionális tesztek során ellenőriztük, hogy a rendszer minden funkciója a tervezett módon működik:
+- Ellenőriztük, hogy az összes alapvető funkció – **regisztráció**, **bejelentkezés**, **termékek megjelenítése**, **kosárkezelés**, **rendelés leadása** – megfelelően működik.
+- Hibakezelés tesztelése:
+  - Hibás jelszó vagy nem létező email esetén megfelelő visszajelzést ad a rendszer.
+  - Hiányzó adatok esetén a felhasználó figyelmeztetést kap.
 
-- 🔐 **Bejelentkezés**: helyes és helytelen adatokkal is kipróbálva
-- 📝 **Regisztráció**: új felhasználók mentése, validációk
-- 🛒 **Termékek megjelenítése**: betöltés, kategória szűrés
-- 📦 **Kosár működése**: hozzáadás, mennyiség módosítás, törlés
-- 🧾 **Rendelés leadása**: automatikusan „Feldolgozás alatt” állapottal
-- 🧠 **Admin funkciók**: termék törlés, ár módosítás, rendelés állapotának váltása
+---
+
+## 📱 Reszponzív tesztelés
+
+- Különböző eszközökön történt a tesztelés:
+  - **Asztali számítógép**
+  - **Tablet**
+  - **Mobiltelefon**
+- Ellenőriztük:
+  - A navigáció működését különböző képernyőméreteken.
+  - A tartalmak, gombok, képek arányos és átlátható megjelenését.
+  - A hamburger menü helyes működését kis kijelzőn.
+
+---
+
+## 🧪 Terhelési tesztelés
+
+- Vizsgáltuk, hogyan viselkedik az alkalmazás, ha egyszerre több felhasználó próbál regisztrálni vagy rendelni.
+- Teszteltük a **rendelési folyamatot** párhuzamos felhasználások mellett.
+- Megfigyeltük az adatbázis válaszidejét és a rendszer stabilitását nagyobb terhelés alatt.
 
 ---
 
 ## 🔐 Biztonsági tesztelés
 
-Ezekkel a tesztekkel azt ellenőriztük, hogy az alkalmazás ne engedjen jogosulatlan hozzáférést, és megbízhatóan ellenőrizze az adatokat:
-
-- ❌ Helytelen email/jelszó esetén nem enged bejelentkezni
-- 🔐 Felhasználói profil módosításakor ellenőrzi az aktuális jelszót
-- 🔒 Admin oldal csak bejelentkezés után érhető el
-- 📧 Az email cím egyediségét validáljuk regisztrációnál
-- 🛡️ A felhasználók jelszava nem kerül visszaküldésre az API-n keresztül
-
----
-
-## 🚀 Terhelési tesztelés (alap szintű)
-
-Kisebb volumenű terhelési teszteket is végeztünk annak ellenőrzésére, hogy a rendszer hogyan viselkedik több egyidejű használat mellett:
-
-- 🔄 Gyors egymás utáni rendelés leadás
-- 🧾 Több tétel egyidejű mentése
-- 💾 Kosár többszöri módosítása rövid időn belül
-- 📶 Internetkapcsolat megszakítása közben történő mentés kezelése
+- A jelszavak titkosított tárolása tesztelve lett – nem kerülnek nyílt szövegként az adatbázisba.
+- SQL injekció elleni védelem:
+  - Kipróbáltunk olyan lekérdezéseket, amelyek manipulálni próbálták az adatbázist – ezek hatástalanok maradtak.
+- Bejelentkezési jogosultságok:
+  - Az admin oldal kizárólag bejelentkezett admin felhasználó számára érhető el.
+  - A felhasználói fiókadatok csak hitelesítés után módosíthatók.
 
 ---
 
-## 🔍 Hibakezelés tesztelése
-
-Fontos szempont volt, hogy a hibák kezelése felhasználóbarát módon történjen:
-
-- 📭 Üzenetek jelenjenek meg, ha valami nem sikerült (pl. „Hibás bejelentkezés”)
-- 🔙 Hibák után ne fagyjon le az alkalmazás, legyen újrapróbálási lehetőség
-- ⚠️ Hiányzó mezők, hibás formátum esetén figyelmeztetést kapjon a felhasználó
-
----
-
-## 🛠️ Tesztelési eszközök
-
-- **Postman**: backend API végpontok tesztelése (login, regisztráció, CRUD műveletek)
-- **Böngészők**: manuális tesztelés Chrome és Edge alatt
-- **Fejlesztői konzol**: hibák naplózása és elemzése (React DevTools, Network tab)
-
----
-
-A rendszer tesztelése során az volt a célunk, hogy minden végpont, minden felület és minden funkció **logikailag és technikailag is helyesen működjön**, stabil és biztonságos élményt nyújtva.
+A tesztelések összességében biztosítják, hogy a **Valai Pékség** alkalmazás **megbízható, biztonságos és felhasználóbarát** módon működjön minden platformon.
