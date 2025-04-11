@@ -29,6 +29,9 @@
 
 ## 🚀 Telepítési útmutató
 
+A docker segítségével indul el a MySQL szerver, a Backend, és a Frontend környezet! 
+A példa adatokat egy adatbáziskezelővel manuálisan kell feltölteni(pl Beepeeker studio).
+
 ### 1. A projekt klónozása
 ```bash
 git clone https://github.com/szmirtill/ValaiPekseg
