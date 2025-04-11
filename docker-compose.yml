@@ -14,6 +14,7 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+      - ./pekseg.sql:/docker-entrypoint-initdb.d/pekseg.sql
     networks:
       - valai-net
 
@@ -28,9 +29,27 @@ services:
       - ASPNETCORE_ENVIRONMENT=Development
       - ConnectionStrings__DefaultConnection=server=mysql;port=3306;database=valai_pekseg;user=valaiuser;password=valai123
     ports:
-      - "7136:80"
+      - "7136:8080"
     networks:
       - valai-net
+
+  frontend:
+    image: node:18-alpine
+    container_name: valai-frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./ReactApp1.Client:/app
+    working_dir: /app
+    command: sh -c "npm install && npm install react-router-dom && npm run dev -- --host 0.0.0.0 --port 3000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+    networks:
+      - valai-net
+    depends_on:
+      - backend
 
 volumes:
   mysql-data:
