@@ -16,7 +16,7 @@ Az alkalmazás lehetővé tette, hogy:
 - 🖼️ Részfeladatok screenshot-jainak tárolását és megosztását végezzük el.
 - 📚 Archiválással visszakereshetők maradtak a korábbi beszélgetések és anyagok.
 
-A Discord intuitív felülete és stabil teljesítménye nagyban hozzájárult a hatékony csapatmunkához.
+A Discord felülete és stabil teljesítménye nagyban hozzájárult a hatékony csapatmunkához.
 
 ---
 

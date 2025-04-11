@@ -1,27 +1,4 @@
-﻿# 🥖 Valai Pékség Webalkalmazás
-
-Ez a projekt egy modern, reszponzív webalkalmazás, amely a Valai Pékség számára készült. A célja, hogy lehetővé tegye a 
-vásárlók számára az online rendelést, valamint egyszerűsítse az adminisztrációs folyamatokat a vállalkozás munkatársai számára.
-
-A rendszer React alapú frontendből, ASP.NET Core Web API backendből és MySQL adatbázisból épül fel.
-
----
-
-## 📌 Tartalomjegyzék
-
-- [Funkciók](#funkciók)
-- [Technológiák](#technológiák)
-- [Telepítési útmutató](#telepítési-útmutató)
-- [Használat](#használat)
-- [Adatbázis szerkezete](#adatbázis-szerkezete)
-- [Tesztelés](#tesztelés)
-- [Fejlesztők](#fejlesztők)
-- [Jövőbeli tervek](#jövőbeli-tervek)
-- [Licenc](#licenc)
-
----
-
-## ✨ Funkciók
+﻿## ✨ Funkciók
 
 ### Felhasználók számára
 
@@ -59,23 +36,15 @@ git clone https://github.com/szmirtill/ValaiPekseg
 
 ### 2. Adatbázis beállítása
 
-- Indítsa el az adatbázis-szervert (például XAMPP segítségével).
-- Hozza létre a szükséges adatbázist.
-- Futtassa az Entity Framework migrációkat, vagy manuálisan hozza létre az adatbázis-táblákat.
+- Indítsa el az adatbázis-szervert (például XAMPP segítségével, az Apache-t és a MySqlt is).
+- A MySqlt mellett nyomjon rá az Admin gombra
+- Hozza létre a szükséges adatbázist. (pekseg néven)
+- Importálja be a megadott pekseg.sql file-t.
 
 ### 3. Backend indítása
 
 - Nyissa meg a megoldást **Visual Studio 2022** alkalmazásban.
-- Indítsa el a szervert a Visual Studio „Start” gombjával vagy `dotnet run` parancs segítségével.
-
-### 4. Frontend indítása
-
-```bash
-cd frontend
-npm install
-npm start
-```
-
+- Indítsa el a szervert a Visual Studio „Start” gombjával.
 
 ---
 
@@ -91,8 +60,8 @@ npm start
 
 ### Adminisztrátorok számára
 
-1. Jelentkezzen be az adminisztrációs felületre.
-2. Kezelje a Felhasználókat.
+1. Jelentkezzen be az adminisztrációs felületre. (Felhasználónév: Tulaj; Jelszó: Tulaj)
+2. Kezelje a Felhasználókat, törölje azokat.
 3. Módosítsa a termékek árait, törölje azokat.
 
 ---
@@ -101,10 +70,10 @@ npm start
 
 A rendszer az alábbi táblákból épül fel:
 
-- **Felhasználók (Vevo)**: `id`, `név`, `email`, `jelszó`, `regisztráció dátuma`
-- **Termékek**: `id`, `név`, `leírás`, `ár`, `kategória`, `kép`
+- **Felhasználók (Vevo)**: `id`, `nev`, `email`, `jelszó`, `regisztracio_datuma`
+- **Termékek**: `id`, `nev`, `leiras`, `ar`, `kategoria`, `kep`
 - **Kategóriák**: termékcsoportok logikai elválasztására
-- **Rendelések**: `id`, `vevő_id`, `státusz`, `dátum`
+- **Rendelések**: `id`, `vevo_id`, `statusz`, `datum`
 - **Rendelés tételek**: kapcsoló tábla rendelés és termék között
 - **Adminisztrátorok**: belépési jogosultsággal rendelkező felhasználók
 - **Készlet információk**: aktuális elérhetőség és mennyiség
@@ -128,6 +97,15 @@ A rendszer megbízhatóságát többféle tesztelési módszer garantálja:
 
 ---
 
+## 🌱 Jövőbeli tervek
+
+- **Értékelési rendszer**: Lehetőség termékek csillagos értékelésére és vélemény írására.
+- **Push értesítések**: Automatikus figyelmeztetések új termékekről vagy rendelésállapot-változásokról.
+- **Mobilalkalmazás**: A webalkalmazás natív mobilos verziója.
+- **Részletesebb statisztikai modul**: Bővített admin felület, ahol grafikonok és elemzések is elérhetők lesznek.
+
+---
+
 ## 👨‍💼 Fejlesztők
 
 - **Szentes Mirtill**  
@@ -135,12 +113,3 @@ A rendszer megbízhatóságát többféle tesztelési módszer garantálja:
 
 - **Nagy Máté János**  
   Backend fejlesztés (ASP.NET), adatbázis-tervezés, REST API megvalósítása, admin funkciók kialakítása.
-
----
-
-## 🌱 Jövőbeli tervek
-
-- **Értékelési rendszer**: Lehetőség termékek csillagos értékelésére és vélemény írására.
-- **Push értesítések**: Automatikus figyelmeztetések új termékekről vagy rendelésállapot-változásokról.
-- **Mobilalkalmazás**: A webalkalmazás natív mobilos verziója (React Native vagy Flutter technológiával).
-- **Részletesebb statisztikai modul**: Bővített admin felület, ahol grafikonok és elemzések is elérhetők lesznek.

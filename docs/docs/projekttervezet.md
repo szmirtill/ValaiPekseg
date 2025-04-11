@@ -17,29 +17,30 @@ A felhasználói felület célja, hogy a látogatók számára egyszerű, mégis
 
 ---
 
-## Webalkalmazás fő funkciói
+## A webalkalmazás fő funkciói
 
-### Termékek böngészése és részletezése:
-- A látogatók képekkel és leírásokkal böngészhetik a termékeket.
-- A termék nevére kattintva részletes információk jelennek meg (összetevők, árak, elérhetőség).
+- **Termékek böngészése és részletezése**  
+  - Az érdeklődők megtekinthetik a termékek listáját képekkel és leírásokkal.  
+  - A termékek nevére kattintva részletes információkat kapnak az adott áruról, például összetevőkről, árakról és elérhetőségről.
 
-### Kosár és rendelési folyamat:
-- A kiválasztott termékek a kosárba kerülnek, az árak automatikusan összeadódnak.
-- A rendelés során a felhasználó végigvezetésre kerül a szállítási és fizetési adatok megadásán.
+- **Kosár és rendelési folyamat**  
+  - A kiválasztott termékek a kosárba kerülnek, ahol az árak automatikusan összeadódnak.  
+  - A rendelési folyamat végig vezeti a vásárlókat a szállítási és fizetési információk megadásán.
 
-### Reszponzív navigáció:
-- A menüsáv kisebb eszközökön **hamburger menüként** jelenik meg.
+- **Reszponzív navigáció**  
+  - A navigációs sáv a reszponzív dizájnnak köszönhetően hamburger menüként jelenik meg kisebb eszközökön.
+
 
 ---
 
-## Navigációs sáv tartalma
+### Navigációs sáv
 
-- **Főoldal** – Bemutató a Valai Pékségről.
-- **Bejelentkezés** – Rendeléshez szükséges, de a böngészéshez opcionális.
-- **Termékek** – A kínálat böngészése kategóriák szerint.
-- **Admin** – Bejelentkezés az adminfelületre.
+- **Főoldal** – Bemutató a Valai Pékségről
+- **Bejelentkezés** – Opcionális böngészéshez, kötelező rendeléshez
+- **Termékek** – A kínálat böngészése
+- **Admin** – Adminfelület elérése
 
-### Bejelentkezés után megjelenő menü:
+### Bejelentkezés után elérhető menüpontok:
 - 🛒 **Kosár**
 - 📜 **Rendeléseim**
 - ⚙️ **Adatok módosítása**
@@ -49,7 +50,7 @@ A felhasználói felület célja, hogy a látogatók számára egyszerű, mégis
 
 ## Főoldal
 
-A főoldalon a termékek listája látható, képekkel kiegészítve. A termékekre kattintva részletes információk jelennek meg. A bal oldali sávban **kategóriaszűrés** segíti a gyors keresést.
+A főoldalon láthatók a termékek képekkel, leírással. Kategóriaszűrés segíti a keresést a bal oldali sávban.
 
 <img src="/img/fooldal.png" alt="Főoldal dizájn" />
 
@@ -57,17 +58,16 @@ A főoldalon a termékek listája látható, képekkel kiegészítve. A terméke
 
 ## Regisztrációs felület
 
-A regisztráció során a felhasználó megadhatja adatait, amelyeket a rendszer biztonságosan, titkosítással tárol.
-
+A felhasználó biztonságosan adhatja meg adatait, amelyek titkosítva kerülnek az adatbázisba.
 
 ### Bekért adatok:
 - Felhasználónév
 - Email cím
-- Jelszó (kétszer, az egyezés ellenőrzéséhez)
+- Jelszó (kétszer, az egyezés ellenőrzésére)
 
 ### Jogosultság:
-- A termékek bejelentkezés nélkül is böngészhetők.
-- **Rendeléshez bejelentkezés szükséges** – ellenkező esetben hibaüzenet jelenik meg.
+- Termékek megtekinthetők bejelentkezés nélkül
+- **Rendeléshez kötelező a bejelentkezés**
 
 <img src="/img/registration.png" alt="Regisztráció dizájn" />
 ---
@@ -79,12 +79,12 @@ A regisztráció során a felhasználó megadhatja adatait, amelyeket a rendszer
 - Jelszó
 
 ### Hibakezelés:
-- Ismeretlen email esetén: „Ez az email cím még nem került regisztrálásra.”
-- Rossz jelszó esetén külön hibaüzenet.
+- Ismeretlen email: _„Ez az email cím még nem került regisztrálásra.”_
+- Hibás jelszó: megfelelő hibaüzenet
 
 ### Sikeres bejelentkezés után:
-- A felhasználó a főoldalra kerül.
-- A menüben a „Bejelentkezés” és „Regisztráció” helyett „Kijelentkezés” látható.
+- A felhasználó a főoldalra kerül
+- A menüben megjelenik a „Kijelentkezés” opció
 
 <img src="/img/login.png" alt="Bejelentkezés dizájn" />
 ---
