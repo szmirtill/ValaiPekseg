@@ -109,10 +109,20 @@ A rendszer megbízhatóságát többféle tesztelési módszer garantálja:
 
 ---
 
-## 👨‍💼 Fejlesztők
+## 🤝 Munkamegosztás
 
-- **Szentes Mirtill**  
-  Frontend fejlesztés (React), felhasználói felület tervezése, reszponzív dizájn és dokumentáció készítése.
+A projekt során a feladatokat egyenlően osztottuk fel, minden fejlesztő aktívan részt vett mind a frontend, mind a backend kialakításában, valamint a tesztelésben és dokumentációban is.
 
-- **Nagy Máté János**  
-  Backend fejlesztés (ASP.NET), adatbázis-tervezés, REST API megvalósítása, admin funkciók kialakítása.
+| Fukciók | Fejlesztők |
+| ------------- | ------------- |
+| Vásárlói felület kialakítása | Szentes Mirtill |
+| Regisztrációs és bejelentkezési rendszer | Szentes Mirtill, Nagy Máté János |
+| Kosárkezelés és rendelés leadása | Nagy Máté János |
+| Felhasználói profilkezelés | Nagy Máté János |
+| Termékek kezelése admin felületen | Szentes Mirtill |
+| Rendelések státuszkezelése | Nagy Máté János |
+| Adatbázis tervezés és implementálás | Szentes Mirtill, Nagy Máté János |
+| API-k fejlesztése | Nagy Máté János |
+| Frontend reszponzív kialakítása | Szentes Mirtill |
+| Tesztelés (UNit és Selenium) | Szentes Mirtill, Nagy Máté János |
+| Dokumentáció és projektösszefoglaló írása | Szentes Mirtill, Nagy Máté János |
