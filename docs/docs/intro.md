@@ -20,20 +20,19 @@ A név kiválasztásánál több lehetőséget is megfontoltunk, azonban a Valai
 A projekt során a feladatokat és a munkafolyamatokat egyenlően osztottuk el, hogy mindketten maximálisan hozzájárulhassunk a Valai Pékség webalkalmazásának megvalósításához.  
 **Az alábbiakban részletezzük, hogy ki melyik feladatot végezte el a projekt során:**
 
-### Szentes Mirtill feladatai:
-- 🎨 **Design**: Az alkalmazás felhasználói felületének és élményének megtervezése, vizuális vonzerő és könnyű navigáció
-- 📱 **Reszponzív dizájn**: Optimális megjelenés és működés különböző eszközökön (mobil, tablet, desktop)
-- 📄 **Dokumentáció**: A fejlesztési folyamat technikai leírása, használt technológiák részletezése
-- 💻 **Frontend fejlesztés**: A termékoldalak, online rendelési felület, valamint információs oldalak megvalósítása
-
-### Nagy Máté János feladatai:
-- 🖥️ **Backend fejlesztés**: A szerveroldali logika, a vásárlói és rendelési adatok kezelése
-- 🗂️ **Adatbázis tervezés és fejlesztés**: Az adatok strukturált, hatékony és biztonságos tárolása
-- 🔄 **API fejlesztés**: A frontend és a backend közötti kommunikáció biztosítása
-
-### Közös feladatok:
-- 🗓️ **Projektmenedzsment és ütemezés**: A határidők betartása, feladatok nyomon követése
-- ✅ **Tesztelés**: Funkcionalitás, rendelési folyamatok és felhasználói élmény tesztelése
+| Fukciók | Fejlesztők |
+| ------------- | ------------- |
+| Vásárlói felület kialakítása | Szentes Mirtill |
+| Regisztrációs és bejelentkezési rendszer | Szentes Mirtill, Nagy Máté János |
+| Kosárkezelés és rendelés leadása | Nagy Máté János |
+| Felhasználói profilkezelés | Nagy Máté János |
+| Termékek kezelése admin felületen | Szentes Mirtill |
+| Rendelések státuszkezelése | Nagy Máté János |
+| Adatbázis tervezés és implementálás | Szentes Mirtill, Nagy Máté János |
+| API-k fejlesztése | Nagy Máté János |
+| Frontend reszponzív kialakítása | Szentes Mirtill |
+| Tesztelés (UNit és Selenium) | Szentes Mirtill, Nagy Máté János |
+| Dokumentáció és projektösszefoglaló írása | Szentes Mirtill, Nagy Máté János |
 
 Ezzel a feladatmegosztással biztosítottuk, hogy a projekt minden részlete precízen kidolgozott legyen, és mindketten maximálisan hozzájáruljunk a sikeres megvalósításhoz.
 
